@@ -38,16 +38,16 @@ namespace WindowsFormsApp4
         {
             root = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             //extentions = Regex.Split(form.getTextBox().Text, @"\s*,", RegexOptions.IgnoreCase);
-            //extentions = {"", "", "", "" };
         }
         
 
         /* Метод для работы с формой */
         public void ReadCatalogue(Form1 form)
         {
-            // получить из формы элементы Список и Тестовое поле
+            // получить из формы элементы Список и Текстовое поле
             ListBox listBox = form.getListBox('1');
             TextBox textBox = form.getTextBox();
+            listBox.Items.Clear();
 
             // поулчение список файлов в рабочей папке
             string path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -63,67 +63,127 @@ namespace WindowsFormsApp4
 
 
         /* Метод сортировки */
-        public List<List<string>> Sort()
+        public Dictionary<string, List<string>> Sort()
         {
-            List<List<string>> soirtingFiles = new List<List<string>>();
+            Dictionary<string,List<string>> sortingFiles = new Dictionary<string, List<string>>();
             string extension;
 
-            byte N = 5; // количество изветсных расширений
-            for (byte i = 0; i < N; i++)
-            {
-                soirtingFiles.Add(new List<string>());
-            }
+            /* Создание категорий файлов */
+            sortingFiles.Add("Текстовые документы", new List<string>());
+            sortingFiles.Add("Многостраничные документы", new List<string>());
+            sortingFiles.Add("Исполняемые и пакетные файлы", new List<string>());
+            sortingFiles.Add("Изображения", new List<string>());
+            sortingFiles.Add("Исходный код", new List<string>());
+            sortingFiles.Add("Музыка", new List<string>());
+            sortingFiles.Add("Видео", new List<string>());
+            sortingFiles.Add("Архивы", new List<string>());
+            sortingFiles.Add("Торренты", new List<string>());
+            sortingFiles.Add("Офисные документы", new List<string>());
+            sortingFiles.Add("Прочие", new List<string>());
            
             foreach (string file in files)
             {
                 extension = Path.GetExtension(file);
-                switch (extension)
+                switch (extension.ToLower())
                 {
-                    case ".exe": soirtingFiles[0].Add(file); break;
+                    case ".msi":
+                    case ".bat":
+                    case ".exe": sortingFiles["Исполняемые и пакетные файлы"].Add(file); break;
+                    case ".rtf":
                     case ".doc":
-                    case ".txt": soirtingFiles[1].Add(file); break;
+                    case ".docx":
+                    case ".docm":
+                    case ".txt": sortingFiles["Текстовые документы"].Add(file); break;
                     case ".jpg":
                     case ".jpeg":
                     case ".gif":
-                    case ".png": soirtingFiles[2].Add(file); break;
+                    case ".png": sortingFiles["Изображения"].Add(file); break;
                     case ".pdf":
-                    case ".djvu": soirtingFiles[3].Add(file); break;
+                    case ".djvu": sortingFiles["Многостраничные документы"].Add(file); break;
+                    case ".cs": 
+                    case ".cpp": 
+                    case ".html": 
+                    case ".php": 
+                    case ".py": 
+                    case ".svg": 
+                    case ".x3d": 
+                    case ".wrl": 
+                    case ".css": 
+                    case ".xml": 
+                    case ".xslt": 
+                    case ".js": sortingFiles["Исходный код"].Add(file); break;
+                    case ".mp3":
+                    case ".ogg":
+                    case ".flac":
+                    case ".wav": sortingFiles["Музыка"].Add(file); break;
+                    case ".mp4":
+                    case ".avi":
+                    case ".mkv":
+                    case ".sfx":
+                    case ".flv": sortingFiles["Видео"].Add(file); break;
+                    case ".tar": 
+                    case ".gz": 
+                    case ".zip": 
+                    case ".rar": sortingFiles["Архивы"].Add(file); break;
+                    case ".torrent": sortingFiles["Торренты"].Add(file); break;
+                    case ".ppt": 
+                    case ".pptx": 
+                    case ".xls": 
+                    case ".xlsx": sortingFiles["Офисные документы"].Add(file); break;
+                    default: sortingFiles["Прочие"].Add(file); break;
                 }
             }
-            return soirtingFiles;
+            return sortingFiles;
         }
 
-        /* Метод вывода предворительной сортировки */
+        /* Метод вывода предварительной сортировки */
         public void ExampleSort(Form1 form)
         {
-            List<List<string>> soirtinfFiles = Sort();
+            Dictionary<string, List<string>> soirtinfFiles = Sort();
             ListBox listBox = form.getListBox('2');
-            foreach (List<string> catigories in soirtinfFiles)
+            Dictionary<string, List<string>>.KeyCollection catigories = soirtinfFiles.Keys;
+
+            listBox.Items.Clear();
+            foreach (string catigorie in catigories)
             {
-                //listBox.Items.Add("Исполняемые файлы:");
-                foreach (string file in catigories)
+                listBox.Items.Add(catigorie+" ("+ soirtinfFiles[catigorie].Count + "):");
+                foreach (string file in soirtinfFiles[catigorie])
                 {
                     listBox.Items.Add(file);
                 }
-                    
+                listBox.Items.Add("\r\n");
+
+
             }
         }
 
         /* Метод действительной сортировки */
-        public void MakeSort(Form form)
+        public void MakeSort()
         {
-            List<List<string>> soirtinfFiles = Sort();
-            foreach (List<string> catigories in soirtinfFiles)
+            Dictionary<string, List<string>> soirtinfFiles = Sort();
+            Dictionary<string, List<string>>.KeyCollection catigories = soirtinfFiles.Keys;
+            string path;
+            foreach (string catigorie in catigories)
             {
-                //listBox.Items.Add("Исполняемые файлы:");
-                foreach (string file in catigories)
+                if (soirtinfFiles[catigorie].Count == 0) continue;
+
+                path = root + "\\" + catigorie;
+                if (!Directory.Exists(path))
                 {
-                    /* здесь перемещение файлов */ 
+                    Directory.CreateDirectory(path);
+                }
+                foreach (string file in soirtinfFiles[catigorie])
+                {
+                    /* здесь перемещение файлов */
+                    if (File.Exists(file) && !File.Exists(path+"\\"+ Path.GetFileName(file)))
+                    {
+                        File.Move(file, path + "\\" + Path.GetFileName(file));
+                    }
+
                 }
 
             }
         }
-
 
         /* Метод смены текущего рабочего каталога*/
         public void ChangeCatalogue(Form1 form)
@@ -137,7 +197,16 @@ namespace WindowsFormsApp4
             root = folder.SelectedPath;
             textBox.Text = root;
             label.Text = "Изменили рабочий каталог";
+
+            ReadCatalogue(form);
         }
+
+        /* Метод логирования перемещений */
+        public void WriteNote(string path1, string path2)
+        {
+
+        }
+
     }
 
     
