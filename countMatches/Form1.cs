@@ -12,29 +12,21 @@ namespace WindowsFormsApp5
 {
     public partial class Form1 : Form
     {
-
-        
-        
         public Form1()
         {
             InitializeComponent();
-            
         }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
+
         TextBox txtB;
+
+        /* Поведение формы */
         private void button1_Click(object sender, EventArgs e)
         {
-            /*string text = textBox1.Text;
-            MessageBox.Show(text);*/
-
             Vkontate vk = new Vkontate();
             int contex = vk.getTok(this);
-
-
             
             TextEditor text = new TextEditor(textBox1.Text);
             enterInBox ent = new enterInBox(this);
@@ -50,7 +42,7 @@ namespace WindowsFormsApp5
             int count = dic.Count;
             txtB.Text += "Загружено текстов: " + contex + "\r\n";
             txtB.Text += "Всего слов: " + count + "\r\n";
-            for (int i = a; i<b; i++)
+            for (int i = a; i < b; i++)
             {
                 var elem = dic.ElementAt(i);
                 txtB.Text += "#"+i+": "+elem.Key + ": " + elem.Value +" - "+ (float)elem.Value/count*100 + "%\r\n";
@@ -59,24 +51,22 @@ namespace WindowsFormsApp5
 
 
         }
-
+        public TextBox TextBox1
+        {
+            get
+            {
+                return textBox1;
+            }
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
-
-
 
         /*
         private string myText;
@@ -98,13 +88,5 @@ namespace WindowsFormsApp5
                 return richTextBox1;
             }
         }*/
-        public TextBox TextBox1
-        {
-            get
-            {
-                return textBox1;
-            }
-        }
-
     }
 }
