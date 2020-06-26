@@ -34,14 +34,14 @@ namespace WindowsFormsApp6
 
         public void makeClick()
         {
-            for (int i = 0; i < pointsX.Count; i++)
+            /*for (int i = 0; i < pointsX.Count; i++)
             {
                 Cursor.Position = new Point(pointsX[i], pointsY[i]);
                 mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);//make left button down
                 //System.Threading.Thread.Sleep(2000);
                 mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);//make left button up
                 System.Threading.Thread.Sleep(500);
-            }
+            }*/
         }
 
 
