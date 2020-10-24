@@ -8,7 +8,7 @@ namespace lab5
         {
             Console.WriteLine("Введите n");
             int n = Int32.Parse(Console.ReadLine());
-            float[] mas = new float[n], mas1 = new float[n];
+            float[] mas = new float[n], mas1 = new float[n], mas2 = new float[n];
             int k = -1;
             double sum = 0;
             float max;
@@ -16,10 +16,11 @@ namespace lab5
 
             for (int i = 0; i < n; ++i)
             {
-                mas[i] = (float)rnd.NextDouble() * 200 - 100; // все четные??
+                mas[i] = (float)rnd.NextDouble() * 200 - 100; 
             }
 
             ShowMas(mas);
+            Array.Copy(mas, mas1, n);
 
             max = mas[0];
             foreach (float i in mas)
@@ -54,8 +55,8 @@ namespace lab5
             }
 
             Console.WriteLine("Сумма элементов массива, расположенных до последнего положительного элемента равна " + sum);
-            Array.Sort(mas);
-            ShowMas(mas);
+            //Array.Sort(mas);
+            //ShowMas(mas);
 
 
             Console.WriteLine("Введите a");
@@ -74,22 +75,27 @@ namespace lab5
                         mas[j] = mas[j + 1];
                     }
                     mas[n - f++] = 0;
-                    --i;
+                    --i;// плохо, будут исключения
                 }
             }
+
+            Console.WriteLine("Массив mas после преобразований:");
+            ShowMas(mas);
 
             // другой вариант
             for (int i = 0, t = 0; i < n; i++)
             {
-                abs = Math.Abs(mas[i]);
+                abs = Math.Abs(mas1[i]);
                 if (!(abs >= a && abs <= b))
                 {
-                    mas1[t++] = mas[i];
+                    mas2[t++] = mas1[i];
                 }
             }
 
-            ShowMas(mas);
+            Console.WriteLine("Массив mas1 до преобразований:");
             ShowMas(mas1);
+            Console.WriteLine("Массив mas1 после преобразований:");
+            ShowMas(mas2);
             
 
             void ShowMas(float[] m)
