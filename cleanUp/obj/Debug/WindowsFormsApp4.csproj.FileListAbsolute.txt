@@ -1,0 +1,10 @@
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.exe.config
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.exe
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.pdb
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.Form1.resources
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.exe
+C:\Users\Lora\source\repos\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.pdb

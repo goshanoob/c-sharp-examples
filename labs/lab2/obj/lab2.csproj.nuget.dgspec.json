@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lora\\source\\repos\\c-sharp-examples\\labs\\lab5\\lab5.csproj": {}
+    "C:\\Users\\Lora\\source\\repos\\lab2\\lab2\\lab2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lora\\source\\repos\\c-sharp-examples\\labs\\lab5\\lab5.csproj": {
+    "C:\\Users\\Lora\\source\\repos\\lab2\\lab2\\lab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lora\\source\\repos\\c-sharp-examples\\labs\\lab5\\lab5.csproj",
-        "projectName": "lab5",
-        "projectPath": "C:\\Users\\Lora\\source\\repos\\c-sharp-examples\\labs\\lab5\\lab5.csproj",
+        "projectUniqueName": "C:\\Users\\Lora\\source\\repos\\lab2\\lab2\\lab2.csproj",
+        "projectName": "lab2",
+        "projectPath": "C:\\Users\\Lora\\source\\repos\\lab2\\lab2\\lab2.csproj",
         "packagesPath": "C:\\Users\\Lora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lora\\source\\repos\\c-sharp-examples\\labs\\lab5\\obj\\",
+        "outputPath": "C:\\Users\\Lora\\source\\repos\\lab2\\lab2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lora\\AppData\\Roaming\\NuGet\\NuGet.Config",
