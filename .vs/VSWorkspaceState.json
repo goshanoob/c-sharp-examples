@@ -5,8 +5,10 @@
     "\\labs\\lab2",
     "\\labs\\lab3",
     "\\labs\\lab4",
+    "\\labs\\lab4\\obj\\Debug",
+    "\\labs\\lab4\\obj\\Debug\\netcoreapp3.1",
     "\\labs\\lab5"
   ],
-  "SelectedNode": "\\labs\\lab2\\Program.cs",
+  "SelectedNode": "\\labs\\lab4\\lab4.csproj",
   "PreviewInSolutionExplorer": false
 }

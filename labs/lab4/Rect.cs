@@ -59,14 +59,14 @@ class Rect
 
         return new double[4,2];
     }
-
+    /*
     public Rect GiveShareRect2()
     {
         return new Rect(new double[8] { vertices[0,], vertices[,],
                                         vertices[,], vertices[,],
                                         vertices[,], vertices[,],
                                         vertices[,], vertices[,] });
-    }
+    }*/
 
 }
 

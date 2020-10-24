@@ -1,26 +1,34 @@
 ﻿using System;
 
+/* Лабораторная работа 5. Одномерные массивы  */
+
 namespace lab5
 {
     class Program
     {
         static void Main(string[] args)
         {
+            /* Задача 5. В одномерном массиве, состоящем из п вещественных элементов, 
+             * вычислить: максимальный элемент массива; сумму элементов массива, 
+             * расположенных до последнего положительного элемента. Сжать массив, 
+             * удалив из него все элементы, модуль которых находится в интервале [а, Ь]. 
+             * Освободившиеся в конце массива элементы заполнить нулями. 
+            */
+
             Console.WriteLine("Введите n");
-            int n = Int32.Parse(Console.ReadLine());
-            float[] mas = new float[n], mas1 = new float[n], mas2 = new float[n];
-            int k = -1;
-            double sum = 0;
-            float max;
+            int n = Int32.Parse(Console.ReadLine()), k = -1;
+            float[] mas = new float[n], masTmp = new float[n];
+            float sum = 0, max;
+
             Random rnd = new Random();
 
             for (int i = 0; i < n; ++i)
             {
-                mas[i] = (float)rnd.NextDouble() * 200 - 100; 
+                mas[i] = (float)rnd.NextDouble() * 200 - 100;
             }
 
             ShowMas(mas);
-            Array.Copy(mas, mas1, n);
+            //Array.Copy(mas, masTmp, n);
 
             max = mas[0];
             foreach (float i in mas)
@@ -46,7 +54,7 @@ namespace lab5
             }
             else
             {
-                Console.WriteLine("В массиве последний положительный элемент равен {0}, его индекс {1}", mas[k], k);
+                Console.WriteLine("В массиве последний положительный элемент равен {0}, его индекс {1}.", mas[k], k);
             }
 
             for (int i = 0; i < k; i++)
@@ -58,53 +66,34 @@ namespace lab5
             //Array.Sort(mas);
             //ShowMas(mas);
 
-
             Console.WriteLine("Введите a");
             float a = float.Parse(Console.ReadLine());
             Console.WriteLine("Введите b");
             float b = float.Parse(Console.ReadLine());
             float abs;
-            int f = 1;
-            for (int i = 0; i < n; i++)
-            {
-                abs = Math.Abs(mas[i]);
-                if (abs >= a && abs <= b)
-                {
-                    for (int j = i; j < n - 1; ++j)
-                    {
-                        mas[j] = mas[j + 1];
-                    }
-                    mas[n - f++] = 0;
-                    --i;// плохо, будут исключения
-                }
-            }
-
-            Console.WriteLine("Массив mas после преобразований:");
-            ShowMas(mas);
 
             // другой вариант
             for (int i = 0, t = 0; i < n; i++)
             {
-                abs = Math.Abs(mas1[i]);
+                abs = Math.Abs(mas[i]);
                 if (!(abs >= a && abs <= b))
                 {
-                    mas2[t++] = mas1[i];
+                    masTmp[t++] = mas[i];
                 }
             }
 
-            Console.WriteLine("Массив mas1 до преобразований:");
-            ShowMas(mas1);
-            Console.WriteLine("Массив mas1 после преобразований:");
-            ShowMas(mas2);
-            
-
-            void ShowMas(float[] m)
-            {
-                foreach (float i in m)
-                {
-                    Console.Write(i + "\t");
-                }
-            }
+            ShowMas(masTmp, "Массив после уплотнения:");
         }
+
+        static private void ShowMas(float[] m, string str = "Содержимое массива:")
+        {
+            Console.WriteLine(str);
+            foreach (float i in m)
+            {
+                Console.Write(i + "\t");
+            }
+            Console.WriteLine();
+        }
+
     }
 }

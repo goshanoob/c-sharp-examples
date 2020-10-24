@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Lora\\.nuget\\packages\\": {}
+    "C:\\Users\\goshanoob\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lora\\source\\repos\\lab3\\lab3\\lab3.csproj",
+      "projectUniqueName": "C:\\Users\\goshanoob\\source\\repos\\lab3\\lab3.csproj",
       "projectName": "lab3",
-      "projectPath": "C:\\Users\\Lora\\source\\repos\\lab3\\lab3\\lab3.csproj",
-      "packagesPath": "C:\\Users\\Lora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lora\\source\\repos\\lab3\\lab3\\obj\\",
+      "projectPath": "C:\\Users\\goshanoob\\source\\repos\\lab3\\lab3.csproj",
+      "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\goshanoob\\source\\repos\\lab3\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lora\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\goshanoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
