@@ -50,7 +50,6 @@ namespace lab5
             if (k == -1)
             {
                 Console.WriteLine("В массиве нет положительных элементов");
-                return;
             }
             else
             {
@@ -83,6 +82,56 @@ namespace lab5
             }
 
             ShowMas(masTmp, "Массив после уплотнения:");
+
+            /* Задача 18. В одномерном массиве, состоящем из n вещественных элементов, 
+             * вычислить: количество элементов массива, меньших С; сумму целых частей 
+             * элементов массива, расположенных после последнего отрицательного элемента. 
+             * Преобразовать массив таким образом, чтобы сначала располагались все элементы, 
+             * отличающиеся от максимального не более чем на 20 %, а потом — все остальные.
+            */
+            Console.WriteLine("Решаем дальше.. Введите C:");
+            float C = Convert.ToInt32(Console.ReadLine());
+            ushort count = 0;
+            sum = 0;
+            for(byte i = 0; i < n; i++)
+            {
+                if(mas[i] < C)
+                {
+                    count++;
+                }
+            }
+
+            // Поиск последнего отрицательного элемента в массиве
+            for(int i = n-1; i >= 0; --i)
+            {
+                if(mas[i] < 0)
+                {
+                    break;
+                }
+                sum += (int) Math.Floor(mas[i]);
+            }
+
+            Console.WriteLine("Количество элементов массива, меньших {0} равно {1} \n " +
+                "Сумма целых частей элементов массива, расположенных после последнего " +
+                "отрицательного элемента, равна {2}", C, count, sum);
+
+            float[] masTmp2 = new float[n];
+            float elem;
+            int start = 0;
+            for(int i = 0, p = 0, p1 = 0; i < n; ++i)
+            {
+                elem = mas[i];
+                if ( elem >= max - 0.2*max ){
+                    masTmp[p++] = elem;
+                    start++;
+                } 
+                else
+                {
+                    masTmp2[p1++] = elem;
+                }
+            }
+            Array.Copy(masTmp2, 0, masTmp, start, n-start);
+            ShowMas(masTmp, "Массив после перестановок:");
         }
 
         static private void ShowMas(float[] m, string str = "Содержимое массива:")
