@@ -59,8 +59,19 @@ namespace lab8
                 Sets animals1 = new Sets();
                 animals1 = animals1.Push("Жираф", "Кенгуру", "Броненосец", "Коала", "Панда", "Бегемот");
                 Sets animals2 = new Sets("Койот", "Волк", "Лисица");
-                animals1 = animals1 + animals2;
-                int a = 5;
+                Sets a3 = new Sets(1.66);
+                animals1 = animals2 + animals1;
+                animals1 += "Дятел";
+                animals1 = "Дятел" + animals1;
+                animals1[0] = "9999";
+                Console.WriteLine(animals1[0]);
+                
+                
+                Console.WriteLine(animals1[animals1.Length-1]);
+                a3[0] = 9999;
+                Console.WriteLine(a3[0]);
+                int a =5;
+
             }
             catch(Exception e)
             {
