@@ -11,3 +11,5 @@ C:\Users\goshanoob\source\repos\lab4\obj\Debug\netcoreapp3.1\lab4.csproj.CoreCom
 C:\Users\goshanoob\source\repos\lab4\obj\Debug\netcoreapp3.1\lab4.dll
 C:\Users\goshanoob\source\repos\lab4\obj\Debug\netcoreapp3.1\lab4.pdb
 C:\Users\goshanoob\source\repos\lab4\obj\Debug\netcoreapp3.1\lab4.genruntimeconfig.cache
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab4\obj\Debug\netcoreapp3.1\lab4.dll
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab4\obj\Debug\netcoreapp3.1\lab4.pdb

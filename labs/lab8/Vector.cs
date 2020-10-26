@@ -1,7 +1,17 @@
 ﻿using Microsoft.VisualBasic.CompilerServices;
 using System;
 
-/* Класс, реализующий вектор. */
+/* Класс, реализующий вектор целочисленных значений (int). Единственный конструктор позволяет создать вектор 
+ * заданной длины (количество элементов). Свойство Length возвращает длину вектора.
+ * Для доступа к элементам вектора по индексу реализован индексадор и отдельный метод.
+ * Методы PrintVector() и PrintValue() возвращают значения строкового типа, содержащие
+ * все элементы вектора либо одно значение по его индексу. Закрытый метод проверяет
+ * допустимость переданных методам индексов и выбрасывает исключения в случае выхода за границы вектора.
+ * В классе перегружены операции для поэлементного сложения векторов, умножения вектора
+ * на число (или числа на вектор), деления вектора на скаляр. В качестве множителя (делителя)
+ * допускаются вещественные значения, в этом случае их дробная часть отбрасывается. Результат
+ * любой операции - целое число.
+ */
 
 namespace lab8
 {
@@ -57,11 +67,11 @@ namespace lab8
         {
             if (i >= vec.Length || i < 0)
             {
-                throw new Exception("Индекс за границами вектора");
+                throw new ArgumentOutOfRangeException("Индекс за границами вектора");
             }
         }
 
-        // перегрузка опреаций с вектором
+        // перегрузка операций с вектором
         public static Vector operator + (Vector a, Vector b)
         {
             int len1 = a.Length;
@@ -78,5 +88,37 @@ namespace lab8
             return newVec;
         }
 
+        public static Vector operator * (double a, Vector b)
+        {
+            int len = b.Length;
+            Vector newVec = new Vector(len);
+            for(int i = 0; i < len; ++i)
+            {
+                newVec.vec[i] = b.vec[i] * (int)a; // дробная часть отбрасывается
+            }
+            return newVec;
+        }
+
+        public static Vector operator * (Vector b, double a)
+        {
+            int len = b.Length;
+            Vector newVec = new Vector(len);
+            for (int i = 0; i < len; ++i)
+            {
+                newVec.vec[i] = b.vec[i] * (int)a;
+            }
+            return newVec;
+        }
+
+        public static Vector operator / (Vector a, double b)
+        {
+            int len = a.Length;
+            Vector newVec = new Vector(len);
+            for (int i = 0; i < len; ++i)
+            {
+                newVec.vec[i] = a.vec[i] / (int)b;
+            }
+            return newVec;
+        }
     }
 }
