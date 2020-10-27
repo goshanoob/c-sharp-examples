@@ -10,16 +10,36 @@ namespace lab8
 {
     class Sets
     {
+
+        /*
         string[] stringSet; // поле для хранения строкового множества
         double[] realSet; // поле для хранения множества вещественных чисел 
+        */
+        object[] set; // поле для хранения множества
         public int Length { get; } // свойство длины множества
-        public string Type { get; } // свойство типа множества (строковый или вещественный) - лучше сделать перечисление
-
+       
+        public Sets()
+        {
+            set = new object[0];
+        }
+        
+        public Sets(params object[] set)
+        {
+            set = RemoveDuplicate(set);
+            Length = set.Length;
+            this.set = new object[Length];
+            for (int i = 0; i < Length; i++)
+            {
+                this.set[i] = set[i];
+            }
+        }
+        /*
         public Sets() 
         {
             stringSet = new string[0];
             realSet = new double[0];
         }
+
         public Sets(params string[] set)
         {
             Length = set.Length;
@@ -40,8 +60,18 @@ namespace lab8
             {
                 realSet[i] = set[i];
             }
+        }*/
+
+        public Sets Push(params object[] set)
+        {
+            object[] comboMas = new object[Length + set.Length];
+            this.set.CopyTo(comboMas, 0);
+            set.CopyTo(comboMas, Length);
+            Sets newSet = new Sets(comboMas);
+            return newSet;
         }
 
+        /*
         public Sets Push(params string[] set)
         {
             string[] comboMas = new string[Length + set.Length];
@@ -61,7 +91,35 @@ namespace lab8
             Sets newSet = new Sets(comboMas);
             return newSet;
         }
+        */
 
+        // объединение множеств
+        public static Sets operator + (Sets a, Sets b)
+        {
+            return new Sets(a.set).Push(b.set);
+        }
+
+        public static Sets operator + (object a, Sets b)
+        {
+            return new Sets(a).Push(b.set);
+        }
+        public static Sets operator + (Sets a, object b)
+        {
+            return new Sets(a.set).Push(b);
+        }
+        public static Sets operator - (Sets a, object b) 
+        {
+
+            return new Sets(a.Delete(b).set);
+        }
+
+        // разность множеств
+        public static Sets operator - (Sets a, Sets b)
+        {
+            return new Sets(a.Delete(b.set).set);
+        }
+
+        /*
         public static Sets operator + (Sets a, Sets b)
         {
             Sets newSet;
@@ -115,7 +173,52 @@ namespace lab8
             comboMas[a.Length] = b;
             return new Sets(comboMas);
         }
+        */
 
+        public object this[int i]
+        {
+            get
+            {
+                if (i < 0 || i >= Length)
+                {
+                    throw new IndexOutOfRangeException("Индекс за границами множества");
+                }
+                return set[i];
+            }
+            set
+            {
+                set[i] = value;
+            }
+        }
+
+        public Sets Delete(params object[] elems)
+        {
+            int count = 0; // количество элементов, которые должны покинуть множество
+            object[] newMas; // массив для хранения нового множества
+            foreach (object i in elems)
+            {
+                if (Array.IndexOf(set, i) != -1)
+                {
+                    ++count;
+                }
+            }
+            if (count == 0)
+            {
+                return this;
+            }
+            newMas = new object[Length - count];
+            for (int i = 0, f = 0; i < Length; i++)
+            {
+                if (Array.IndexOf(elems, set[i]) == -1)
+                {
+                    newMas[f++] = set[i];
+                }
+            }
+            return new Sets(newMas);
+        }
+           
+
+        /*
         public object this[int i]
         {
             get
@@ -180,7 +283,55 @@ namespace lab8
                 return new Sets(newMas);
             }
         } 
-        /**/
+        */
+
+        // пересечение множеств
+        public Sets Intersection(Sets a)
+        {
+            int count = 0, f = 0;
+            foreach (object i in set)
+            {
+                if (Array.IndexOf(a.set, i) != -1)
+                {
+                    ++count;
+                }
+            }
+            object[] newMas = new object[count];
+            foreach (object i in set)
+            {
+                if(Array.IndexOf(a.set, i) != -1)
+                {
+                    newMas[f++] = i;
+                }
+            }
+            return new Sets(newMas);
+        }
+
+        private object[] RemoveDuplicate(object[] a)
+        {
+            int count = 0, len = a.Length;
+            for(int i = 0; i < len; ++i)
+            {
+                for(int j = i+1; j < len; ++j)
+                {
+                    if (a[i] == a[j]) ++count;
+                }
+                len -= count;
+            }
+
+            if (count == len) return a;
+
+            object[] newMas = new object[count];
+            foreach (object i in a)
+            {
+                if (Array.IndexOf(a, i) == Array.LastIndexOf(a, i))
+                {
+                    newMas[f++] = i;
+                }
+            }
+
+            return newMas;
+        }
 
     }
 }

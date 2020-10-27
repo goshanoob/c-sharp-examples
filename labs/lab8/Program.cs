@@ -58,6 +58,19 @@ namespace lab8
             try
             {
                 Sets animals1 = new Sets();
+                Sets animals2 = new Sets("Жираф", "Кенгуру", "Броненосец", "Кенгуру");
+                animals1 = animals1.Push("Коала", "Панда", "Бегемот",5);
+                animals1 += animals2;
+                animals1 = animals1.Delete(5);
+                animals1 -= animals2;
+                animals1 = animals1 - "Панда";
+                animals1 = animals1 - "Овечка";
+                Sets animals3 = animals1.Intersection(animals2);
+                animals3 = animals1 + animals2;
+                animals3 = animals3.Intersection(animals2);
+                animals3 = "Чайка" + animals3 + "Чайка";
+                int a = 5;
+                /*
                 animals1 = animals1.Push("Жираф", "Кенгуру", "Броненосец", "Коала", "Панда", "Бегемот");
                 Sets animals2 = new Sets("Койот", "Волк", "Лисица");
                 Sets a3 = new Sets(1.66);
@@ -70,9 +83,8 @@ namespace lab8
                 a3[0] = 9999;
                 Console.WriteLine(a3[0]);
                 animals2 = animals2.Delete("Волк", "Жираф");
-
-                int a = 5;
-
+                */
+               
             }
             catch(Exception e)
             {
