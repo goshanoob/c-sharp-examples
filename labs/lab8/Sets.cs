@@ -18,6 +18,7 @@ namespace lab8
         public Sets() 
         {
             stringSet = new string[0];
+            realSet = new double[0];
         }
         public Sets(params string[] set)
         {
@@ -143,6 +144,42 @@ namespace lab8
                 }
             }
         }
+
+        public Sets Delete(params object[] elems)
+        {
+            int count = 0; // количество элементов, которые должны покинуть множество
+            foreach (object i in elems)
+            {
+                if (Array.IndexOf(stringSet, i) != -1)
+                {
+                    ++count;
+                }
+            }
+            if (Type == "string")
+            {
+                string[] newMas = new string[Length - count];
+                for(int i = 0, f = 0; i < Length; i++)
+                {
+                    if (Array.IndexOf(elems, stringSet[i]) == -1)
+                    {
+                        newMas[f++] = stringSet[i];
+                    }
+                }
+                return new Sets(newMas);
+            }
+            else
+            {
+                double[] newMas = new double[Length - count];
+                for (int i = 0, f = 0; i < Length; i++)
+                {
+                    if (Array.IndexOf(elems, realSet[i]) == 0)
+                    {
+                        newMas[f++] = realSet[i];
+                    }
+                }
+                return new Sets(newMas);
+            }
+        } 
 
 
     }

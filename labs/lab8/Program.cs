@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 /* Лабораторная 8. Классы и операции */
 
@@ -65,12 +66,12 @@ namespace lab8
                 animals1 = "Дятел" + animals1;
                 animals1[0] = "9999";
                 Console.WriteLine(animals1[0]);
-                
-                
                 Console.WriteLine(animals1[animals1.Length-1]);
                 a3[0] = 9999;
                 Console.WriteLine(a3[0]);
-                int a =5;
+                animals2 = animals2.Delete("Волк", "Жираф");
+
+                int a = 5;
 
             }
             catch(Exception e)
