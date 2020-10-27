@@ -180,7 +180,7 @@ namespace lab8
                 return new Sets(newMas);
             }
         } 
-
+        /**/
 
     }
 }
