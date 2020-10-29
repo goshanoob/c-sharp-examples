@@ -80,7 +80,7 @@ namespace lab9
     class Line : Point
     {
         // константы для перевода градусов в радианы и обратно
-        const float gR = (float)(Math.PI / 180), rG = (float)(180 / Math.PI);
+        protected const float gR = (float)(Math.PI / 180), rG = (float)(180 / Math.PI);
         public float X2 { get; set; } = 1;
         public float Y2 { get; set; } = 1;
         public Line() { }
@@ -106,12 +106,26 @@ namespace lab9
             }
         }
 
-        virtual public void Rotate(float alpha)
+        virtual public float[] Rotate(float alpha)
         {
-            float sa = (float)Math.Sin(gR * alpha), ca = (float)Math.Cos(gR * alpha),
+
+            float sa = (float)Math.Sin(gR * alpha), ca = (float)Math.Cos(gR * alpha);
+            /*
             x2 = X2 - X, y2 = Y2 - Y;
             X2 = x2 * ca - y2 * sa + X;
             Y2 = x2 * sa + y2 * ca + Y;
+            */
+            // универсальный метод для произвольного количества вершин
+            float[] newCoord = new float[Coord.Length];
+            float x0 = Coord[0], y0 = Coord[1];
+            newCoord[0] = x0;
+            newCoord[1] = y0;
+            for (int i = 2; i < Coord.Length; i += 2)
+            {
+                newCoord[i] = (Coord[i] - x0) * ca - (Coord[i + 1] - y0) * sa + x0;
+                newCoord[i + 1] = (Coord[i] - x0) * sa + (Coord[i + 1] - y0) * ca + y0;
+            }
+            return newCoord;
         }
 
         public override bool Equals(object obj)
@@ -136,15 +150,105 @@ namespace lab9
     class ColoredLine : Line
     {
         public string Color { get; set; } = "черный";
-        public ColoredLine()
+        public ColoredLine() { }
+        public ColoredLine(string color)
         {
-
+            Color = color;
         }
+        public ColoredLine(float x1, float y1, float x2, float y2, string color) : base(x1, y1, x2, y2)
+        {
+            Color = color;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (this.GetType() != obj.GetType()) return false;
+            ColoredLine tmpObj = (ColoredLine)obj;
+            return X == tmpObj.X && Y == tmpObj.Y && X2 == tmpObj.X2
+                                 && Y2 == tmpObj.Y2 && Color == tmpObj.Color;
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string Info()
+        {
+            return base.Info() + ". Цвет " + Color;
+        }
+
     }
 
     class PolyLine : Line
     {
-        public PolyLine()
+        float[] coords;
+        int length;
+        public PolyLine() 
+        {
+            coords = new float[] { 0, 0, 1, 0, 1, 1, 0, 1 };
+            length = 8;
+        }
+        public PolyLine(params float[] coord)
+        {
+            length = coord.Length;
+            coords = new float[length];
+            int f = 0;
+            foreach (float i in coord)
+            {
+                coords[f++] = i;
+            }
+        }
+
+        public override float[] Coord
+        {
+            get
+            {
+                return coords;
+            }
+            set
+            {
+                if (value.Length != length)
+                {
+                    throw new Exception(String.Format("Несоответствие кол-ва аргументов кол-ву вершин. В этом многоугольнике {0} вершин(-ы)", length / 2));
+                }
+                int f = 0;
+                foreach (float i in value)
+                {
+                    coords[f++] = i;
+                }
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (this.GetType() != obj.GetType()) return false;
+            PolyLine tmpObj = (PolyLine)obj;
+            if (length != tmpObj.Coord.Length) return false;
+            bool isEqual = true;
+            for (int i = 0; i < length; ++i)
+            {
+                if (coords[i] != tmpObj.Coord[i]) isEqual = false;
+            }
+            return isEqual;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string Info()
+        {
+            string info = "";
+            for(int i = 0; i < length/2-1; ++i)
+            {
+                info += String.Format("x{0} = {1}, y{0} = {2}, ", i+1, coords[2*i], coords[2*i+1]);
+            }
+            return string.Format("Многоугольник (n = {0}) с координатами вершин: {1}",
+                length /2, info);
+        }
+
+        public void Scale(float x, float y)
         {
 
         }

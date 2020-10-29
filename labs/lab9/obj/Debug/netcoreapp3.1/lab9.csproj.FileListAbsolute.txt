@@ -11,3 +11,16 @@ C:\Users\Lora\source\repos\goshanoob\labs\lab9\obj\Debug\netcoreapp3.1\lab9.cspr
 C:\Users\Lora\source\repos\goshanoob\labs\lab9\obj\Debug\netcoreapp3.1\lab9.dll
 C:\Users\Lora\source\repos\goshanoob\labs\lab9\obj\Debug\netcoreapp3.1\lab9.pdb
 C:\Users\Lora\source\repos\goshanoob\labs\lab9\obj\Debug\netcoreapp3.1\lab9.genruntimeconfig.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.deps.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.runtimeconfig.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\bin\Debug\netcoreapp3.1\lab9.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab9\obj\Debug\netcoreapp3.1\lab9.genruntimeconfig.cache
