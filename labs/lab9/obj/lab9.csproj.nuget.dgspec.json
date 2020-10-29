@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab8\\lab8.csproj": {}
+    "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab9\\lab9.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab8\\lab8.csproj": {
+    "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab9\\lab9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab8\\lab8.csproj",
-        "projectName": "lab8",
-        "projectPath": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab8\\lab8.csproj",
+        "projectUniqueName": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab9\\lab9.csproj",
+        "projectName": "lab9",
+        "projectPath": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab9\\lab9.csproj",
         "packagesPath": "C:\\Users\\Lora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab8\\obj\\",
+        "outputPath": "C:\\Users\\Lora\\source\\repos\\goshanoob\\labs\\lab9\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lora\\AppData\\Roaming\\NuGet\\NuGet.Config",

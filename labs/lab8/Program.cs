@@ -69,22 +69,8 @@ namespace lab8
                 animals3 = animals1 + animals2;
                 animals3 = animals3.Intersection(animals2);
                 animals3 = "Чайка" + animals3 + "Чайка";
-                int a = 5;
-                /*
-                animals1 = animals1.Push("Жираф", "Кенгуру", "Броненосец", "Коала", "Панда", "Бегемот");
-                Sets animals2 = new Sets("Койот", "Волк", "Лисица");
-                Sets a3 = new Sets(1.66);
-                animals1 = animals2 + animals1;
-                animals1 += "Дятел";
-                animals1 = "Дятел" + animals1;
-                animals1[0] = "9999";
-                Console.WriteLine(animals1[0]);
-                Console.WriteLine(animals1[animals1.Length-1]);
-                a3[0] = 9999;
-                Console.WriteLine(a3[0]);
-                animals2 = animals2.Delete("Волк", "Жираф");
-                */
-               
+                Sets numbers = new Sets(3.1,4,6,2,3.1,5,6,7,8,8,8,3.1,4,3,4,5,6,7,8); // дубликаты останутся
+                Sets animals4 = new Sets("Жираф", "Коала", "Жираф", "Коала", "Жираф", "Коала", "Жираф", "Слоник");
             }
             catch(Exception e)
             {
