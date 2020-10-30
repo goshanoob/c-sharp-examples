@@ -21,25 +21,28 @@ namespace lab9
              */
 
             Point myPoint1 = new Point();
-            Console.WriteLine("Координаты точки 1: {0}, {1}", myPoint1.Coord[0], myPoint1.Coord[1]);
-            Console.WriteLine("Координаты точки 1: {0}, {1}", myPoint1.X, myPoint1.Y);
+            Console.WriteLine("Координаты точки 1: {0}", string.Join(", ", myPoint1.Coord));
+            Console.WriteLine($"Координаты точки 1: {myPoint1.X}, {myPoint1.Y}");
             Point myPoint2 = new Point();
             myPoint2.X = 5;
             myPoint2.Y = 6.1f;
-            Console.WriteLine("Координаты точки 2: {0}, {1}", myPoint2.Coord[0], myPoint2.Coord[1]);
+            Console.WriteLine("Координаты точки 2: {0}", string.Join(", ", myPoint2.Coord));
+
             Point myPoint3 = new Point(2.0f, 5.1f);
-            Console.WriteLine("Координаты точки 3: {0}, {1}", myPoint3.Coord[0], myPoint3.Coord[1]);
+            Console.WriteLine("Координаты точки 3: {0}", string.Join(", ", myPoint3.Coord));
             myPoint3.Coord = new float[] { 5f, 6.1f };
             Console.WriteLine("Координаты точки 3: {0}, {1}", myPoint3.X, myPoint3.Y);
             Console.WriteLine(myPoint2 == myPoint3);
-            Console.WriteLine(myPoint2.Equals(myPoint3));
+            Console.WriteLine("Результат сравнения точек 2 с 3 " + myPoint2.Equals(myPoint3));
+            Console.WriteLine("Результат сравнения точек 3 с 2 " + myPoint3.Equals(myPoint2));
             Console.WriteLine(myPoint3.Info());
 
             ColoredPoint myPoint4 = new ColoredPoint();
             myPoint4.Coord = new float[] { 5, 6.1f };
             Console.WriteLine(myPoint4.Info());
             myPoint4.Color = "красный";
-            Console.WriteLine(myPoint4.Equals(myPoint3));
+            Console.WriteLine("Результат сравнения точек 4 с 3 " + myPoint4.Equals(myPoint3));
+            Console.WriteLine("Результат сравнения точек 3 с 4 " + myPoint3.Equals(myPoint4));
 
             Line myLine1 = new Line();
             Console.WriteLine(myLine1.Info());
@@ -51,15 +54,25 @@ namespace lab9
 
             ColoredLine myLine2 = new ColoredLine(4, -3, 5, -11, "зеленый");
             Console.WriteLine("Длина отрезка по умолчанию равна " + Math.Sqrt(Math.Pow(myLine2.Y2, 2) + Math.Pow(myLine2.Y2, 2)));
-            float[] co = myLine2.Rotate(-45);
+            myLine2.Rotate(-45);
             myLine2.Color = "голубой";
             Console.WriteLine(myLine2.Info());
             Console.WriteLine("Точки: {0}, {1}, {2}, {3}", myLine2.Coord[0], myLine2.Coord[1], myLine2.Coord[2], myLine2.Coord[3]);
 
-            PolyLine myLine3 = new PolyLine(1, 1, 6, 1, 8, 4, 3.5f, 7, -1, 4);
-            Console.WriteLine(myLine3.Info());
 
-            int a = 5;
+            PolyLine myLine3 = new PolyLine { };
+            Console.WriteLine(myLine3.Info());
+            myLine3.Coord = new float[] { 4, -3, 5, -11 };
+
+            PolyLine myLine4 = new PolyLine( 1, 1, 6, 6 );
+            Console.WriteLine(myLine4.Info());
+            myLine4.Coord = new float[] { 6, 1 };
+            Console.WriteLine(myLine4.Info());
+
+
+            int[] a = new int[] { 1, 2, 4, 56 };
+
+            Console.WriteLine(string.Join(" ", a));
         
         }
     }

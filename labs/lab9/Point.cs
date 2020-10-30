@@ -35,7 +35,10 @@ namespace lab9
 
         public override bool Equals(object obj)
         {
-            if (obj.GetType() != this.GetType()) return false;
+            if ((object)this == obj) return true;
+
+            if (obj == null || obj.GetType() != this.GetType()) return false;
+
             Point tmpObj = (Point)obj;
             return tmpObj.X == this.X && tmpObj.Y == this.Y;
         }
@@ -61,7 +64,10 @@ namespace lab9
 
         public override bool Equals(object obj)
         {
-            if (this.GetType() != obj.GetType()) return false;
+            if ((object)this == obj) return true;
+
+            if (obj == null || this.GetType() != obj.GetType()) return false;
+
             ColoredPoint tmpObj = (ColoredPoint)obj;
             return X == tmpObj.X && Y == tmpObj.Y && Color == tmpObj.Color;
         }
@@ -106,31 +112,34 @@ namespace lab9
             }
         }
 
-        virtual public float[] Rotate(float alpha)
+        public void Rotate(float alpha)
         {
-
             float sa = (float)Math.Sin(gR * alpha), ca = (float)Math.Cos(gR * alpha);
             /*
             x2 = X2 - X, y2 = Y2 - Y;
             X2 = x2 * ca - y2 * sa + X;
             Y2 = x2 * sa + y2 * ca + Y;
             */
+
             // универсальный метод для произвольного количества вершин
-            float[] newCoord = new float[Coord.Length];
+            float[] tmpCoord = new float[Coord.Length];
             float x0 = Coord[0], y0 = Coord[1];
-            newCoord[0] = x0;
-            newCoord[1] = y0;
+            tmpCoord[0] = x0;
+            tmpCoord[1] = y0;
             for (int i = 2; i < Coord.Length; i += 2)
             {
-                newCoord[i] = (Coord[i] - x0) * ca - (Coord[i + 1] - y0) * sa + x0;
-                newCoord[i + 1] = (Coord[i] - x0) * sa + (Coord[i + 1] - y0) * ca + y0;
+                tmpCoord[i] = (Coord[i] - x0) * ca - (Coord[i + 1] - y0) * sa + x0;
+                tmpCoord[i + 1] = (Coord[i] - x0) * sa + (Coord[i + 1] - y0) * ca + y0;
             }
-            return newCoord;
+            tmpCoord.CopyTo(Coord, 0);
         }
 
         public override bool Equals(object obj)
         {
-            if (this.GetType() != obj.GetType()) return false;
+            if ((object)this == obj) return true;
+
+            if (obj == null || this.GetType() != obj.GetType()) return false;
+
             Line tmpObj = (Line)obj;
             return X == tmpObj.X && Y == tmpObj.Y && X2 == tmpObj.X2 && Y2 == tmpObj.Y2;
         }
@@ -162,7 +171,10 @@ namespace lab9
 
         public override bool Equals(object obj)
         {
-            if (this.GetType() != obj.GetType()) return false;
+            if ((object)this == obj) return true;
+
+            if (obj == null || this.GetType() != obj.GetType()) return false;
+
             ColoredLine tmpObj = (ColoredLine)obj;
             return X == tmpObj.X && Y == tmpObj.Y && X2 == tmpObj.X2
                                  && Y2 == tmpObj.Y2 && Color == tmpObj.Color;
@@ -183,11 +195,7 @@ namespace lab9
     {
         float[] coords;
         int length;
-        public PolyLine() 
-        {
-            coords = new float[] { 0, 0, 1, 0, 1, 1, 0, 1 };
-            length = 8;
-        }
+        public PolyLine() { }
         public PolyLine(params float[] coord)
         {
             length = coord.Length;
@@ -197,6 +205,7 @@ namespace lab9
             {
                 coords[f++] = i;
             }
+            
         }
 
         public override float[] Coord
@@ -207,23 +216,19 @@ namespace lab9
             }
             set
             {
-                if (value.Length != length)
-                {
-                    throw new Exception(String.Format("Несоответствие кол-ва аргументов кол-ву вершин. В этом многоугольнике {0} вершин(-ы)", length / 2));
-                }
-                int f = 0;
-                foreach (float i in value)
-                {
-                    coords[f++] = i;
-                }
+                new PolyLine(value);
             }
         }
 
         public override bool Equals(object obj)
         {
-            if (this.GetType() != obj.GetType()) return false;
+            if (obj == (object)this) return true;
+
+            if (obj == null || this.GetType() != obj.GetType()) return false;
+
             PolyLine tmpObj = (PolyLine)obj;
             if (length != tmpObj.Coord.Length) return false;
+
             bool isEqual = true;
             for (int i = 0; i < length; ++i)
             {
@@ -239,13 +244,14 @@ namespace lab9
 
         public override string Info()
         {
+            if (length == 0) return "В многоугольнике не определены вершины";
             string info = "";
-            for(int i = 0; i < length/2-1; ++i)
+            for (int i = 0; i < length / 2; ++i)
             {
-                info += String.Format("x{0} = {1}, y{0} = {2}, ", i+1, coords[2*i], coords[2*i+1]);
+                info += String.Format("x{0} = {1}, y{0} = {2}, ", i + 1, coords[2 * i], coords[2 * i + 1]);
             }
             return string.Format("Многоугольник (n = {0}) с координатами вершин: {1}",
-                length /2, info);
+                length / 2, info);
         }
 
         public void Scale(float x, float y)
