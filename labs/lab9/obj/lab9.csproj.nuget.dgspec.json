@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj": {}
+    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj": {}
   },
   "projects": {
-    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj": {
+    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj",
+        "projectUniqueName": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj",
         "projectName": "lab9",
-        "projectPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj",
-        "packagesPath": "C:\\Users\\username\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\obj\\",
+        "projectPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\lab9.csproj",
+        "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab9\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\username\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\goshanoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

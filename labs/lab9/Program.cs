@@ -21,6 +21,7 @@ namespace lab9
              */
 
             Point myPoint1 = new Point();
+            Console.WriteLine(string.Join(", ", myPoint1.Coord));
             Console.WriteLine("Координаты точки 1: {0}", string.Join(", ", myPoint1.Coord));
             Console.WriteLine($"Координаты точки 1: {myPoint1.X}, {myPoint1.Y}");
             Point myPoint2 = new Point();
@@ -61,19 +62,29 @@ namespace lab9
 
 
             PolyLine myLine3 = new PolyLine { };
+            Console.WriteLine(string.Join(", ", myLine3.Coord));
             Console.WriteLine(myLine3.Info());
             myLine3.Coord = new float[] { 4, -3, 5, -11 };
+            Console.WriteLine(myLine3.Info());
 
-            PolyLine myLine4 = new PolyLine( 1, 1, 6, 6 );
+            PolyLine myLine4 = new PolyLine(1, 1, 6, 6);
             Console.WriteLine(myLine4.Info());
-            myLine4.Coord = new float[] { 6, 1 };
+            myLine4.Coord = new float[] { 6, 1, 8, 1 };
             Console.WriteLine(myLine4.Info());
+            myLine4.Rotate(-120);
+            myLine4.Scale(1, 1.5f);
+            Console.WriteLine(myLine4.Info());
+
+            Point[] massiv = new Point[] { myPoint1, myPoint2, myLine1, myLine2, myLine3, myLine4 };
+            foreach(Point i in massiv)
+            {
+                Console.WriteLine(i.Info());
+            }
 
 
             int[] a = new int[] { 1, 2, 4, 56 };
 
-            Console.WriteLine(string.Join(" ", a));
-        
+
         }
     }
 }

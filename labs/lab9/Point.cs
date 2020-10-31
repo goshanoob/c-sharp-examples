@@ -45,7 +45,7 @@ namespace lab9
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return (X, Y, Coord).GetHashCode();
         }
     }
 
@@ -74,7 +74,7 @@ namespace lab9
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return (X, Y, Coord, Color).GetHashCode();
         }
 
         public override string Info()
@@ -146,7 +146,7 @@ namespace lab9
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return (X, Y, X2, Y2, Coord).GetHashCode();
         }
 
         public override string Info()
@@ -181,7 +181,7 @@ namespace lab9
         }
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return (X, Y, X2, Y2, Coord, Color).GetHashCode();
         }
 
         public override string Info()
@@ -195,7 +195,19 @@ namespace lab9
     {
         float[] coords;
         int length;
-        public PolyLine() { }
+        public PolyLine() {
+            length = 4;
+            coords = new float[] { 0, 0, 1, 1 };
+            SetProperties();
+        }
+
+        private void SetProperties()
+        {
+            X = coords[0];
+            Y = coords[1];
+            X2 = coords[2];
+            Y2 = coords[3];
+        }
         public PolyLine(params float[] coord)
         {
             length = coord.Length;
@@ -205,7 +217,7 @@ namespace lab9
             {
                 coords[f++] = i;
             }
-            
+            SetProperties();
         }
 
         public override float[] Coord
@@ -216,7 +228,19 @@ namespace lab9
             }
             set
             {
-                new PolyLine(value);
+                if(value.Length < 4)
+                {
+                    throw new Exception("В многоугольнике мининмум две вершины (отрезок)");
+                }
+                // вынести в общую функцию:
+                length = value.Length;
+                coords = new float[length];
+                int f = 0;
+                foreach (float i in value)
+                {
+                    coords[f++] = i;
+                }
+                SetProperties();
             }
         }
 
@@ -239,12 +263,11 @@ namespace lab9
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return (X, Y, X2, Y2, Coord).GetHashCode();
         }
 
         public override string Info()
         {
-            if (length == 0) return "В многоугольнике не определены вершины";
             string info = "";
             for (int i = 0; i < length / 2; ++i)
             {
@@ -256,7 +279,11 @@ namespace lab9
 
         public void Scale(float x, float y)
         {
-
+            for(int i = 0; i < length / 2; i+=2)
+            {
+                coords[i] *= x;
+                coords[i+1] *= y;
+            }
         }
     }
 }
