@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab8\\lab8.csproj": {}
+    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab10\\lab10.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab8\\lab8.csproj": {
+    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab10\\lab10.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab8\\lab8.csproj",
-        "projectName": "lab8",
-        "projectPath": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab8\\lab8.csproj",
+        "projectUniqueName": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab10\\lab10.csproj",
+        "projectName": "lab10",
+        "projectPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab10\\lab10.csproj",
         "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab8\\obj\\",
+        "outputPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab10\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
