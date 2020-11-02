@@ -16,7 +16,7 @@ namespace lab10
              * экран фамилий и номеров групп для всех студентов, включенных в массив, если средний 
              * балл студента больше 4,0 (если таких студентов нет, вывести соответствующее сообщение).
             */
-            byte count = 2, marksCount = 5;
+            int count = 4, marksCount = 5, f = 0;
             STUDENT[] students = new STUDENT[count];
             string[] marks = new string[marksCount];
             string name;
@@ -29,13 +29,27 @@ namespace lab10
                 group = short.Parse(Console.ReadLine());
                 Console.WriteLine("Оценки студента через запятую:");
                 marks = Regex.Split(Console.ReadLine(), @",\s*");
-                students[i] = new STUDENT(name, group, marks);
+
+                // сортировка по возрастанию номера группы
+                f = i;
+                for (int j = 0; j < i; ++j)
+                {
+                    if (group < students[j].Group)
+                    {
+                        for (int k = count - 1; k > j; --k)
+                        {
+                            students[k] = students[k - 1];
+                        }
+                        f = j;
+                    }
+                }
+
+                students[f] = new STUDENT(name, group, marks);
             }
-            //students[0].Marks = new string[] { "4", "4", "4", "4", "4" };
 
             string topStudents = "";
             string[] st;
-            int sum = 0;
+            float sum = 0;
             for (int i = 0; i < count; ++i)
             {
                 sum = 0;
@@ -86,7 +100,7 @@ namespace lab10
                         Console.WriteLine(marsh[i].Info());
                 }
             }
-            
+
         }
     }
 }
