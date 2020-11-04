@@ -3,7 +3,6 @@
 /* Структура STUDENT содержит поля для хранения фамилии студента, номера группы, оценок студента
  * по пяти дисциплинам. Свойства Name, Group, Marks возвращают значения соотвествующих полей. Конструктор
  * с тремя параметрами позволяет создать объект типа STUDENT и определить значения всех полей. Метод
- * MakeList() ...
 */
 
 namespace lab10
@@ -47,6 +46,10 @@ namespace lab10
             }
             set
             {
+                if(value.Length > marksCount)
+                {
+                    throw new Exception($"Максисмальное количество оценок равно {marksCount}");
+                }
                 value.CopyTo(marks, 0);
             }
         }
@@ -60,14 +63,8 @@ namespace lab10
                 throw new Exception($"Максисмальное количество оценок равно {marksCount}");
             }
             marks = new string[marksCount];
-            mark.CopyTo(marks, 0); // попробовать присваивание
+            mark.CopyTo(marks, 0);
         }
-
-        private void MakeList()
-        {
-
-        }
-
     }
 }
 
