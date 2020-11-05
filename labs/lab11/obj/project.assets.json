@@ -8,23 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\goshanoob\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\username\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\lab11.csproj",
+      "projectUniqueName": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\lab11.csproj",
       "projectName": "lab11",
-      "projectPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\lab11.csproj",
-      "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\obj\\",
+      "projectPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\lab11.csproj",
+      "packagesPath": "C:\\Users\\username\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\lab11\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\goshanoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\username\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
