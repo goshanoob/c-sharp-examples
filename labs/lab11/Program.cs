@@ -62,43 +62,62 @@ namespace lab11
              * задания: Вариант 5, Комбинационный элемент ИЛИ-НЕ, Число входов 8, Триггер V, 
              * Разрядность регистра 9.
             */
-            // Тестируем элементы класса Элемент и его потомков
-            List<Элемент> elems = new List<Элемент>();
-            elems.Add(new Элемент("Элемент1"));
-            elems.Add(new Элемент("Элемент2", 2, 2));
-            elems.Add(new Комбинационный("Элемент3 - Комбинационный",
-                new byte[] { 0, 0, 1, 0, 1, 1, 1, 0 }));
-            elems.Add(new Комбинационный());
-            Console.WriteLine($"Состояние элемента {elems[2].Name}: " + elems[2].GetOutputValue());
-            byte inp2 = elems[2].GetInputValue(3);
-            Console.WriteLine($"На третьм входе Элемента 3 значение {inp2}");
-            elems[2].SetInputs(new byte[] {0, 0, 0, 0, 0, 0, 0, 0 });
-            Console.WriteLine("Новое состояние третьего элемента: " + elems[2].GetOutputValue());
-            Console.WriteLine("Состояние четвертого элемента по умолчанию: " + elems[3].GetOutputValue());
-            
-            // Тестируем класс Регистр и Память
-            Регистр regis = new Регистр();
-            regis.SetInputs(new byte[,] { { 1, 1}, { 1, 0 }, { 0, 1 }, { 0, 0 },
-                { 1, 1 }, { 1, 0 }, { 0, 1 }, { 1, 1 }, { 0, 0 } });
-            Console.WriteLine(regis.GetOutputValue());
-            Регистр.Память trigger = regis.memory[0];
-            for (int i = 0; i < regis.memory.Length; ++i)
+            try
             {
-                string res = "";
-                if (trigger == regis.memory[i]) {
-                    res += $" {i+1}";
-                }
-                if(res != "")
+                // Тестируем элементы класса Элемент и его потомков
+                List<Элемент> elems = new List<Элемент>();
+                elems.Add(new Элемент("Элемент1"));
+                elems.Add(new Элемент("Элемент2", 2, 2));
+                elems.Add(new Комбинационный("Элемент3 - Комбинационный",
+                    new byte[] { 0, 0, 1, 0, 1, 1, 1, 0 }));
+                elems.Add(new Комбинационный());
+                Console.WriteLine($"Состояние элемента {elems[2].Name}: " + elems[2].GetOutputValue());
+                byte inp2 = elems[2].GetInputValue(3);
+                Console.WriteLine($"На третьм входе Элемента 3 значение {inp2}");
+                elems[2].SetInputs(new byte[] { 0, 0, 0, 0, 0, 0, 0, 0 });
+                Console.WriteLine("Новое состояние третьего элемента: " + elems[2].GetOutputValue());
+                Console.WriteLine("Состояние четвертого элемента по умолчанию: " + elems[3].GetOutputValue());
+
+                // Тестируем класс Регистр и Память
+                Регистр regis = new Регистр();
+                regis.SetInputs(new byte[,] { { 1, 1}, { 1, 0 }, { 0, 1 }, { 0, 0 },
+                    { 1, 1 }, { 1, 0 }, { 0, 1 }, { 1, 1 }, { 0, 0 } });
+                Console.WriteLine(regis.GetOutputValue());
+                Регистр.Память trigger = regis.memory[0];
+                for (int i = 0; i < regis.memory.Length; ++i)
                 {
-                    Console.WriteLine("Найдены совпадающие с первым триггеры. Их номера:" + res);
+                    string res = "";
+                    if (trigger == regis.memory[i])
+                    {
+                        res += $" {i + 1}";
+                    }
+                    if (res != "")
+                    {
+                        Console.WriteLine("Найдены совпадающие с первым триггеры. Их номера:" + res);
+                    }
+
+                    
                 }
+                regis.SetInputs(new byte[,] { { 1, 0}, { 1, 1 }, { 0, 1 }, { 1, 1 },
+                    { 0, 1 }, { 0, 1 }, { 1, 1 }, { 1, 1 }, { 0, 1 } });
+                string res = regis.GetOutputValue(); // ожидается последовательность 1 0 0 1 1 1 1 0 0
+                Console.WriteLine(res); // ожидается последовательность 1 0 0 1 1 1 1 0 0
+
+                Регистр regis2 = new Регистр("Второй регистр", new byte[,](res));
+                if(regis2 >= regis)
+                {
+                    Console.WriteLine(regis2.Name + "Больше" + regis.Name);
+                }
+                // поместим экзмепляры памяти в параметризированную коллекцию List
+                List<Регистр.Память> mem = new List<Регистр.Память>(regis.memory);
+
+
+                int a = 0;
             }
-            regis.SetInputs(new byte[,] { { 1, 0}, { 1, 1 }, { 0, 1 }, { 1, 1 },
-                { 0, 1 }, { 0, 1 }, { 1, 1 }, { 1, 1 }, { 0, 1 } });
-            Console.WriteLine(regis.GetOutputValue()); // ожидается последовательность 1 0 0 1 1 1 1 0 0
-
-            int a = 0;
-
+            catch (Exception e)
+            {
+                Console.WriteLine("Возникла ошибка: " + e.Message);
+            }
         }
     }
 }

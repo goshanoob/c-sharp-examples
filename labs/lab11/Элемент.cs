@@ -101,8 +101,9 @@ namespace lab11
         public virtual byte GetInputValue(byte i) { return 0; }
         public virtual byte GetOutputValue() { return 0; }
 
-        public int CompareTo(object obj)
+        public virtual int CompareTo(object obj)
         {
+            // Сравнение элементов по количеству входов
             if ((object)this == obj) return 0;
             Элемент tmp = (Элемент)obj;
             if (inputCount < tmp.inputCount) return -1;
@@ -182,11 +183,11 @@ namespace lab11
             return result;
         }
 
-        public int CompareTo(object obj)
+        public override int CompareTo(object obj)
         {
+            // Сравнение по выходному значению
             if ((object)this == obj) return 0;
             Комбинационный tmp = (Комбинационный)obj;
-
             if (GetOutputValue() < tmp.GetOutputValue()) return -1;
             if (GetOutputValue() > tmp.GetOutputValue()) return 1;
             return 0;
@@ -238,6 +239,7 @@ namespace lab11
 
         public byte Reset
         {
+            // Свойство сбрасывающее значения элементов класса на занчения по умолчанию
             set
             {
                 if (value == 1)
@@ -421,7 +423,6 @@ namespace lab11
                 }
             }
 
-
             public static bool operator ==(Память a, Память b)
             {
                 return a.Equals(b);
@@ -455,8 +456,9 @@ namespace lab11
                 return (inputValues, straightOutputValue, inversOutputValue).GetHashCode();
             }
 
-            public int CompareTo(object obj)
+            public override int CompareTo(object obj)
             {
+                // Сравнение по значению на прямом выходе
                 if ((object)this == obj) return 0;
                 Память tmp = (Память)obj;
                 if (this.straightOutputValue < tmp.straightOutputValue) return -1;
@@ -477,7 +479,6 @@ namespace lab11
             {
                 return (a.CompareTo(b) <= 0);
             }
-
             public static bool operator >=(Память a, Память b)
             {
                 return (a.CompareTo(b) >= 0);
