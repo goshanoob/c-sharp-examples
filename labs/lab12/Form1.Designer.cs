@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fgfgfgfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fdfdfdfdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ggggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Inp = new System.Windows.Forms.ToolStripMenuItem();
+            this.CalcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -39,33 +39,35 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fgfgfgfToolStripMenuItem,
-            this.fdfdfdfdfToolStripMenuItem,
-            this.ggggToolStripMenuItem});
+            this.Inp,
+            this.CalcToolStripMenuItem,
+            this.QuitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // fgfgfgfToolStripMenuItem
+            // Inp
             // 
-            this.fgfgfgfToolStripMenuItem.Name = "fgfgfgfToolStripMenuItem";
-            this.fgfgfgfToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.fgfgfgfToolStripMenuItem.Text = "Input";
-            this.fgfgfgfToolStripMenuItem.Click += new System.EventHandler(this.fgfgfgfToolStripMenuItem_Click);
+            this.Inp.Name = "Inp";
+            this.Inp.Size = new System.Drawing.Size(47, 20);
+            this.Inp.Text = "Input";
+            this.Inp.Click += new System.EventHandler(this.InpToolStripMenuItem_Click);
             // 
-            // fdfdfdfdfToolStripMenuItem
+            // CalcToolStripMenuItem
             // 
-            this.fdfdfdfdfToolStripMenuItem.Name = "fdfdfdfdfToolStripMenuItem";
-            this.fdfdfdfdfToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
-            this.fdfdfdfdfToolStripMenuItem.Text = "Calc";
+            this.CalcToolStripMenuItem.Name = "CalcToolStripMenuItem";
+            this.CalcToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
+            this.CalcToolStripMenuItem.Text = "Calc";
+            this.CalcToolStripMenuItem.Click += new System.EventHandler(this.CalcToolStripMenuItem_Click);
             // 
-            // ggggToolStripMenuItem
+            // QuitToolStripMenuItem
             // 
-            this.ggggToolStripMenuItem.Name = "ggggToolStripMenuItem";
-            this.ggggToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.ggggToolStripMenuItem.Text = "Exit";
+            this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.QuitToolStripMenuItem.Text = "Exit";
+            this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -78,6 +80,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -88,9 +91,9 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fgfgfgfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fdfdfdfdfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ggggToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Inp;
+        private System.Windows.Forms.ToolStripMenuItem CalcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuitToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

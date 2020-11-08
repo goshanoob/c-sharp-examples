@@ -8,3 +8,5 @@ C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\lab12.csproj.CoreCompileInputs.cache
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\lab12.exe
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\lab12.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\lab12.Form2.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab12\obj\Debug\lab12.Form3.resources

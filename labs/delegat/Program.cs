@@ -7,6 +7,8 @@ namespace delegat
     delegate void VectorDelegate(Point a, Point b);
 
     delegate void WashDelegate(Garage.Car car);
+
+    delegate void DelAttantion(Garage.Car car);
     class Program
     {
         
@@ -78,7 +80,8 @@ namespace delegat
              */
             // тестрование класса помывка машин
             Garage.Car car1 = new Garage.Car("audi x7");
-            WashDelegate del = Washer.Wash;
+            Washer wash1 = new Washer();
+            WashDelegate del = wash1.Wash;
             del(car1);
             Garage.Car car = new Garage.Car();
 
@@ -89,11 +92,13 @@ namespace delegat
             }
 
             Garage gar1 = new Garage(cars);
+            Garage gar2 = new Garage();
             int a = 5;
 
-
-
-
+            
+            NewWasher wash2 = new NewWasher();
+            wash1.DelRegister(wash2.Attantion); // подписались на события
+            wash1.Wash(car);
 
         }
 
