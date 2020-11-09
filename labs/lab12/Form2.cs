@@ -12,9 +12,9 @@ namespace lab12
 {
     public partial class Form2 : Form
     {
-        public double a { private set;  get; }
-        public double b { private set; get; }
-        public double c { private set; get; }
+        public double a { get; private set; }
+        public double b { get; private set; }
+        public double c { get; private set; }
         public Form2()
         {
             InitializeComponent();

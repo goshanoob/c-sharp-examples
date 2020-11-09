@@ -25,10 +25,7 @@ namespace lab12
             if (form2.ShowDialog() == DialogResult.OK) triangle = new Triangle(form2.a, form2.b, form2.c);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -43,5 +40,7 @@ namespace lab12
                 "Площадь треугольника равна: "+triangle.CalcPlosh() };
             form3.ShowDialog();
         }
+
+
     }
 }

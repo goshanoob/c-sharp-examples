@@ -9,7 +9,7 @@ namespace delegat
     class Point
     {
         protected int x, y;
-
+        public event EventTest SetEvent;
         public Point()
         {
             x = 0;
@@ -24,6 +24,7 @@ namespace delegat
         {
             x = firstInt;
             y = nextInt;
+            if (SetEvent != null) SetEvent(this);
         }
 
         public override string ToString()
