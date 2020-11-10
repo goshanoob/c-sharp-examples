@@ -28,98 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.boxA = new System.Windows.Forms.TextBox();
+            this.boxB = new System.Windows.Forms.TextBox();
+            this.boxC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkPlosh = new System.Windows.Forms.CheckBox();
+            this.checkPerim = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // boxA
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.boxA.Location = new System.Drawing.Point(114, 55);
+            this.boxA.Name = "boxA";
+            this.boxA.Size = new System.Drawing.Size(100, 20);
+            this.boxA.TabIndex = 0;
             // 
-            // textBox2
+            // boxB
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.boxB.Location = new System.Drawing.Point(114, 93);
+            this.boxB.Name = "boxB";
+            this.boxB.Size = new System.Drawing.Size(100, 20);
+            this.boxB.TabIndex = 1;
             // 
-            // textBox3
+            // boxC
             // 
-            this.textBox3.Location = new System.Drawing.Point(114, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.boxC.Location = new System.Drawing.Point(114, 130);
+            this.boxC.Name = "boxC";
+            this.boxC.Size = new System.Drawing.Size(100, 20);
+            this.boxC.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 58);
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.CausesValidation = false;
+            this.label1.Location = new System.Drawing.Point(50, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "Сторона a";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 96);
+            this.label2.Location = new System.Drawing.Point(50, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Сторона b";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 137);
+            this.label3.Location = new System.Drawing.Point(50, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "label3";
+            this.label3.Text = "Сторона c";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.checkPlosh);
+            this.groupBox1.Controls.Add(this.checkPerim);
             this.groupBox1.Location = new System.Drawing.Point(231, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 95);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Требуемые вычисления";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // checkBox1
+            // checkPlosh
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(32, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkPlosh.AutoSize = true;
+            this.checkPlosh.Checked = true;
+            this.checkPlosh.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkPlosh.Location = new System.Drawing.Point(32, 55);
+            this.checkPlosh.Name = "checkPlosh";
+            this.checkPlosh.Size = new System.Drawing.Size(73, 17);
+            this.checkPlosh.TabIndex = 1;
+            this.checkPlosh.Text = "Площадь";
+            this.checkPlosh.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkPerim
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(32, 55);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkPerim.AutoSize = true;
+            this.checkPerim.Checked = true;
+            this.checkPerim.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkPerim.Location = new System.Drawing.Point(32, 32);
+            this.checkPerim.Name = "checkPerim";
+            this.checkPerim.Size = new System.Drawing.Size(77, 17);
+            this.checkPerim.TabIndex = 0;
+            this.checkPerim.Text = "Периметр";
+            this.checkPerim.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -128,7 +134,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 66);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -142,11 +148,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.boxC);
+            this.Controls.Add(this.boxB);
+            this.Controls.Add(this.boxA);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Ввод сторон треугольника";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -157,15 +163,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox boxA;
+        private System.Windows.Forms.TextBox boxB;
+        private System.Windows.Forms.TextBox boxC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkPlosh;
+        private System.Windows.Forms.CheckBox checkPerim;
         private System.Windows.Forms.Button button1;
     }
 }

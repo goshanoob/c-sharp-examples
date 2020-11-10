@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj": {}
+    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj": {
+    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj",
+        "projectUniqueName": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj",
         "projectName": "delegat",
-        "projectPath": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj",
+        "projectPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\delegat.csproj",
         "packagesPath": "C:\\Users\\username\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\obj\\",
+        "outputPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\labs\\delegat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\username\\AppData\\Roaming\\NuGet\\NuGet.Config",
