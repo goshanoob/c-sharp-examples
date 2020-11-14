@@ -35,7 +35,7 @@
             // perim
             // 
             this.perim.AutoSize = true;
-            this.perim.Location = new System.Drawing.Point(132, 34);
+            this.perim.Location = new System.Drawing.Point(23, 36);
             this.perim.Name = "perim";
             this.perim.Size = new System.Drawing.Size(35, 13);
             this.perim.TabIndex = 0;
@@ -44,7 +44,7 @@
             // plosh
             // 
             this.plosh.AutoSize = true;
-            this.plosh.Location = new System.Drawing.Point(132, 78);
+            this.plosh.Location = new System.Drawing.Point(23, 87);
             this.plosh.Name = "plosh";
             this.plosh.Size = new System.Drawing.Size(35, 13);
             this.plosh.TabIndex = 1;
@@ -54,11 +54,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 148);
+            this.ClientSize = new System.Drawing.Size(427, 139);
             this.Controls.Add(this.plosh);
             this.Controls.Add(this.perim);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Результаты";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

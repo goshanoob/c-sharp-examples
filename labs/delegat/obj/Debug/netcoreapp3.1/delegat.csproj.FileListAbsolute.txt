@@ -11,3 +11,16 @@ C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debu
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.dll
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.pdb
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.genruntimeconfig.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.exe
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.deps.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.runtimeconfig.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.runtimeconfig.dev.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.dll
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\bin\Debug\netcoreapp3.1\delegat.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.csprojAssemblyReference.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.AssemblyInfoInputs.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.AssemblyInfo.cs
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.csproj.CoreCompileInputs.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.dll
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\delegat\obj\Debug\netcoreapp3.1\delegat.genruntimeconfig.cache

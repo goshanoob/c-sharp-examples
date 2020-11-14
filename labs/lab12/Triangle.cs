@@ -1,4 +1,6 @@
-﻿namespace lab12
+﻿using System;
+
+namespace lab12
 {
     class Triangle
     {
@@ -15,8 +17,10 @@
 
         public double CalcPlosh()
         {
-            double h = 0.44 * edges[0] * edges[1]; // вычисление высота (либо считать угол по теор. кос.)
-            return 0.5 * edges[2] * h;
+            // По формуле Герона
+            double halfPerim = CalcPerim() / 2;
+            return Math.Sqrt(halfPerim*(halfPerim - edges[0])*
+                (halfPerim - edges[1])*(halfPerim - edges[2]));
         }
     }
 }

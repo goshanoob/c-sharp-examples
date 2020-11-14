@@ -9,6 +9,9 @@ namespace delegat
     delegate void WashDelegate(Garage.Car car);
 
     delegate void DelAttantion(Garage.Car car);
+
+    delegate void EventTest(object point);
+    
     class Program
     {
         
@@ -99,6 +102,18 @@ namespace delegat
             NewWasher wash2 = new NewWasher();
             wash1.DelRegister(wash2.Attantion); // подписались на события
             wash1.Wash(car);
+
+
+            // терстирование событий
+            point1.SetEvent += TestEvent;
+            point1.SetValues(100, 100);
+            point1.SetEvent -= TestEvent;
+            point1.SetValues(0, 0);
+            void TestEvent(object p){
+                Console.WriteLine("Произошла установка свойств объекта Point!");
+                Console.WriteLine($"Получили объект! {p.ToString()}");
+            }
+
 
         }
 

@@ -23,28 +23,23 @@ namespace delegat
         }
         public class Car
         {
-            public string Name { get; } = "Машина";
-
-
+            public string Name { get; }
+            public status stat;
             public enum status
             {
+                // авто имеют статус из перечисления: чистый либо грязный
                 clean, dirty
             }
-
-            public status stat;
-            public Car() { }
-
+            public Car() {
+                Name = "Машина"; // имя по умолчанию
+                stat = status.dirty; // статус по умолчанию
+            }
             public Car(string name)
             {
-                // авто имеют поле status со значением из перечисления enum clear или dirty
-                // или проще: поле типа bool isClean
                 Name = name;
                 stat = status.dirty;
             }
         }
-
-
-
     }
 
 
@@ -57,15 +52,11 @@ namespace delegat
             Console.WriteLine($"Автомобиль {car.Name} отлично помыт! Приезжайте еще...");
             if (delAttant != null) delAttant(car);
         }
-
         public void DelRegister(DelAttantion del)
         {
             delAttant += del;
         }
-
     }
-
-
     class NewWasher
     {
         // добавить наблюдателя за действиями экземпляров класса Washer (конкурента)
@@ -75,8 +66,6 @@ namespace delegat
                 $"всего за 9.99 у.е. на автомойке {this.ToString()}! Вы получаете скидку в 9.99% от следующей мойки! " +
                 $"Не упустите воспользоваться купоном до 9.09.99!!!11111адын");
         }
-
-
         public void Wash(Queue<Garage.Car> cars)
         {
             Garage.Car car;
@@ -89,7 +78,6 @@ namespace delegat
                     $"Только в NewWasher и только в термидоре!");
             }
         }
-
         public void Attantion(object company)
         {
             Console.WriteLine($"Мы обнаружили, что вы только что помыли свой авто в компании {company.ToString()} - " +
