@@ -1,0 +1,13 @@
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\TextRedactor.csprojAssemblyReference.cache
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\TextRedactor.csproj.GenerateResource.cache
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\TextRedactor.csproj.CoreCompileInputs.cache
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Users\guest\Documents\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\guest\Documents\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\guest\Documents\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\guest\Documents\WindowsFormsApp1\bin\Debug\ClassLibrary1.dll
+C:\Users\guest\Documents\WindowsFormsApp1\bin\Debug\ClassLibrary1.pdb
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\TextRedactor.csproj.CopyComplete
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\guest\Documents\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
