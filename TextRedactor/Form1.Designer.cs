@@ -48,16 +48,17 @@
             this.fontMenuFontNameTimes = new System.Windows.Forms.ToolStripMenuItem();
             this.quitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.openButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.copyButton = new System.Windows.Forms.Button();
             this.fontSize = new System.Windows.Forms.DomainUpDown();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.pasteButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.symbolCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.openButton = new System.Windows.Forms.Button();
+            this.pasteButton = new System.Windows.Forms.Button();
+            this.copyButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.newFileButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,23 +92,24 @@
             this.fileMenuOpen.Name = "fileMenuOpen";
             this.fileMenuOpen.Size = new System.Drawing.Size(180, 22);
             this.fileMenuOpen.Text = "Открыть";
+            this.fileMenuOpen.Click += new System.EventHandler(this.fileMenuOpen_Click);
             // 
             // fileMenuSave
             // 
             this.fileMenuSave.Name = "fileMenuSave";
-            this.fileMenuSave.Size = new System.Drawing.Size(180, 22);
+            this.fileMenuSave.Size = new System.Drawing.Size(154, 22);
             this.fileMenuSave.Text = "Сохранить";
             // 
             // fileMenuSaveAs
             // 
             this.fileMenuSaveAs.Name = "fileMenuSaveAs";
-            this.fileMenuSaveAs.Size = new System.Drawing.Size(180, 22);
+            this.fileMenuSaveAs.Size = new System.Drawing.Size(154, 22);
             this.fileMenuSaveAs.Text = "Сохранить как";
             // 
             // fileMenuQuit
             // 
             this.fileMenuQuit.Name = "fileMenuQuit";
-            this.fileMenuQuit.Size = new System.Drawing.Size(180, 22);
+            this.fileMenuQuit.Size = new System.Drawing.Size(154, 22);
             this.fileMenuQuit.Text = "Выход";
             // 
             // editMenu
@@ -122,13 +124,13 @@
             // editMenuCopy
             // 
             this.editMenuCopy.Name = "editMenuCopy";
-            this.editMenuCopy.Size = new System.Drawing.Size(180, 22);
+            this.editMenuCopy.Size = new System.Drawing.Size(139, 22);
             this.editMenuCopy.Text = "Копировать";
             // 
             // editMenuPaste
             // 
             this.editMenuPaste.Name = "editMenuPaste";
-            this.editMenuPaste.Size = new System.Drawing.Size(180, 22);
+            this.editMenuPaste.Size = new System.Drawing.Size(139, 22);
             this.editMenuPaste.Text = "Вставить";
             // 
             // fontMenu
@@ -144,13 +146,13 @@
             // fontMenuUpper
             // 
             this.fontMenuUpper.Name = "fontMenuUpper";
-            this.fontMenuUpper.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuUpper.Size = new System.Drawing.Size(174, 22);
             this.fontMenuUpper.Text = "Увеличить";
             // 
             // fontMenuLower
             // 
             this.fontMenuLower.Name = "fontMenuLower";
-            this.fontMenuLower.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuLower.Size = new System.Drawing.Size(174, 22);
             this.fontMenuLower.Text = "Уменьшить";
             // 
             // fontMenuFontName
@@ -161,31 +163,31 @@
             this.fontMenuFontNameImpact,
             this.fontMenuFontNameTimes});
             this.fontMenuFontName.Name = "fontMenuFontName";
-            this.fontMenuFontName.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuFontName.Size = new System.Drawing.Size(174, 22);
             this.fontMenuFontName.Text = "Название шрифта";
             // 
             // fontMenuFontNameArial
             // 
             this.fontMenuFontNameArial.Name = "fontMenuFontNameArial";
-            this.fontMenuFontNameArial.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuFontNameArial.Size = new System.Drawing.Size(173, 22);
             this.fontMenuFontNameArial.Text = "Arial";
             // 
             // fontMenuFontNameArialCalibri
             // 
             this.fontMenuFontNameArialCalibri.Name = "fontMenuFontNameArialCalibri";
-            this.fontMenuFontNameArialCalibri.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuFontNameArialCalibri.Size = new System.Drawing.Size(173, 22);
             this.fontMenuFontNameArialCalibri.Text = "Calibri";
             // 
             // fontMenuFontNameImpact
             // 
             this.fontMenuFontNameImpact.Name = "fontMenuFontNameImpact";
-            this.fontMenuFontNameImpact.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuFontNameImpact.Size = new System.Drawing.Size(173, 22);
             this.fontMenuFontNameImpact.Text = "Impact";
             // 
             // fontMenuFontNameTimes
             // 
             this.fontMenuFontNameTimes.Name = "fontMenuFontNameTimes";
-            this.fontMenuFontNameTimes.Size = new System.Drawing.Size(180, 22);
+            this.fontMenuFontNameTimes.Size = new System.Drawing.Size(173, 22);
             this.fontMenuFontNameTimes.Text = "Times New Roman";
             // 
             // quitMenu
@@ -199,54 +201,13 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // openButton
-            // 
-            this.openButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._new;
-            this.openButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.openButton.Location = new System.Drawing.Point(12, 24);
-            this.openButton.Name = "openButton";
-            this.openButton.Size = new System.Drawing.Size(15, 21);
-            this.openButton.TabIndex = 3;
-            this.openButton.UseVisualStyleBackColor = true;
-            this.openButton.Click += new System.EventHandler(this.openButton_Click);
-            // 
-            // saveButton
-            // 
-            this.saveButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.save;
-            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.saveButton.Location = new System.Drawing.Point(33, 24);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(15, 21);
-            this.saveButton.TabIndex = 4;
-            this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // copyButton
-            // 
-            this.copyButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.copy;
-            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.copyButton.Location = new System.Drawing.Point(54, 24);
-            this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(15, 21);
-            this.copyButton.TabIndex = 5;
-            this.copyButton.UseVisualStyleBackColor = true;
-            // 
             // fontSize
             // 
             this.fontSize.Location = new System.Drawing.Point(111, 26);
             this.fontSize.Name = "fontSize";
             this.fontSize.Size = new System.Drawing.Size(120, 20);
             this.fontSize.TabIndex = 6;
-            this.fontSize.Text = "domainUpDown1";
-            // 
-            // pasteButton
-            // 
-            this.pasteButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.insert;
-            this.pasteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pasteButton.Location = new System.Drawing.Point(75, 24);
-            this.pasteButton.Name = "pasteButton";
-            this.pasteButton.Size = new System.Drawing.Size(15, 21);
-            this.pasteButton.TabIndex = 7;
-            this.pasteButton.UseVisualStyleBackColor = true;
+            this.fontSize.Text = "11";
             // 
             // textBox
             // 
@@ -287,18 +248,70 @@
             this.symbolCount.Text = "0";
             this.symbolCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // openButton
+            // 
+            this.openButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.open;
+            this.openButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.openButton.Location = new System.Drawing.Point(31, 24);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(15, 21);
+            this.openButton.TabIndex = 10;
+            this.openButton.UseVisualStyleBackColor = true;
+            // 
+            // pasteButton
+            // 
+            this.pasteButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.insert;
+            this.pasteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pasteButton.Location = new System.Drawing.Point(88, 24);
+            this.pasteButton.Name = "pasteButton";
+            this.pasteButton.Size = new System.Drawing.Size(15, 21);
+            this.pasteButton.TabIndex = 7;
+            this.pasteButton.UseVisualStyleBackColor = true;
+            // 
+            // copyButton
+            // 
+            this.copyButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.copy;
+            this.copyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.copyButton.Location = new System.Drawing.Point(69, 24);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(15, 21);
+            this.copyButton.TabIndex = 5;
+            this.copyButton.UseVisualStyleBackColor = true;
+            // 
+            // saveButton
+            // 
+            this.saveButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.save;
+            this.saveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.saveButton.Location = new System.Drawing.Point(50, 24);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(15, 21);
+            this.saveButton.TabIndex = 4;
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
+            // newFileButton
+            // 
+            this.newFileButton.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._new;
+            this.newFileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.newFileButton.Location = new System.Drawing.Point(12, 24);
+            this.newFileButton.Name = "newFileButton";
+            this.newFileButton.Size = new System.Drawing.Size(15, 21);
+            this.newFileButton.TabIndex = 3;
+            this.newFileButton.UseVisualStyleBackColor = true;
+            this.newFileButton.Click += new System.EventHandler(this.openButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.openButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.pasteButton);
             this.Controls.Add(this.fontSize);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.newFileButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -334,7 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem fontMenuFontNameTimes;
         private System.Windows.Forms.ToolStripMenuItem quitMenu;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button openButton;
+        private System.Windows.Forms.Button newFileButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button copyButton;
         private System.Windows.Forms.DomainUpDown fontSize;
@@ -344,6 +357,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel symbolCount;
+        private System.Windows.Forms.Button openButton;
     }
 }
 

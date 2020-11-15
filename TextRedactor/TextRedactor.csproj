@@ -82,12 +82,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\FileSystemLibrary.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\guest\Documents\ClassLibrary1\FileSystemLibrary.csproj">
       <Project>{bf647e28-482b-426f-a49e-8f047fb55e74}</Project>
       <Name>FileSystemLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Icons\copy.png" />
   </ItemGroup>
@@ -99,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\open.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
