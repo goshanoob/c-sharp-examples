@@ -6,10 +6,22 @@ using System.Text;
 using System.Windows.Forms;
 using FileSystemLibrary;
 
-namespace WindowsFormsApp1
+namespace Labs.TextRedactor
 {
-    public partial class MainForm : Form
+    public interface IUIterface
     {
+        event EventHandler openFile;
+        event EventHandler saveFile;
+        event EventHandler textChanged;
+    }
+
+
+    public partial class MainForm : Form, IUIterface
+    {
+        public event EventHandler textChanged;
+        public event EventHandler openFile;
+        public event EventHandler saveFils;
+
         TextRedactor redactor = new TextRedactor();
         public MainForm()
         {
@@ -28,6 +40,8 @@ namespace WindowsFormsApp1
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            textChanged(sender, e);
+
             this.Text += "*";
             redactor.Text = textBox.Text;
             this.symbolCount.Text = redactor.GetSymbolCount().ToString();
@@ -47,6 +61,16 @@ namespace WindowsFormsApp1
         }
 
         private void fileMenuOpen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
         {
 
         }

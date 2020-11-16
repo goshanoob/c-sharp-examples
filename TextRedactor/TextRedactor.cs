@@ -1,7 +1,7 @@
 ﻿using System;
 using FileSystemLibrary;
 
-namespace WindowsFormsApp1
+namespace Labs.TextRedactor
 {
     public interface IRedactor
     {

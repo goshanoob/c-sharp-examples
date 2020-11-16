@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Labs.TextRedactor
 {
     partial class MainForm
     {
@@ -90,7 +90,7 @@
             // fileMenuOpen
             // 
             this.fileMenuOpen.Name = "fileMenuOpen";
-            this.fileMenuOpen.Size = new System.Drawing.Size(180, 22);
+            this.fileMenuOpen.Size = new System.Drawing.Size(154, 22);
             this.fileMenuOpen.Text = "Открыть";
             this.fileMenuOpen.Click += new System.EventHandler(this.fileMenuOpen_Click);
             // 
@@ -211,8 +211,8 @@
             // 
             // textBox
             // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox.Location = new System.Drawing.Point(12, 53);
             this.textBox.Multiline = true;
@@ -257,6 +257,7 @@
             this.openButton.Size = new System.Drawing.Size(15, 21);
             this.openButton.TabIndex = 10;
             this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click_1);
             // 
             // pasteButton
             // 
@@ -287,6 +288,7 @@
             this.saveButton.Size = new System.Drawing.Size(15, 21);
             this.saveButton.TabIndex = 4;
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // newFileButton
             // 

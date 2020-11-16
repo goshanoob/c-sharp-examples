@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Labs.TextRedactor
 {
-    static class RedactorForm
+    static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -17,6 +17,17 @@ namespace WindowsFormsApp1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
+        }
+    }
+
+    class Controller
+    {
+        public void OpenFile()
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.textChanged = я всё
+                устал;
+
         }
     }
 }
