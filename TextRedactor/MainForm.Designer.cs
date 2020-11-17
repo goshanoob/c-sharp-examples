@@ -59,6 +59,7 @@
             this.copyButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.newFileButton = new System.Windows.Forms.Button();
+            this.FontBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,7 @@
             this.fileMenuSave.Name = "fileMenuSave";
             this.fileMenuSave.Size = new System.Drawing.Size(154, 22);
             this.fileMenuSave.Text = "Сохранить";
+            this.fileMenuSave.Click += new System.EventHandler(this.fileMenuSave_Click);
             // 
             // fileMenuSaveAs
             // 
@@ -110,7 +112,8 @@
             // 
             this.fileMenuQuit.Name = "fileMenuQuit";
             this.fileMenuQuit.Size = new System.Drawing.Size(154, 22);
-            this.fileMenuQuit.Text = "Выход";
+            this.fileMenuQuit.Text = "Закрыть";
+            this.fileMenuQuit.Click += new System.EventHandler(this.fileMenuQuit_Click);
             // 
             // editMenu
             // 
@@ -195,6 +198,7 @@
             this.quitMenu.Name = "quitMenu";
             this.quitMenu.Size = new System.Drawing.Size(54, 20);
             this.quitMenu.Text = "Выход";
+            this.quitMenu.Click += new System.EventHandler(this.quitMenu_Click);
             // 
             // contextMenuStrip1
             // 
@@ -208,11 +212,12 @@
             this.fontSize.Size = new System.Drawing.Size(120, 20);
             this.fontSize.TabIndex = 6;
             this.fontSize.Text = "11";
+            this.fontSize.TextChanged += new System.EventHandler(this.fontSize_TextChanged);
             // 
             // textBox
             // 
-            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox.Location = new System.Drawing.Point(12, 53);
             this.textBox.Multiline = true;
@@ -239,7 +244,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(136, 17);
             this.toolStripStatusLabel1.Text = "Количество символов: ";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // symbolCount
             // 
@@ -257,7 +261,7 @@
             this.openButton.Size = new System.Drawing.Size(15, 21);
             this.openButton.TabIndex = 10;
             this.openButton.UseVisualStyleBackColor = true;
-            this.openButton.Click += new System.EventHandler(this.openButton_Click_1);
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // pasteButton
             // 
@@ -268,6 +272,7 @@
             this.pasteButton.Size = new System.Drawing.Size(15, 21);
             this.pasteButton.TabIndex = 7;
             this.pasteButton.UseVisualStyleBackColor = true;
+            this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
             // 
             // copyButton
             // 
@@ -278,6 +283,7 @@
             this.copyButton.Size = new System.Drawing.Size(15, 21);
             this.copyButton.TabIndex = 5;
             this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
             // saveButton
             // 
@@ -299,13 +305,25 @@
             this.newFileButton.Size = new System.Drawing.Size(15, 21);
             this.newFileButton.TabIndex = 3;
             this.newFileButton.UseVisualStyleBackColor = true;
-            this.newFileButton.Click += new System.EventHandler(this.openButton_Click);
+            this.newFileButton.Click += new System.EventHandler(this.newFileButton_Click);
+            // 
+            // FontBox
+            // 
+            this.FontBox.FormattingEnabled = true;
+            this.FontBox.Items.AddRange(new object[] {
+            "Arial Calibri Impact Times New Roman"});
+            this.FontBox.Location = new System.Drawing.Point(237, 25);
+            this.FontBox.Name = "FontBox";
+            this.FontBox.Size = new System.Drawing.Size(121, 21);
+            this.FontBox.TabIndex = 11;
+            this.FontBox.SelectedValueChanged += new System.EventHandler(this.FontBox_SelectedValueChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.FontBox);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox);
@@ -360,6 +378,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel symbolCount;
         private System.Windows.Forms.Button openButton;
+        private System.Windows.Forms.ComboBox FontBox;
     }
 }
 

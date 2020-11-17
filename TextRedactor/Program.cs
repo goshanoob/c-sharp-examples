@@ -19,15 +19,4 @@ namespace Labs.TextRedactor
             Application.Run(new MainForm());
         }
     }
-
-    class Controller
-    {
-        public void OpenFile()
-        {
-            MainForm mainForm = new MainForm();
-            mainForm.textChanged = я всё
-                устал;
-
-        }
-    }
 }
