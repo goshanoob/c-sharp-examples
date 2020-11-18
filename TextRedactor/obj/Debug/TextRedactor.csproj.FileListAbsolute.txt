@@ -15,7 +15,6 @@ C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\bin\Debu
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\bin\Debug\WindowsFormsApp1.exe
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\bin\Debug\WindowsFormsApp1.pdb
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\TextRedactor.csprojAssemblyReference.cache
-C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\WindowsFormsApp1.MainForm.resources
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\TextRedactor.csproj.GenerateResource.cache
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\TextRedactor.csproj.CoreCompileInputs.cache
@@ -31,3 +30,4 @@ C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\TextRedactor.csproj.CoreCompileInputs.cache
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\WindowsFormsApp1.exe
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TextRedactor\obj\Debug\Labs.TextRedactor.MainForm.resources

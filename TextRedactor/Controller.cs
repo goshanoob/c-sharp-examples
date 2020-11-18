@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text;
+using FileSystemLibrary;
 
 namespace Labs.TextRedactor
 {
@@ -14,14 +14,11 @@ namespace Labs.TextRedactor
             _FS = FS;
 
             formUI.OpenFile += openFileHandler;
-            formUI.SaveFile += saveFileHandler;
-            formUI.ContentChanged += changedContentHandler;
-            
+            formUI.SaveFile += saveFileHandler;            
         }
         private void openFileHandler(object sender, EventArgs e)
         {
-            _FS fileSystem = new _FS(_formUI.FilePath);
-            if (!_FS.ReadFile())
+            if (!_FS.ReadFile(_formUI.FilePath))
             {
                 throw new Exception("Файл не прочтен");
             }
@@ -29,15 +26,18 @@ namespace Labs.TextRedactor
         }
         private void saveFileHandler(object sender, EventArgs e)
         {
-            _FS.Content = _formUI.TextContent;
-            if (!_FS.WriteFile())
+            try
             {
-                throw new Exception("Файл не записан");
+                _FS.Content = _formUI.TextContent;
+                if (!_FS.WriteFile(_formUI.FilePath))
+                {
+                    throw new Exception("Файл не записан");
+                }
             }
-        }
-        private void changedContentHandler(object sender, EventArgs e)
-        {
-
+            catch(Exception er)
+            {
+                Console.WriteLine(er.Message);
+            }
         }
     }
 }

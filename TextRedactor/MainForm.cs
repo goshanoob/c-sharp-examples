@@ -7,7 +7,6 @@ namespace Labs.TextRedactor
     {
         event EventHandler OpenFile;
         event EventHandler SaveFile;
-        event EventHandler ContentChanged;
         string TextContent { get; set; }
         string FilePath { get; set; }
     }
@@ -16,7 +15,6 @@ namespace Labs.TextRedactor
     {
         public event EventHandler OpenFile;
         public event EventHandler SaveFile;
-        public event EventHandler ContentChanged;
         public string TextContent
         {
             get
@@ -35,37 +33,30 @@ namespace Labs.TextRedactor
         }
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            if (ContentChanged != null)
-            {
-                ContentChanged(this, EventArgs.Empty);
-            }
-
-            // ContentChanged?.Invoke(this, EventArgs.Empty); // можно так
-            this.Text += " *";
+            Text += " *";
             SetSymbolCount();
         }
         private void SetSymbolCount()
         {
-            symbolCount.Text = TextContent.Length.ToString();
+            symbolCount.Text = TextContent.Length.ToString(); // вернули количество символов в тексте формы
         }
         private void fileMenuOpen_Click(object sender, EventArgs e)
         {
-            if (OpenFile != null)
-            {
-                OpenFile(this, EventArgs.Empty);
-            }
+            openButton_Click(this, EventArgs.Empty);
         }
         private void openButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog FD = new OpenFileDialog();
-            FD.Filter = "*.txt";
+            FD.Filter = "Текстовый документ|*.txt";
             if (FD.ShowDialog() == DialogResult.OK)
             {
                 FilePath = FD.FileName;
+                // OpenFile?.Invoke(this, EventArgs.Empty); // можно так
                 if (OpenFile != null)
                 {
                     OpenFile(this, EventArgs.Empty);
                 }
+                fontSize_TextChanged(this, EventArgs.Empty); // выставили шрифт
             }
         }
         private void saveButton_Click(object sender, EventArgs e)
@@ -81,7 +72,7 @@ namespace Labs.TextRedactor
         }
         private void copyButton_Click(object sender, EventArgs e)
         {
-            new NotImplementedException();
+            new NotImplementedException(); // не реализовано
         }
         private void pasteButton_Click(object sender, EventArgs e)
         {
@@ -89,11 +80,20 @@ namespace Labs.TextRedactor
         }
         private void FormRedactor_Load(object sender, EventArgs e)
         {
-            this.Text += " Новый файл";
+            Text += " Новый файл";
+            textBox.Clear();
+            TextContent = "";
+            FilePath = null;
+            ToolTip tip = new ToolTip();
+            tip.SetToolTip(openButton, "Открыть файл");
+            tip.SetToolTip(newFileButton, "Открыть файл");
+            tip.SetToolTip(saveButton, "Сохранить файл");
+            tip.SetToolTip(copyButton, "Копировать в буфер");
+            tip.SetToolTip(pasteButton, "Вставить текст");
+
         }
         private void newFileButton_Click(object sender, EventArgs e)
         {
-
             var result = MessageBox.Show("Сохранить файл?", "Закрытие текущего файла", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Cancel)
             {
@@ -101,15 +101,15 @@ namespace Labs.TextRedactor
             }
             else if (result == DialogResult.Yes && SaveFile != null)
             {
+                if (FilePath == null) fileMenuSaveAs_Click(this, EventArgs.Empty); // вызов меню Сохранить как
                 SaveFile(this, EventArgs.Empty);
             }
-            Text = "";
             FormRedactor_Load(this, EventArgs.Empty);
 
         }
         private void fileMenuQuit_Click(object sender, EventArgs e)
         {
-            Close();
+            newFileButton_Click(this, EventArgs.Empty);
         }
 
         private void quitMenu_Click(object sender, EventArgs e)
@@ -127,5 +127,14 @@ namespace Labs.TextRedactor
             fontSize_TextChanged(this, EventArgs.Empty);
         }
 
+        private void fontSize_ValueChanged(object sender, EventArgs e)
+        {
+            fontSize_TextChanged(this, EventArgs.Empty);
+        }
+
+        private void fileMenuSaveAs_Click(object sender, EventArgs e)
+        {
+            new NotImplementedException();
+        }
     }
 }

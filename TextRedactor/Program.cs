@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FileSystemLibrary;
+using System;
 using System.Windows.Forms;
 
 namespace Labs.TextRedactor
@@ -16,7 +14,13 @@ namespace Labs.TextRedactor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm mainForm = new MainForm();
+            FileSystem fileSystem = new FileSystem();
+
+            Controller control = new Controller(mainForm, fileSystem);
+
+            Application.Run(mainForm);
         }
     }
 }

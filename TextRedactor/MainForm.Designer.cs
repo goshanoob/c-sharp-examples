@@ -48,7 +48,6 @@
             this.fontMenuFontNameTimes = new System.Windows.Forms.ToolStripMenuItem();
             this.quitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.fontSize = new System.Windows.Forms.DomainUpDown();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.textBox = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -60,8 +59,10 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.newFileButton = new System.Windows.Forms.Button();
             this.FontBox = new System.Windows.Forms.ComboBox();
+            this.fontSize = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSize)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,8 +106,9 @@
             // fileMenuSaveAs
             // 
             this.fileMenuSaveAs.Name = "fileMenuSaveAs";
-            this.fileMenuSaveAs.Size = new System.Drawing.Size(154, 22);
+            this.fileMenuSaveAs.Size = new System.Drawing.Size(180, 22);
             this.fileMenuSaveAs.Text = "Сохранить как";
+            this.fileMenuSaveAs.Click += new System.EventHandler(this.fileMenuSaveAs_Click);
             // 
             // fileMenuQuit
             // 
@@ -127,13 +129,13 @@
             // editMenuCopy
             // 
             this.editMenuCopy.Name = "editMenuCopy";
-            this.editMenuCopy.Size = new System.Drawing.Size(139, 22);
+            this.editMenuCopy.Size = new System.Drawing.Size(180, 22);
             this.editMenuCopy.Text = "Копировать";
             // 
             // editMenuPaste
             // 
             this.editMenuPaste.Name = "editMenuPaste";
-            this.editMenuPaste.Size = new System.Drawing.Size(139, 22);
+            this.editMenuPaste.Size = new System.Drawing.Size(180, 22);
             this.editMenuPaste.Text = "Вставить";
             // 
             // fontMenu
@@ -205,24 +207,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // fontSize
-            // 
-            this.fontSize.Location = new System.Drawing.Point(111, 26);
-            this.fontSize.Name = "fontSize";
-            this.fontSize.Size = new System.Drawing.Size(120, 20);
-            this.fontSize.TabIndex = 6;
-            this.fontSize.Text = "11";
-            this.fontSize.TextChanged += new System.EventHandler(this.fontSize_TextChanged);
-            // 
             // textBox
             // 
             this.textBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox.Location = new System.Drawing.Point(12, 53);
+            this.textBox.Location = new System.Drawing.Point(9, 53);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(776, 374);
+            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox.Size = new System.Drawing.Size(794, 374);
             this.textBox.TabIndex = 8;
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
@@ -309,26 +303,54 @@
             // 
             // FontBox
             // 
+            this.FontBox.DisplayMember = "Calibri";
             this.FontBox.FormattingEnabled = true;
             this.FontBox.Items.AddRange(new object[] {
-            "Arial Calibri Impact Times New Roman"});
+            "Arial",
+            "Calibri",
+            "Impact",
+            "Times New Roman"});
             this.FontBox.Location = new System.Drawing.Point(237, 25);
             this.FontBox.Name = "FontBox";
             this.FontBox.Size = new System.Drawing.Size(121, 21);
             this.FontBox.TabIndex = 11;
+            this.FontBox.Text = "Calibri";
             this.FontBox.SelectedValueChanged += new System.EventHandler(this.FontBox_SelectedValueChanged);
+            // 
+            // fontSize
+            // 
+            this.fontSize.Location = new System.Drawing.Point(111, 25);
+            this.fontSize.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.fontSize.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.fontSize.Name = "fontSize";
+            this.fontSize.Size = new System.Drawing.Size(120, 20);
+            this.fontSize.TabIndex = 12;
+            this.fontSize.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.fontSize.ValueChanged += new System.EventHandler(this.fontSize_ValueChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fontSize);
             this.Controls.Add(this.FontBox);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.pasteButton);
-            this.Controls.Add(this.fontSize);
             this.Controls.Add(this.copyButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.newFileButton);
@@ -341,6 +363,7 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,7 +393,6 @@
         private System.Windows.Forms.Button newFileButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button copyButton;
-        private System.Windows.Forms.DomainUpDown fontSize;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button pasteButton;
         private System.Windows.Forms.TextBox textBox;
@@ -379,6 +401,7 @@
         private System.Windows.Forms.ToolStripStatusLabel symbolCount;
         private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.ComboBox FontBox;
+        private System.Windows.Forms.NumericUpDown fontSize;
     }
 }
 
