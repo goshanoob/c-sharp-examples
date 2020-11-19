@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sizeA = new System.Windows.Forms.TextBox();
+            this.sizeB = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.redFlag = new System.Windows.Forms.CheckBox();
-            this.greenFlag = new System.Windows.Forms.CheckBox();
             this.blueFlag = new System.Windows.Forms.CheckBox();
+            this.greenFlag = new System.Windows.Forms.CheckBox();
+            this.redFlag = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // sizeA
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "100";
+            this.sizeA.Location = new System.Drawing.Point(27, 35);
+            this.sizeA.Name = "sizeA";
+            this.sizeA.Size = new System.Drawing.Size(100, 20);
+            this.sizeA.TabIndex = 0;
+            this.sizeA.Text = "100";
             // 
-            // textBox2
+            // sizeB
             // 
-            this.textBox2.Location = new System.Drawing.Point(169, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "50";
+            this.sizeB.Location = new System.Drawing.Point(169, 35);
+            this.sizeB.Name = "sizeB";
+            this.sizeB.Size = new System.Drawing.Size(100, 20);
+            this.sizeB.TabIndex = 1;
+            this.sizeB.Text = "50";
             // 
             // groupBox1
             // 
@@ -68,15 +68,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Цвет";
             // 
-            // redFlag
+            // blueFlag
             // 
-            this.redFlag.AutoSize = true;
-            this.redFlag.Location = new System.Drawing.Point(94, 19);
-            this.redFlag.Name = "redFlag";
-            this.redFlag.Size = new System.Drawing.Size(71, 17);
-            this.redFlag.TabIndex = 0;
-            this.redFlag.Text = "Красный";
-            this.redFlag.UseVisualStyleBackColor = true;
+            this.blueFlag.AutoSize = true;
+            this.blueFlag.Location = new System.Drawing.Point(94, 68);
+            this.blueFlag.Name = "blueFlag";
+            this.blueFlag.Size = new System.Drawing.Size(57, 17);
+            this.blueFlag.TabIndex = 2;
+            this.blueFlag.Text = "Синий";
+            this.blueFlag.UseVisualStyleBackColor = true;
             // 
             // greenFlag
             // 
@@ -88,15 +88,15 @@
             this.greenFlag.Text = "Зеленый";
             this.greenFlag.UseVisualStyleBackColor = true;
             // 
-            // blueFlag
+            // redFlag
             // 
-            this.blueFlag.AutoSize = true;
-            this.blueFlag.Location = new System.Drawing.Point(94, 68);
-            this.blueFlag.Name = "blueFlag";
-            this.blueFlag.Size = new System.Drawing.Size(57, 17);
-            this.blueFlag.TabIndex = 2;
-            this.blueFlag.Text = "Синий";
-            this.blueFlag.UseVisualStyleBackColor = true;
+            this.redFlag.AutoSize = true;
+            this.redFlag.Location = new System.Drawing.Point(94, 19);
+            this.redFlag.Name = "redFlag";
+            this.redFlag.Size = new System.Drawing.Size(71, 17);
+            this.redFlag.TabIndex = 0;
+            this.redFlag.Text = "Красный";
+            this.redFlag.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 
@@ -106,6 +106,7 @@
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // label1
             // 
@@ -134,8 +135,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sizeB);
+            this.Controls.Add(this.sizeA);
             this.Name = "SizeForm";
             this.Text = "Ввод сторон прямоугольника";
             this.groupBox1.ResumeLayout(false);
@@ -147,8 +148,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sizeA;
+        private System.Windows.Forms.TextBox sizeB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox blueFlag;
         private System.Windows.Forms.CheckBox greenFlag;

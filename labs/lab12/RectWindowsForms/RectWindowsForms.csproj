@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenter.cs" />
     <Compile Include="Rect.cs" />
     <Compile Include="SizeForm.cs">
       <SubType>Form</SubType>

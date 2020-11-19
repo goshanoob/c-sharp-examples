@@ -9,3 +9,14 @@ C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindows
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.CoreCompileInputs.cache
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.exe
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\bin\Debug\RectWindowsForms.exe.config
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\bin\Debug\RectWindowsForms.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\bin\Debug\RectWindowsForms.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.csprojAssemblyReference.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.MainForm.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.Properties.Resources.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.SizeForm.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.GenerateResource.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.pdb

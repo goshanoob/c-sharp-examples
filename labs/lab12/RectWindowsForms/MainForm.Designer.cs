@@ -54,7 +54,7 @@
             this.sizeMenu.Name = "sizeMenu";
             this.sizeMenu.Size = new System.Drawing.Size(39, 20);
             this.sizeMenu.Text = "Size";
-            this.sizeMenu.Click += new System.EventHandler(this.sizwToolStripMenuItem_Click);
+            this.sizeMenu.Click += new System.EventHandler(this.sizeMenu_Click);
             // 
             // colorMenu
             // 
