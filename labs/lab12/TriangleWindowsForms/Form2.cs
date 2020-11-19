@@ -12,9 +12,9 @@ namespace lab12
 {
     public partial class Form2 : Form
     {
-        public double a { get; private set; }
-        public double b { get; private set; }
-        public double c { get; private set; }
+        public double A { get; private set; }
+        public double B { get; private set; }
+        public double C { get; private set; }
         public bool CalcPerim { get; private set; } = true;
         public bool CalcPlosh { get; private set; } = true;
         public Form2()
@@ -29,9 +29,9 @@ namespace lab12
 
         private void button1_Click(object sender, EventArgs e)
         {
-            a = Double.Parse(boxA.Text);
-            b = Double.Parse(boxB.Text);
-            c = Double.Parse(boxC.Text);
+            A = Double.Parse(boxA.Text);
+            B = Double.Parse(boxB.Text);
+            C = Double.Parse(boxC.Text);
             if (!checkPerim.Checked)
                 CalcPerim = false;
             if (!checkPlosh.Checked)
