@@ -18,3 +18,13 @@ C:\Users\username\source\repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\T
 C:\Users\username\source\repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.csproj.CoreCompileInputs.cache
 C:\Users\username\source\repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.exe
 C:\Users\username\source\repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\bin\Debug\TreeSystem.exe.config
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\bin\Debug\TreeSystem.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\bin\Debug\TreeSystem.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.csprojAssemblyReference.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.Form1.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.Properties.Resources.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.csproj.GenerateResource.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\TreeSystem\obj\Debug\TreeSystem.pdb

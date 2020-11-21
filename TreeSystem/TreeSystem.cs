@@ -48,7 +48,6 @@ namespace TreeSystem
         public List<int> GetEnds()
         {
             // Поиск концевых элементов дерева. Номер элемента не встрачается в массиве Bases
-
             bool isEnd;
             Ends.Add(0);
             for (int i = 1; i < Bases[0] + 1; ++i)
@@ -64,7 +63,6 @@ namespace TreeSystem
                 }
                 if (isEnd)
                     Ends.Add(i);
-
             }
             Ends[0] = Ends.Count - 1;
             return Ends;
@@ -76,40 +74,42 @@ namespace TreeSystem
             Adjac.Add(new List<int> { });
             for (int i = 1; i < Bases[0] + 1; ++i)
             {
-                Adjac.Add(new List<int> {0});
+                Adjac.Add(new List<int> { 0 });
                 for (int j = i + 1; j < Bases[0] + 1; ++j)
                 {
-                    if(Bases[j] == i)
+                    if (Bases[j] == i)
                     {
                         Adjac[i].Add(j);
                     }
                 }
-
                 Adjac[i][0] = Adjac[i].Count - 1;
-
             }
             return Adjac;
         }
 
         public List<List<int>> GetSupp()
         {
-            for(int i = 1; i < Bases[0] + 1; ++i)
+            // Поиск несущих цепочек тел
+            Supp.Add(new List<int> { 1, 0 });
+            for (int i = 1; i < Bases[0] + 1; ++i)
             {
-                List<int> list = new List<int> { };
-                recurs(i, ref list);
-                Supp.Add(list);
+                List<int> list = new List<int> { 0 };
+                Supp.Add(Recurs(i, list));
+                Supp[i][0] = Supp[i].Count - 1;
             }
 
-            void recurs(int i, ref List<int> list)
+            List<int> Recurs(int i, List<int> list)
             {
                 list.Add(i);
-                if (Bases[i] != 0) recurs(Bases[i], ref list);
+                if (Bases[i] != 0)
+                {
+                    return Recurs(Bases[i], list);
+                }
                 else
                 {
                     list.Add(0);
-                    return ;
+                    return list;
                 }
-                    
             }
             return Supp;
         }
