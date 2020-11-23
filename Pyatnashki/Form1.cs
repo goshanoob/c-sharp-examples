@@ -19,8 +19,8 @@ namespace Pyatnashki
         private void Form1_Load(object sender, EventArgs e)
         {
             // инициализация игрового поля
-            rowCount = 3;
-            colCount = 3;
+            rowCount = 5;
+            colCount = 5;
             tag = new Tags(rowCount, colCount);
             int k = 0;
             _formTags = new Button[rowCount * colCount];
@@ -41,7 +41,7 @@ namespace Pyatnashki
         private void SetMove(object sender, EventArgs e)
         {
             int number = Convert.ToInt32(Regex.Replace(((Button)sender).Name, @"[^\d]*", "")) - 1;
-            tag.SetMove(number / rowCount , number % colCount);
+            tag.SetMove(number / rowCount, number % colCount);
             //tag.SetMove(((Button)sender).Location.Y / 100 - 1, ((Button)sender).Location.X / 100 - 2); // определять позицию пятнишки по координатам - не надежно
             MakeLabels();
             TestResult();
@@ -54,7 +54,7 @@ namespace Pyatnashki
             {
                 f.Visible = tag.TagMatrix[i, j] == 0 ? false : true;
                 f.Text = tag.TagMatrix[i, j++].ToString();
-                if (j == 3)
+                if (j == colCount)
                 {
                     ++i;
                     j = 0;
@@ -78,7 +78,11 @@ namespace Pyatnashki
             {
                 Button button1 = (Button)x;
                 Button button2 = (Button)y;
-                return String.Compare(button1.Name, button2.Name);
+                int number1 = Convert.ToInt32(Regex.Replace(button1.Name, @"[^\d]*", ""));
+                int number2 = Convert.ToInt32(Regex.Replace(button2.Name, @"[^\d]*", ""));
+                if (number1 < number2) return -1;
+                if (number1 > number2) return 1;
+                return 0;
             }
         }
 
