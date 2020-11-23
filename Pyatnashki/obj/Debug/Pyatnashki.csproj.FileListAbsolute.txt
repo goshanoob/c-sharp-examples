@@ -8,3 +8,13 @@ C:\Users\goshanoob\source\repos\Pyatnashki\obj\Debug\Pyatnashki.csproj.GenerateR
 C:\Users\goshanoob\source\repos\Pyatnashki\obj\Debug\Pyatnashki.csproj.CoreCompileInputs.cache
 C:\Users\goshanoob\source\repos\Pyatnashki\obj\Debug\Pyatnashki.exe
 C:\Users\goshanoob\source\repos\Pyatnashki\obj\Debug\Pyatnashki.pdb
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\bin\Debug\Pyatnashki.exe.config
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\bin\Debug\Pyatnashki.exe
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\bin\Debug\Pyatnashki.pdb
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.csprojAssemblyReference.cache
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.Form1.resources
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.Properties.Resources.resources
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.csproj.GenerateResource.cache
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.csproj.CoreCompileInputs.cache
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.exe
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Pyatnashki\obj\Debug\Pyatnashki.pdb
