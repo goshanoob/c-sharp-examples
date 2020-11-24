@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FileSystemLibrary;
 
 namespace Approximation
 {
@@ -16,7 +17,13 @@ namespace Approximation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            MainForm form = new MainForm();
+            FileSystem fileSystem = new FileSystem();
+            Presenter presenter = new Presenter(fileSystem, form);
+
+            
+            Application.Run(form);
         }
     }
 }

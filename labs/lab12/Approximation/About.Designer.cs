@@ -42,11 +42,11 @@
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.MaximumSize = new System.Drawing.Size(300, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 52);
+            this.label1.Size = new System.Drawing.Size(297, 52);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Данная программа написана в соответствии с задачей из учебника Павловской Т.А. C#" +
-    ". Программирование на языке высокого уровня, лабораторая работа 12, задача 3, ва" +
-    "риант 5, с. 422";
+            this.label1.Text = "Программа написана в соответствии с задачей из учебника Павловской Т.А. C#. Прогр" +
+    "аммирование на языке высокого уровня, лабораторая работа 12, задача 3, вариант 5" +
+    ", с. 422";
             // 
             // label2
             // 
@@ -89,12 +89,14 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.Location = new System.Drawing.Point(155, 155);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Русская хтонь";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // About
             // 
@@ -107,7 +109,10 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(414, 229);
+            this.MinimumSize = new System.Drawing.Size(414, 229);
             this.Name = "About";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.ResumeLayout(false);
             this.PerformLayout();
