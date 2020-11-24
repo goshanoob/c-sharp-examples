@@ -17,7 +17,7 @@ namespace Approximation
         public string FilePath { get; set; }
         public string TextContent { get; set; }
 
-        private const float a = 1, b = 1;
+        private const float a = 0.1f, b = 0.1f;
 
         Approximation approximation;
         public MainForm()
@@ -67,8 +67,8 @@ namespace Approximation
                 plot.DrawLine(pen, 10 + i * 20, 395, 10 + i * 20, 405);
             }
             pen.Color = Color.Red;
-            double[,] points = approximation.GetPoints(1, 10);
-           /* double[,] points = new double[100, 2];
+            double[,] points = approximation.GetPoints(0.1, 20);
+            /*double[,] points = new double[100, 2];
             double initValue = 0.1; string a = "";
             for (int i = 0; i < 100; i++)
             {
@@ -82,12 +82,18 @@ namespace Approximation
                 plot.DrawLine(pen, (float)points[i, 0] * 20 + 50, 400 - (float)points[i, 1] * 20,
                     (float)points[i + 1, 0] * 20 + 50, 400 - (float)points[i + 1, 1] * 20);
             }
+            Brush brush = new SolidBrush(Color.Green);
+            for (int i = 0; i < approximation.InputPoints.GetLength(0) - 1; ++i)
+            {
+                plot.FillEllipse(brush, (float)approximation.InputPoints[i, 0] * 20-2.5f + 50,
+                    400 - (float)approximation.InputPoints[i, 1] * 20-2.5f, 5, 5);
+            }
         }
 
         private void openMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Текстовые файлы | .txt";
+            dialog.Filter = "Текстовые документы | .txt";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 FilePath = dialog.FileName;
@@ -112,12 +118,12 @@ namespace Approximation
             string[] points = TextContent.Split('\n');
             double[,] M = new double[points.Length, 2];
             int k = 0;
-            IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
+            //IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
             foreach (string i in points)
             {
                 string[] coord = i.Split('\t');
-                M[k, 0] = double.Parse(coord[0], formatter);
-                M[k++, 1] = double.Parse(coord[1], formatter);
+                M[k, 0] = double.Parse(coord[0]);
+                M[k++, 1] = double.Parse(coord[1]);
             }
             return M;
         }
