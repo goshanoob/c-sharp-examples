@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace Approximation
@@ -17,7 +16,7 @@ namespace Approximation
         public string FilePath { get; set; }
         public string TextContent { get; set; }
 
-        private const float a = 0.1f, b = 0.1f;
+        private const float a = 0, b = 0;
 
         Approximation approximation;
         public MainForm()
@@ -32,18 +31,16 @@ namespace Approximation
                 DialogResult result = MessageBox.Show("Вы не выбрали файл, содержащий входные данные. Задать их по умолнчанию?", "Ошибка", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    approximation = new Approximation(new double[,] {
-                        { 1, 1 } ,{ 2, 4 }, { 3, 9 },{ 4, 16 },{ 5, 25 }
-                        },
-                        a, b);
+                    approximation = new Approximation(new double[,] { { 1, 1 } ,{ 2, 4 }, { 3, 9 },
+                        { 4, 16 },{ 5, 25 } }, a, b);
                 }
                 else
                 {
                     return;
                 }
             }
-            MessageBox.Show($"Коэффициенты a = {approximation.A}, b = {approximation.B}" +
-                $", c = {approximation.C}");
+            MessageBox.Show($"Коэффициенты a = {approximation.A},\n b = {approximation.B}" +
+                $",\n c = {approximation.C}");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -52,7 +49,7 @@ namespace Approximation
 
         private void showMenu_Click(object sender, EventArgs e)
         {
-
+            /*!! исправить обозначения, перенести оси правее и освободить ресурсы*/
             Graphics plot = CreateGraphics();
             // Оси системы координат
             Pen pen = new Pen(Color.Black);
@@ -68,15 +65,6 @@ namespace Approximation
             }
             pen.Color = Color.Red;
             double[,] points = approximation.GetPoints(0.1, 20);
-            /*double[,] points = new double[100, 2];
-            double initValue = 0.1; string a = "";
-            for (int i = 0; i < 100; i++)
-            {
-                points[i, 0] = initValue;
-                points[i, 1] = Math.Log(initValue, 2);
-                initValue *= 2;
-                a += $"{points[i, 0]}\t{points[i, 1]}\n";
-            }*/
             for (int i = 0; i < points.GetLength(0) - 1; ++i)
             {
                 plot.DrawLine(pen, (float)points[i, 0] * 20 + 50, 400 - (float)points[i, 1] * 20,
@@ -85,21 +73,21 @@ namespace Approximation
             Brush brush = new SolidBrush(Color.Green);
             for (int i = 0; i < approximation.InputPoints.GetLength(0) - 1; ++i)
             {
-                plot.FillEllipse(brush, (float)approximation.InputPoints[i, 0] * 20-2.5f + 50,
-                    400 - (float)approximation.InputPoints[i, 1] * 20-2.5f, 5, 5);
+                plot.FillEllipse(brush, (float)approximation.InputPoints[i, 0] * 20 - 2.5f + 50,
+                    400 - (float)approximation.InputPoints[i, 1] * 20 - 2.5f, 5, 5);
             }
         }
 
         private void openMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Текстовые документы | .txt";
+            dialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 FilePath = dialog.FileName;
                 OpenFile?.Invoke(this, EventArgs.Empty);
+                approximation = new Approximation(ConvertToPoints(), a, b);
             }
-            approximation = new Approximation(ConvertToPoints(), a, b);
         }
 
         private void exitMenu_Click(object sender, EventArgs e)
@@ -118,7 +106,6 @@ namespace Approximation
             string[] points = TextContent.Split('\n');
             double[,] M = new double[points.Length, 2];
             int k = 0;
-            //IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
             foreach (string i in points)
             {
                 string[] coord = i.Split('\t');

@@ -8,7 +8,7 @@ namespace Approximation
         public double B { get; private set; }
         public double C { get; private set; }
         private const float delta = 0.1f; // приращение аргумента
-        public Approximation(double[,] matrix, double a = 0, double b = 0)
+        public Approximation(double[,] matrix, double b = 0, double c = 0)
         {
             int inputCount = matrix.GetLength(0);
             InputPoints = new double[inputCount, 2];
@@ -17,13 +17,13 @@ namespace Approximation
             for (int i = 0; i < inputCount; ++i)
             {
                 sumXi += InputPoints[i, 0];
-                sumXi += InputPoints[i, 0];
                 sumYi += InputPoints[i, 1];
                 sumLogXi += Math.Log(InputPoints[i, 0], 2);
             }
-            C = (sumYi - (a + b) * sumXi) / sumLogXi;
-            A = a;
+            C = c;
             B = b;
+            A = sumYi/sumXi - b - c*sumLogXi/sumXi;
+            
         }
 
         public double[,] GetPoints(double x1, double x2)
