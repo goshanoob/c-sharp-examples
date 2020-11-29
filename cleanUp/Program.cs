@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using System.IO;
-using System.Text.RegularExpressions;
 
 namespace goshanoob.CleanUpApp
 {
-    public class Sorting
+    // Программа соритировки документов в папки по категориям. Шаблон проектирования MVP. Отображение - форма WindowsForms.
+    // Модель - каталог файловой системы (класс FileSystemDirectory). Презентер - класс Presenter. Для сортировки
+    // используется класс FileSorter.
+    public class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
