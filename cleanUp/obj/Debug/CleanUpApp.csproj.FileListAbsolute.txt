@@ -1,0 +1,10 @@
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.exe.config
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\bin\Debug\WindowsFormsApp4.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\CleanUpApp.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\goshanoob.CleanUpApp.Form1.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\CleanUpApp.csproj.GenerateResource.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\CleanUpApp.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\cleanUp\obj\Debug\WindowsFormsApp4.pdb

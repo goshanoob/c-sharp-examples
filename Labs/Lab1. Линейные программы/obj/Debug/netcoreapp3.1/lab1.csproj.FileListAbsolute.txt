@@ -1,0 +1,26 @@
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.exe
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.deps.json
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.json
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.dll
+C:\Users\goshanoob\source\repos\lab1\bin\Debug\netcoreapp3.1\lab1.pdb
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.dll
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.pdb
+C:\Users\goshanoob\source\repos\lab1\obj\Debug\netcoreapp3.1\lab1.genruntimeconfig.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.deps.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\bin\Debug\netcoreapp3.1\lab1.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab1 Линейные программы\obj\Debug\netcoreapp3.1\lab1.genruntimeconfig.cache
