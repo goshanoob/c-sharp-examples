@@ -10,3 +10,9 @@ C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\ClassLibrary1\obj\Deb
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\ClassLibrary1\obj\Debug\FileSystemLibrary.csproj.CoreCompileInputs.cache
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\obj\Debug\FileSystemLibrary.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\obj\Debug\FileSystemLibrary.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

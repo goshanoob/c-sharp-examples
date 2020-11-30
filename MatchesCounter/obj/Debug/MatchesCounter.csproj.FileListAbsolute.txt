@@ -1,5 +1,4 @@
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\MatchesCounter.csprojAssemblyReference.cache
-C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\WindowsFormsApp5.Form1.resources
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\WindowsFormsApp5.Properties.Resources.resources
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\MatchesCounter.csproj.GenerateResource.cache
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\MatchesCounter.csproj.CoreCompileInputs.cache
@@ -98,3 +97,4 @@ C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debu
 C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\MatchesCounter.csproj.CopyComplete
 C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\WindowsFormsApp5.exe
 C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\WindowsFormsApp5.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\MatchesCounter\obj\Debug\goshanoob.MatchesCounter.Form1.resources

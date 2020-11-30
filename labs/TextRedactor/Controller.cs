@@ -7,7 +7,6 @@ namespace Labs.TextRedactor
     {
         private IUIterface _formUI;
         private IFileSystem _FS;
-
         public Controller(IUIterface formUI, IFileSystem FS)
         {
             _formUI = formUI;

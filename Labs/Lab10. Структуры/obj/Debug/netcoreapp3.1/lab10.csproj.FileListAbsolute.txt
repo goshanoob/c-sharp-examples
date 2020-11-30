@@ -1,0 +1,39 @@
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.deps.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.genruntimeconfig.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.exe
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.deps.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.dev.json
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.dll
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\bin\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.csprojAssemblyReference.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.AssemblyInfoInputs.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.AssemblyInfo.cs
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.csproj.CoreCompileInputs.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.dll
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab10\obj\Debug\netcoreapp3.1\lab10.genruntimeconfig.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.deps.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\bin\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab10. Структуры\obj\Debug\netcoreapp3.1\lab10.genruntimeconfig.cache

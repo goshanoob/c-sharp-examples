@@ -1,0 +1,42 @@
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.exe.config
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.exe
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\ClassLibrary1.dll
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\ClassLibrary1.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csprojAssemblyReference.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.MainForm.resources
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.Properties.Resources.resources
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.GenerateResource.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.CoreCompileInputs.cache
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.CopyComplete
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.exe
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.pdb
+C:\Users\username\source\repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.About.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.exe.config
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\Approximation.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\ClassLibrary1.dll
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\bin\Debug\ClassLibrary1.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csprojAssemblyReference.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.About.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.MainForm.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.Properties.Resources.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.GenerateResource.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.csproj.CopyComplete
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\Approximation\obj\Debug\Approximation.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\bin\Debug\Approximation.exe.config
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\bin\Debug\Approximation.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\bin\Debug\Approximation.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\bin\Debug\ClassLibrary1.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\bin\Debug\ClassLibrary1.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.About.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.MainForm.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.Properties.Resources.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.csproj.GenerateResource.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.csproj.CopyComplete
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\Approximation\obj\Debug\Approximation.pdb

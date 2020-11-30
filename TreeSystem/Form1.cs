@@ -16,7 +16,7 @@ namespace TreeSystem
         TreeSystem tree;
         private void calcButton_Click(object sender, EventArgs e)
         {
-            // очистка 
+            // Очистка.
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
@@ -37,7 +37,7 @@ namespace TreeSystem
                 listBox2.Items.Add("Массив номеров смежных элементов у " + k++ + ": " + string.Join(", ", i));
                 listBox3.Items.Add("Массив несущей цепочки элемента у " + f + ": " + string.Join(", ", supp[f++]));
             }
-            drawTree(sender,e);
+            drawTree(sender, e);
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,22 +56,24 @@ namespace TreeSystem
             DrowBranch(1, x, y, x, y);
             void DrowBranch(int i, float cx, float cy, float c0x, float c0y)
             {
-                grath.DrawLine(pen, cx, cy, c0x, c0y+d/2);
+                grath.DrawLine(pen, cx, cy, c0x, c0y + d / 2);
                 grath.FillEllipse(brushString, cx - d / 2, cy - d / 2, d, d);
                 grath.DrawEllipse(pen, cx - d / 2, cy - d / 2, d, d);
                 grath.DrawString(i.ToString(), font, brushStroke, cx - d / 3, cy - d / 3);
                 for (int j = 1; j <= tree.Adjac[i][0]; ++j)
                 {
-                    var k = 500 / (tree.Adjac[i][0] + 1)*j;
+                    var k = 500 / (tree.Adjac[i][0] + 1) * j;
                     DrowBranch(tree.Adjac[i][j], cx - 250 + k, cy + 30, cx, cy);
                 }
             }
+            grath.Dispose();
+            pen.Dispose();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
             baseNumbers.Text = ((Label)sender).Text;
-            calcButton_Click(sender,e);
+            calcButton_Click(sender, e);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -82,6 +84,6 @@ namespace TreeSystem
         private void label7_Click(object sender, EventArgs e)
         {
             label5_Click(sender, e);
-        } 
+        }
     }
 }

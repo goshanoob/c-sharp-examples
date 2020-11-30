@@ -12,7 +12,7 @@ namespace FileSystemLibrary
         bool WriteFile(string filePath);
         bool WriteFile(string filePath, Encoding encoding);
     }
-    public class FileSystem: IFileSystem
+    public class FileSystem : IFileSystem
     {
         private Encoding defaultEnconding = Encoding.UTF8; // кодировка файла по умолчанию
         public string Content { get; set; } // содержимое файла

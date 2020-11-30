@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace Labs.TextRedactor
 {
+    // Незаконченная программа для редактирования текстовых документов.
     static class Program
     {
         /// <summary>

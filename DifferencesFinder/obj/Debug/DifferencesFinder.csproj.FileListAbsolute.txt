@@ -8,3 +8,13 @@ C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\findDifferences\bin\D
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\findDifferences\obj\Debug\WindowsFormsApp6.exe
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\findDifferences\obj\Debug\WindowsFormsApp6.pdb
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\findDifferences\obj\Debug\goshanoob.DifferencesFinder.Form1.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\bin\Debug\WindowsFormsApp6.exe.config
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\bin\Debug\WindowsFormsApp6.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\bin\Debug\WindowsFormsApp6.pdb
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\DifferencesFinder.csprojAssemblyReference.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\goshanoob.DifferencesFinder.Form1.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\WindowsFormsApp6.Properties.Resources.resources
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\DifferencesFinder.csproj.GenerateResource.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\DifferencesFinder.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\WindowsFormsApp6.exe
+C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\DifferencesFinder\obj\Debug\WindowsFormsApp6.pdb

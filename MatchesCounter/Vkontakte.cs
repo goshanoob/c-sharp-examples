@@ -1,20 +1,12 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Microsoft.Extensions.DependencyInjection;
 using VkNet;
-using VkNet.Abstractions;
 using VkNet.AudioBypassService.Extensions;
 using VkNet.Model;
 using VkNet.Model.RequestParams;
-using System.Text.RegularExpressions;
-using Microsoft.Extensions.DependencyInjection;
-
 
 namespace goshanoob.MatchesCounter
 {
-    // Класс Vkontacte для работы с API VK.
+    // Класс Vkontakte для работы с API VK.
     // Закрытое поле класса содержит ссылку на экземпляр класса из бибилиотеки для работы с API VK.
     // Свойство SongsCount возвращает количество загруженных треков.
     // Метод GetEnter() позволяет авторизоваться в социальной сети по логину и паролю, переданным в качесте
@@ -47,7 +39,7 @@ namespace goshanoob.MatchesCounter
             var audios = _api.Audio.Get(new AudioGetParams { Count = 6000 });
             string text = "";
             // Счетчик аудио без текста.
-            int empt = 0; 
+            int empt = 0;
             foreach (var song in audios)
             {
                 if (song.LyricsId == null)
