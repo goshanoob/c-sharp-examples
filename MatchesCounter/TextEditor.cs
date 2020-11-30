@@ -4,42 +4,45 @@ using System.Linq;
 
 namespace goshanoob.MatchesCounter
 {
+    // Класс TextEditor нужен для работы с текстом. Класс содержит закрытое поле для хранения текста.
+    // Конструктор класса позволяет создать объект, инициализировав закрытое поле. Доступный метод CutWords()
+    // разбивиет текст по словам и возвращает строковый массив без пустых элементов. Метод GetSort() принимает
+    // в качестве аргумента массив слов, преобразует его в словарь Dictionary<>, который содержит в качестве
+    // ключей сами слова, а в качестве значений - количество повторений слов в массиве. Метод возвращает
+    // коллекцию Dictionary.
     internal class TextEditor
     {
-        private string text;
+        private string _text;
 
         public TextEditor(string text)
         {
-            this.text = text;
+            _text = text;
         }
-        public string[] cutWords()
+        public string[] CutWords()
         {
-            // Символы, по которым определяем границы слов (сами смволы не нужны, поэтому без ругелярок)
-            char[] sep = new char[] { ',', ' ', '\"', '.', '»', '«', ':', '-' };
-            //string[] words = text.Split(sep);
-            text = text.Replace("\r\n", " ").ToLower();
-            return text.Split(sep, StringSplitOptions.RemoveEmptyEntries); //вернули массив слов без пустых элементов
+            char[] separators = new char[] { ',', ' ', '\"', '.', '»', '«', ':', '-' };
+            _text = _text.Replace("\r\n", " ").ToLower();
+            return _text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         }
 
-        /* Метод подсчёта числа повторений слов в тексте и сортировки*/
-        public Dictionary<string, int> getSort(string[] words)
+        public Dictionary<string, int> GetSort(string[] words)
         {
             // Словарь из пар "слово - количество вхождений".
-            Dictionary<string, int> dic = new Dictionary<string, int>();
-            foreach (string word2 in words)
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+            foreach (string word in words)
             {
-                if (dic.ContainsKey(word2))
+                if (dictionary.ContainsKey(word))
                 {
-                    dic[word2]++;
+                    dictionary[word]++;
                 }
                 else
                 {
-                    dic.Add(word2, 1);
+                    dictionary.Add(word, 1);
                 }
             }
-            // сортировка по значению (число вхождений) и возвращение в исходный тип
-            dic = dic.OrderByDescending(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
-            return dic;
+            // Сортировка по числу посторений слова и возвращение в исходный тип.
+            dictionary = dictionary.OrderByDescending(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+            return dictionary;
         }
     }
 }

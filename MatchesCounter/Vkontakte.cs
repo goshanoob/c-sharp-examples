@@ -14,28 +14,40 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace goshanoob.MatchesCounter
 {
-    internal class Vkontate
+    // Класс Vkontacte для работы с API VK.
+    // Закрытое поле класса содержит ссылку на экземпляр класса из бибилиотеки для работы с API VK.
+    // Свойство SongsCount возвращает количество загруженных треков.
+    // Метод GetEnter() позволяет авторизоваться в социальной сети по логину и паролю, переданным в качесте
+    // аргументов. Метод GetAudio() возвращает тексты песен.
+    internal class Vkontakte
     {
-        public int getTok(Form1 form)
+        private VkApi _api;
+        public int SongsCount { get; private set; }
+        public void GetEnter(string login, string password)
         {
             var services = new ServiceCollection();
             services.AddAudioBypass();
-            var api = new VkApi(services);
+            _api = new VkApi(services);
 
-            // Авторизируемся для получения токена
-            api.Authorize(new ApiAuthParams
+            // Авторизируемся для получения токена.
+            _api.Authorize(new ApiAuthParams
             {
-                // Можно использовать токен, если есть, или использовать логин
-                //AccessToken = "" 
-                Login = "goshanoob@mail.ru",
-                Password = "Gea0pcgF41"
+                // Если токен уже получен, то можно использовать его.
+                // Здесь используется логин для авторизации.
+                //AccessToken = "", 
+                Login = login,
+                Password = password
             });
-            //MessageBox.Show(api.Token);
+            // MessageBox.Show(api.Token);
+        }
 
-            // Запрос к аудио по идентификатору группы или пользователя OwnerId, Count - объем выборки
-            var audios = api.Audio.Get(new AudioGetParams { Count = 6000 });
+        public string GetAudio()
+        {
+            // Запрос к аудио по идентификатору группы или пользователя OwnerId, Count - максимальный объем выборки.
+            var audios = _api.Audio.Get(new AudioGetParams { Count = 6000 });
             string text = "";
-            int empt = 0; // счетчик аудио без текста
+            // Счетчик аудио без текста.
+            int empt = 0; 
             foreach (var song in audios)
             {
                 if (song.LyricsId == null)
@@ -44,11 +56,10 @@ namespace goshanoob.MatchesCounter
                     empt++;
                     continue;
                 }
-                text += api.Audio.GetLyrics((long)song.LyricsId).Text + "\r\n";
+                text += _api.Audio.GetLyrics((long)song.LyricsId).Text + "\r\n";
             }
-
-            form.audioText.Text = text.Replace("\n", "\r\n");
-            return audios.Count - empt;
+            SongsCount = audios.Count - empt;
+            return text;
         }
     }
 }
