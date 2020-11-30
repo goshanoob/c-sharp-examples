@@ -5,6 +5,7 @@ namespace goshanoob.CleanUpApp
 {
     // Класс реализующий сортировку файлов. В классе определены два свойства, конструктор и метод PutInOrder().
     // Метод возвращает коллекцию Dictionary, в которой ключом является категория файлов, а значеним - список соответствующих категории файлов.
+   
     internal class FileSorter
     {
         // Каталог сортировки файлов.
@@ -40,6 +41,7 @@ namespace goshanoob.CleanUpApp
             {
                 sortedFiles.Add(category, new List<string>());
             }
+
             // Распределение файлов по категориям.
             string extension;
             foreach (string file in FilesList)

@@ -13,6 +13,7 @@ namespace goshanoob.CleanUpApp
         {
             return Directory.GetFiles(root);
         }
+
         public void CreateDirectory(string root, string directory)
         {
             string path = root + "\\" + directory;
@@ -21,6 +22,7 @@ namespace goshanoob.CleanUpApp
                 Directory.CreateDirectory(path);
             }
         }
+
         public void MoveFile(string filePath, string destinationFolder)
         {
             if (File.Exists(filePath) && Directory.Exists(destinationFolder) &&

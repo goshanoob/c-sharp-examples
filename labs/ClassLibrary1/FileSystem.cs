@@ -12,10 +12,14 @@ namespace FileSystemLibrary
         bool WriteFile(string filePath);
         bool WriteFile(string filePath, Encoding encoding);
     }
+
+    // Класс для работы с файловой системой. Класс реализует интерфейс IFileSystem.
     public class FileSystem : IFileSystem
     {
-        private Encoding defaultEnconding = Encoding.UTF8; // кодировка файла по умолчанию
-        public string Content { get; set; } // содержимое файла
+        // Кодировка файла по умолчанию.
+        private Encoding defaultEnconding = Encoding.UTF8;
+        // Содержимое файла.
+        public string Content { get; set; } 
         public bool ReadFile(string filePath)
         {
             if (ReadFile(filePath, defaultEnconding)) return true;

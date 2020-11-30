@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace Labs.TextRedactor
 {
+    // Интерфейс IUIterface содержит события открытия файла и сохранения, а также два свойства: с содержимым
+    // файла и путь к файлу.
     public interface IUIterface
     {
         event EventHandler OpenFile;

@@ -6,6 +6,7 @@ namespace goshanoob.CleanUpApp
     // Программа соритировки документов в папки по категориям. Шаблон проектирования MVP. Отображение - форма WindowsForms.
     // Модель - каталог файловой системы (класс FileSystemDirectory). Презентер - класс Presenter. Для сортировки
     // используется класс FileSorter.
+
     public class Program
     {
         /// <summary>

@@ -3,6 +3,7 @@ using FileSystemLibrary;
 
 namespace Labs.TextRedactor
 {
+    // Контроллер.
     class Controller
     {
         private IUIterface _formUI;
