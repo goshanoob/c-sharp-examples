@@ -25,9 +25,9 @@
 
 namespace lab11
 {
-    class Элемент: IComparable
+    class Элемент : IComparable
     {
-        private string name;
+        protected string name;
         private byte inputCount;
         private byte outputCount;
 
@@ -98,7 +98,7 @@ namespace lab11
 
         public virtual int CompareTo(object obj)
         {
-            // Сравнение элементов по количеству входов
+            // Сравнение элементов по количеству входов.
             if ((object)this == obj) return 0;
             Элемент tmp = (Элемент)obj;
             if (inputCount < tmp.inputCount) return -1;
@@ -132,7 +132,8 @@ namespace lab11
 
         public Комбинационный()
         {
-            InputCount = 8; // количество входов равно 8, один выход (по умолчанию)
+            // Количество входов равно 8, один выход (по умолчанию).
+            InputCount = 8;
             inputValues = new byte[InputCount];
         }
 
@@ -142,8 +143,10 @@ namespace lab11
             inputValues = new byte[InputCount];
             inpVal.CopyTo(inputValues, 0);
         }
+
+        // Комбинационный элемент имеет один выход.
         public Комбинационный(string name, byte inpCount, byte[] inpVal)
-            : base(name, inpCount, 1) // комбинационный элемент имеет один выход
+            : base(name, inpCount, 1)
         {
             if (inpCount < inpVal.Length)
             {
@@ -169,7 +172,7 @@ namespace lab11
         }
         public override byte GetOutputValue()
         {
-            // Проверка операции ИЛИ-НЕ (инверсия дизъюнкции, стрелка Пирса)
+            // Проверка операции ИЛИ-НЕ (инверсия дизъюнкции, стрелка Пирса).
             byte result = 1;
             for (int k = 0; k < inputValues.Length; ++k)
             {
@@ -180,7 +183,7 @@ namespace lab11
 
         public override int CompareTo(object obj)
         {
-            // Сравнение по выходному значению
+            // Сравнение по выходному значению.
             if ((object)this == obj) return 0;
             Комбинационный tmp = (Комбинационный)obj;
             if (GetOutputValue() < tmp.GetOutputValue()) return -1;
@@ -209,12 +212,20 @@ namespace lab11
 
     class Регистр : IComparable
     {
-        byte reset; // сброс
-        byte set; // установка - не выяснил, как работают. Пусть, если set == 1, то можно задавать входные сигналы, иначе - нельзя. При изменении reset в значение 1, все триггеры обнуляются.
-        internal Память[] memory; // регистр состоит из набора триггеров 
-        byte[,] inputValues; // входные сигналы регистра
-        const byte capacity = 9; // разрядность регистра
-        const byte inOutCount = 2; // количество входов и выходов у триггеров
+        // Сброс.
+        private byte reset;
+        // Установка - не выяснил, как работают. Пусть, если set == 1, то можно задавать 
+        // входные сигналы, иначе - нельзя. При изменении reset в значение 1, 
+        // все триггеры обнуляются.
+        private byte set;
+        // Регистр состоит из набора триггеров.
+        internal Память[] memory;
+        // Входные сигналы регистра.
+        private byte[,] inputValues;
+        // Разрядность регистра.
+        private const byte capacity = 9;
+        // Количество входов и выходов у триггеров.
+        private const byte inOutCount = 2;
 
         public byte Set
         {
@@ -234,7 +245,7 @@ namespace lab11
 
         public byte Reset
         {
-            // Свойство сбрасывающее значения элементов класса на занчения по умолчанию
+            // Свойство сбрасывающее значения элементов класса на занчения по умолчанию.
             set
             {
                 if (value == 1)
@@ -318,7 +329,7 @@ namespace lab11
         {
             if ((object)this == obj) return 0;
             Регистр tmp = (Регистр)obj;
-            string[] outPutA = GetOutputValue().Split(" "); // выделить память?
+            string[] outPutA = GetOutputValue().Split(" ");
             string[] outPutB = tmp.GetOutputValue().Split(" ");
             int sumA = 0, sumB = 0;
             for (int i = 0; i < capacity; ++i)
@@ -326,8 +337,8 @@ namespace lab11
                 sumA += Int32.Parse(outPutA[i]);
                 sumB += Int32.Parse(outPutB[i]);
             }
-            // Больше тот регистр, у которого больше единиц на выходе
-            if (sumA < sumB) return - 1;
+            // Больше тот регистр, у которого больше единиц на выходе.
+            if (sumA < sumB) return -1;
             if (sumA > sumB) return 1;
             return 0;
         }
@@ -353,13 +364,17 @@ namespace lab11
         internal class Память : Элемент, IComparable
         {
             private byte[] inputValues;
-            private byte straightOutputValue; // состояние на прямом выходе
-            private byte inversOutputValue; // состояние на инверсном выходе
+            // Состояние на прямом выходе.
+            private byte straightOutputValue;
+            // Состояние на инверсном выходе.
+            private byte inversOutputValue;
 
             public Память()
             {
-                InputCount = inOutCount; // количество входов TV-триггера равно 2
-                OutputCount = inOutCount; // у триггера два выхода: прямой и инверсный
+                // Количество входов TV-триггера равно 2.
+                InputCount = inOutCount;
+                // У триггера два выхода: прямой и инверсный.
+                OutputCount = inOutCount;
                 inputValues = new byte[InputCount];
                 straightOutputValue = 0;
                 inversOutputValue = 1;
@@ -367,7 +382,7 @@ namespace lab11
 
             public Память(Память a)
             {
-                // конструктор копирования объекта
+                // Конструктор копирования объекта.
                 InputCount = a.InputCount;
                 inputValues = new byte[InputCount];
                 straightOutputValue = a.straightOutputValue;
@@ -381,7 +396,7 @@ namespace lab11
                 OutputCount = inOutCount;
                 inputValues = new byte[InputCount];
                 straightOutputValue = inputValues[0];
-                inversOutputValue = (byte)~straightOutputValue;
+                inversOutputValue = (byte)(1 - straightOutputValue);
             }
             public override void SetInputs(byte[] inpVal)
             {
@@ -405,16 +420,15 @@ namespace lab11
 
             private void CalcOutput(byte[] Q0, byte[] Q1)
             {
-                /* Вычисление значения TV-триггера. Если на втором входе 1, то запись в триггер разрешается,
-                 * в противном случае триггер не меняет состояние. Если на первом входе 0, то проверяется текущее
-                 * значение триггера: если было 0, то 0 останется, если была 1 - останется 1. Если на первом входе 1,
-                 * то также проверяется текущее значение: если было 0, то в результате станет 1, если было 1,
-                 * то станет 0. Таким образом, TV-триггер реализует операцию исключающего или.
-                */
+                // Вычисление значения TV-триггера. Если на втором входе 1, то запись в триггер разрешается,
+                // в противном случае триггер не меняет состояние. Если на первом входе 0, то проверяется текущее
+                // значение триггера: если было 0, то 0 останется, если была 1 - останется 1. Если на первом входе 1,
+                // то также проверяется текущее значение: если было 0, то в результате станет 1, если было 1,
+                // то станет 0. Таким образом, TV-триггер реализует операцию исключающего или.
                 if (Q1[InputCount - 1] == 1)
                 {
                     straightOutputValue = (byte)(Q0[0] ^ Q1[0]);
-                    inversOutputValue = (byte)~straightOutputValue;
+                    inversOutputValue = (byte)(1 - straightOutputValue);
                 }
             }
 
@@ -429,10 +443,13 @@ namespace lab11
 
             public override bool Equals(object a)
             {
+                // Если оба объекта содержать null, то они равны, если только один из них, то не равны.
                 if (a == null && (object)this == null) return true;
-                if (a == null || (object)this == null) return false; // также как для обнуляемых типов
-                if ((object)this == a) return true; // сравнили с самим собой
-                if (a.GetType() != GetType()) return false; // не совпал тип
+                if (a == null || (object)this == null) return false;
+                // Если метод стравнения объекта взван для самого объекта.
+                if ((object)this == a) return true;
+                // Если типы объектов не совпадают, то объекты не равны.
+                if (a.GetType() != GetType()) return false;
                 Память tmp = (Память)a;
                 if (tmp.inputValues.Length != inputValues.Length) return false;
                 int f = 0;
@@ -453,7 +470,7 @@ namespace lab11
 
             public override int CompareTo(object obj)
             {
-                // Сравнение по значению на прямом выходе
+                // Сравнение по значению на прямом выходе.
                 if ((object)this == obj) return 0;
                 Память tmp = (Память)obj;
                 if (this.straightOutputValue < tmp.straightOutputValue) return -1;
@@ -481,4 +498,3 @@ namespace lab11
         }
     }
 }
-

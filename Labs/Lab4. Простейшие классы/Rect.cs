@@ -42,6 +42,8 @@ internal class Rect
             _vertices[i, 0] = vert[k];
             _vertices[i, 1] = vert[k + 1];
         }
+        _edges[0] = Math.Abs(_vertices[0, 0] - _vertices[3, 0]);
+        _edges[1] = Math.Abs(_vertices[0, 1] - _vertices[1, 1]);
     }
 
     public void SetScale(double rx, double ry)
@@ -54,10 +56,14 @@ internal class Rect
         SetRectProperties(_vertices[0, 0], _vertices[0, 1], rxy * _edges[0], rxy * _edges[1]);
     }
 
+    public double[,] GetVertices()
+    {
+        return _vertices;
+    }
+
     public double[,] GiveShareRect()
     {
-
-        return new double[4, 2];
+        throw new  NotImplementedException("Метод не реализован");
     }
 }
 

@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+// Из лабораторной работы 12. Создание Windows-приложений. Задача 2.
 
 namespace RectWindowsForms
 {
+    // Программа для рисования разноцветного прямоугольника. Пользователь задает ширину и высоту прямоугольника и
+    // сочетание из трёх цветов для его изображения. Для описания прямоугольника реализован класс Rect.
     static class Program
     {
         /// <summary>

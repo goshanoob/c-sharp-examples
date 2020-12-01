@@ -15,25 +15,15 @@ namespace lab12
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            A = Double.Parse(boxA.Text);
-            B = Double.Parse(boxB.Text);
-            C = Double.Parse(boxC.Text);
+            A = double.Parse(boxA.Text);
+            B = double.Parse(boxB.Text);
+            C = double.Parse(boxC.Text);
             if (!checkPerim.Checked)
                 CalcPerim = false;
             if (!checkPlosh.Checked)
                 CalcPlosh = false;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

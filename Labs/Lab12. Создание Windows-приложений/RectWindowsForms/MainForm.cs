@@ -13,11 +13,6 @@ namespace RectWindowsForms
             InitializeComponent();
         }
 
-        private void sizwToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void quitToolMenu_Click(object sender, EventArgs e)
         {
             Close();
@@ -30,13 +25,14 @@ namespace RectWindowsForms
 
         internal void PrintRect(Rect rect)
         {
-            const byte originX = 10, originY = 30; // координаты начала рисунка
+            // Координаты начала рисунка.
+            const byte originX = 10, originY = 30; 
             if (rect.A + originX > Size.Width || rect.B + originY > Size.Height)
             {
                 MessageBox.Show("Размер прямоугольника превышает размер окна");
                 return;
             }
-            // преобразование составляющих в цвета
+            // Преобразование составляющих в цвета.
             List<Color> colors = new List<Color>() { Color.Black };
             if (rect[0] == 1)
             {
@@ -50,25 +46,30 @@ namespace RectWindowsForms
             {
                 colors.Add(Color.Blue);
             }
-            // рисование прямоугольника
-            Graphics lines = CreateGraphics();
-            SolidBrush brush = new SolidBrush(Color.Black);
-            Pen pen = new Pen(brush, 3);
-            float a = (float)rect.A, b = (float)rect.B;
-            float x = a + originX, y = b + originY; // координата x правого верхнего и y правого нижнего углов
-            int k = 0;
-            ChangeColor();
-            lines.DrawLine(pen, originX, originY, x, originY);
-            lines.DrawLine(pen, originX, y, x, y);
-            ChangeColor();
-            lines.DrawLine(pen,x, originY, x, y);
-            ChangeColor();
-            lines.DrawLine(pen, originX, originY, originX, y);
-            void ChangeColor()
+            // Рисование прямоугольника.
+            using (Graphics lines = CreateGraphics())
             {
-                // смена цвета по кругу
-                pen.Color = colors[k++];
-                if (k >= colors.Count) k = 0;
+                SolidBrush brush = new SolidBrush(Color.Black);
+                Pen pen = new Pen(brush, 3);
+                float a = (float)rect.A, b = (float)rect.B;
+                // Координата x правого верхнего и y правого нижнего углов.
+                float x = a + originX, y = b + originY;
+                int k = 0;
+                ChangeColor();
+                lines.DrawLine(pen, originX, originY, x, originY);
+                lines.DrawLine(pen, originX, y, x, y);
+                ChangeColor();
+                lines.DrawLine(pen, x, originY, x, y);
+                ChangeColor();
+                lines.DrawLine(pen, originX, originY, originX, y);
+                brush.Dispose();
+                pen.Dispose();
+                void ChangeColor()
+                {
+                    // Смена цвета по кругу.
+                    pen.Color = colors[k++];
+                    if (k >= colors.Count) k = 0;
+                }
             }
         }
 

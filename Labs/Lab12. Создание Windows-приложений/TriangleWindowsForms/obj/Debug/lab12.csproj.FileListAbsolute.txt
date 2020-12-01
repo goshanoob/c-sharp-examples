@@ -34,3 +34,15 @@ C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Созд�
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.csproj.CoreCompileInputs.cache
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.exe
 C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.pdb
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\bin\Debug\lab12.exe.config
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\bin\Debug\lab12.exe
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\bin\Debug\lab12.pdb
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.csprojAssemblyReference.cache
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.Form1.resources
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.Form2.resources
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.Form3.resources
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.Properties.Resources.resources
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.csproj.GenerateResource.cache
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.csproj.CoreCompileInputs.cache
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.exe
+C:\Users\user208\source\repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\TriangleWindowsForms\obj\Debug\lab12.pdb

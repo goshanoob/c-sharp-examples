@@ -18,12 +18,12 @@ class Mailer
         _estate = "11/1";
     }
 
-    public Mailer(string p, string c, string st, string es)
+    public Mailer(string post, string city, string street, string estate)
     {
-        this.Post = p;
-        this.Сity = _city;
-        this.Street = st;
-        this.Estate = es;
+        Post = post;
+        Сity = city;
+        Street = street;
+        Estate = estate;
     }
     public string Post
     {
@@ -62,7 +62,6 @@ class Mailer
             {
                 throw new Exception("Ошибка в названии города");
             }
-
         }
     }
 
@@ -82,7 +81,6 @@ class Mailer
             {
                 throw new Exception("Неправильное название улицы");
             }
-
         }
     }
 

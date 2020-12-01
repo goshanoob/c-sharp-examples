@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sizeMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.paintMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -40,7 +39,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sizeMenu,
-            this.colorMenu,
             this.paintMenu,
             this.quitToolMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -55,12 +53,6 @@
             this.sizeMenu.Size = new System.Drawing.Size(39, 20);
             this.sizeMenu.Text = "Size";
             this.sizeMenu.Click += new System.EventHandler(this.sizeMenu_Click);
-            // 
-            // colorMenu
-            // 
-            this.colorMenu.Name = "colorMenu";
-            this.colorMenu.Size = new System.Drawing.Size(48, 20);
-            this.colorMenu.Text = "Color";
             // 
             // paintMenu
             // 
@@ -96,7 +88,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem sizeMenu;
-        private System.Windows.Forms.ToolStripMenuItem colorMenu;
         private System.Windows.Forms.ToolStripMenuItem paintMenu;
         private System.Windows.Forms.ToolStripMenuItem quitToolMenu;
     }

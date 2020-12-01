@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj": {}
+    "C:\\Users\\user208\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj": {
+    "C:\\Users\\user208\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj",
+        "projectUniqueName": "C:\\Users\\user208\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj",
         "projectName": "lab4",
-        "projectPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj",
-        "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goshanoob\\source\\repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\obj\\",
+        "projectPath": "C:\\Users\\user208\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\lab4.csproj",
+        "packagesPath": "C:\\Users\\user208\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user208\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab4. Простейшие классы\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\goshanoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user208\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

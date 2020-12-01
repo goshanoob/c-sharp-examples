@@ -20,3 +20,14 @@ C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindow
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.CoreCompileInputs.cache
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.exe
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\labs\lab12\RectWindowsForms\obj\Debug\RectWindowsForms.pdb
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\bin\Debug\RectWindowsForms.exe.config
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\bin\Debug\RectWindowsForms.exe
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\bin\Debug\RectWindowsForms.pdb
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.csprojAssemblyReference.cache
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.MainForm.resources
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.Properties.Resources.resources
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.SizeForm.resources
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.GenerateResource.cache
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.exe
+C:\Users\user208\Source\Repos\goshanoob\c-sharp-examples\Labs\Lab12. Создание Windows-приложений\RectWindowsForms\obj\Debug\RectWindowsForms.pdb

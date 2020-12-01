@@ -101,7 +101,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Требуемые вычисления";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // checkPlosh
             // 
@@ -153,12 +152,10 @@
             this.Controls.Add(this.boxA);
             this.Name = "Form2";
             this.Text = "Ввод сторон треугольника";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -5,8 +5,8 @@ namespace lab12
 {
     public partial class Form1 : Form
     {
-        Triangle _triangle;
-        string _perimResult = "", _ploshResult = "";
+        private Triangle _triangle;
+        private string _perimResult = "", _ploshResult = "";
         public Form1()
         {
             InitializeComponent();
@@ -19,8 +19,10 @@ namespace lab12
             Form2 form2 = new Form2();
             if (form2.ShowDialog() == DialogResult.OK)
                 _triangle = new Triangle(form2.A, form2.B, form2.C);
-            if (form2.CalcPerim) _perimResult = _triangle.CalcPerim().ToString();
-            if (form2.CalcPlosh) _ploshResult = _triangle.CalcPlosh().ToString();
+            if (form2.CalcPerim) 
+                _perimResult = _triangle.CalcPerim().ToString();
+            if (form2.CalcPlosh) 
+                _ploshResult = _triangle.CalcPlosh().ToString();
         }
 
         private void QuitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,11 +59,6 @@ namespace lab12
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

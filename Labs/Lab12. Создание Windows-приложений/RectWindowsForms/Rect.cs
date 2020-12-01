@@ -2,26 +2,29 @@
 using System.Collections;
 namespace RectWindowsForms
 {
-    class Rect: IEnumerable
+    class Rect : IEnumerable
     {
-        private byte[] _colors; // компоненты цвета в формате RGB (0 - отсутствие компонента, 1 - наличие)
-        public double A { get; set; } // сторона прямоугольника A
-        public double B { get; set; } // сторона прямоугольника B
+        // Компоненты цвета в формате RGB (0 - отсутствие компонента, 1 - наличие).
+        private byte[] _colors;
+        // Сторона прямоугольника A.
+        public double A { get; set; }
+        // Сторона прямоугольника B.
+        public double B { get; set; }
         public Rect()
         {
             A = 100;
             B = 50;
             _colors = new byte[] { 1, 0, 0 };
         }
-        public Rect(double a, double b)
+        public Rect(double a, double b) : this()
         {
             A = a;
             B = b;
-            _colors = new byte[] { 1, 0, 0 };
         }
-        public Rect(double a, double b, byte[] colors)
+        public Rect(double a, double b, byte[] colors) : this()
         {
-            if (colors.Length != 3) throw new FormatException("Количество компонентов цвета должно равняться трем");
+            if (colors.Length != 3)
+                throw new FormatException("Количество компонентов цвета должно равняться трем.");
             A = a;
             B = b;
             Array.Copy(colors, _colors, 3);
@@ -41,11 +44,10 @@ namespace RectWindowsForms
 
         public IEnumerator GetEnumerator()
         {
-            for(int i = 0; i < 3; ++i)
+            for (int i = 0; i < 3; ++i)
             {
                 yield return _colors[i];
             }
         }
-
     }
 }

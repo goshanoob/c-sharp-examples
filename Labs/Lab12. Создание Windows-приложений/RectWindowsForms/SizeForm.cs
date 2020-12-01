@@ -5,10 +5,8 @@ namespace RectWindowsForms
 {
     public partial class SizeForm : Form
     {
-        double _a, _b;
-        
-        public double A { get;  set ; } 
-        public double B { get ;  set ; } 
+        public double A { get;  set; } 
+        public double B { get;  set; } 
         public byte[] Colors { get; set; }
         public SizeForm()
         {
@@ -20,11 +18,12 @@ namespace RectWindowsForms
             A = double.Parse(sizeA.Text);
             B = double.Parse(sizeB.Text);
             Colors = new byte[3];
-            if (redFlag.Checked) Colors[0] = 1;
-            if (redFlag.Checked) Colors[1] = 1;
-            if (redFlag.Checked) Colors[2] = 1;
- 
-
+            if (redFlag.Checked) 
+                Colors[0] = 1;
+            if (greenFlag.Checked) 
+                Colors[1] = 1;
+            if (blueFlag.Checked) 
+                Colors[2] = 1;
         }
     }
 }
