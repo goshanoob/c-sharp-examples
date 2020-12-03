@@ -108,25 +108,48 @@ namespace lab3
                 }
             }
             Console.WriteLine($"В результате {hitCount} попаданий(-е, -я) и {shotCount - hitCount} промах(-ов, -а).");
-
+            
             // Задача 3.20. Вычислить и вывести на экран в виде таблицы значения функции, заданной с помощью ряда 
             // Тейлора, на интервале от хn до хk с шагом dx с точностью e. Таблицу снабдить заголовком 
             // и шапкой. Каждая строка таблицы должна содержать значение аргумента, значение функции и 
             // количество просуммированных членов ряда.
-            dx = 1.5f;
-            xk = 9;
-            x = -15;
-            Console.WriteLine("Решаем задачу 4 \n Введите R: ");
-            R = float.Parse(Console.ReadLine());
+            Console.WriteLine("Решаем задачу 3.20");
             Console.WriteLine("Значения функции, заданной при помощи ряда тейлора \n" +
                 "|   x   |   y   | Кол-во членов ряда | Проверка");
+            // Ограничение по количеству членов ряда, счетчик их количества.
+            const int maxMembersCount = 1000;
+            int membersCount = 0;
+            double getMember(double x)
+            {
+                // Сумма членов ряда, n-й член ряда, точность.
+                double sum = 0, yn = x, e = 0.001, n = 1;
+                while (e < yn)
+                {
+                    if (n == maxMembersCount)
+                        break;
+                    yn *= n * x * x * Math.Pow(2 * n + 1, 2);
+                    yn /= (2 * n - 1) * (n + 1) * (2 * n + 3);
+                    sum += yn;
+                    ++n;
+                    ++membersCount;
+                }
+                return Math.PI / 2 - (x + sum);
+            }
+            dx = 0.1f;
+            xk = 1;
+            x = -1;
+            while (x <= xk)
+            {
+                //Console.WriteLine("{0,7:F} | {1,7:F3} | {2,10:F} | {3,7:F}\n",
+                membersCount = 0;
+                Console.WriteLine("{0,7:F} | {1,7:F3} | {2,7:F}| {3,7:F}\n",
+                    x, getMember(x), membersCount, Math.Acos(x));
+                x += dx;
+            }
 
-            int maxMember = 1000, membersCount = 1;
-            double sum, newMember, oldMember = (2 * 1 - 1) * (2 * 1 + 2) * (2 * 1 + 3) /
-                        2 * 1 / Math.Pow(2 * 1 + 1, 2) / -1 / -1;
-            // точность
-            double e = 0.001;
-            for (double i = -0.9; i <= 1; i += 0.1)
+
+
+            /*for (double i = -0.9; i <= 1; i += 0.1)
             {
                 sum = 0;
                 membersCount = 0;
@@ -141,7 +164,9 @@ namespace lab3
                     oldMember = newMember;
                 }
                 Console.WriteLine("{0,7:F} | {1,7:F3} | {2,10:F} | {3,7:F}\n", i, Math.PI / 2 - sum - i, membersCount, Math.Acos(i));
+            }*/
+
+
             }
-        }
     }
 }
