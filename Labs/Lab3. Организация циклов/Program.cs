@@ -12,7 +12,7 @@ namespace lab3
             // функции, заданной графически, на интервале от хn до хk с шагом dx. 
             // Интервал и шаг задать таким образом, чтобы проверить все ветви 
             // программы. Таблицу снабдить заголовком и шапкой.
-            float dx = 1, xk = 10, x = -15, y, R;
+            /*float dx = 1, xk = 10, x = -15, y, R;
             Console.WriteLine("Решаем задачу 4 \n Введите R: ");
             R = float.Parse(Console.ReadLine());
             Console.WriteLine("|   x   |   y   |");
@@ -108,7 +108,7 @@ namespace lab3
                 }
             }
             Console.WriteLine($"В результате {hitCount} попаданий(-е, -я) и {shotCount - hitCount} промах(-ов, -а).");
-            
+            */
             // Задача 3.20. Вычислить и вывести на экран в виде таблицы значения функции, заданной с помощью ряда 
             // Тейлора, на интервале от хn до хk с шагом dx с точностью e. Таблицу снабдить заголовком 
             // и шапкой. Каждая строка таблицы должна содержать значение аргумента, значение функции и 
@@ -117,56 +117,55 @@ namespace lab3
             Console.WriteLine("Значения функции, заданной при помощи ряда тейлора \n" +
                 "|   x   |   y   | Кол-во членов ряда | Проверка");
             // Ограничение по количеству членов ряда, счетчик их количества.
-            const int maxMembersCount = 1000;
-            int membersCount = 0;
+            const int maxMembersCount = 10000;
+            int membersCount = 1;
             double getMember(double x)
             {
                 // Сумма членов ряда, n-й член ряда, точность.
-                double sum = 0, yn = x, e = 0.001, n = 1;
-                while (e < yn)
+                double sum = Math.Pow(x, 3) / 6, yn = sum, e = 1e-500, n = 2;
+
+                while (e < Math.Abs(yn))
                 {
                     if (n == maxMembersCount)
                         break;
-                    yn *= n * x * x * Math.Pow(2 * n + 1, 2);
-                    yn /= (2 * n - 1) * (n + 1) * (2 * n + 3);
+                    //yn *= n * x * x * Math.Pow(2 * n + 1, 2) / ((2 * n - 1) * (n + 1) * (2 * n + 3));
+                    yn *= x * x / (16 * Math.Pow(n, 4) + 32 * Math.Pow(n, 3) + 4 * n * n - 12 * n);
+                    // yn /= ;
                     sum += yn;
                     ++n;
                     ++membersCount;
                 }
                 return Math.PI / 2 - (x + sum);
             }
-            dx = 0.1f;
-            xk = 1;
-            x = -1;
+            double dx = 0.1;
+            double xk = 1;
+            double x = -1;
             while (x <= xk)
             {
-                //Console.WriteLine("{0,7:F} | {1,7:F3} | {2,10:F} | {3,7:F}\n",
-                membersCount = 0;
-                Console.WriteLine("{0,7:F} | {1,7:F3} | {2,7:F}| {3,7:F}\n",
+                membersCount = 1;
+                Console.WriteLine("{0,7:F} | {1,7:F5} | {2,9:F}| {3,7:F5}\n",
                     x, getMember(x), membersCount, Math.Acos(x));
                 x += dx;
             }
 
-
-
-            /*for (double i = -0.9; i <= 1; i += 0.1)
+            double sum = 0, fn = 0;
+            double f(double x, double eps)
             {
-                sum = 0;
-                membersCount = 0;
-                for (int n = 2; n <= maxMember; ++n)
+                double v, sum = x;
+                long n = 1;
+                double fn = Math.Pow(x, 3) / 2.0;
+                while (eps < Math.Abs(fn))
                 {
-                    membersCount++;
-                    newMember = oldMember * (2 * n - 1) * (2 * n + 2) * (2 * n + 3) /
-                        2 * n / Math.Pow(2 * n + 1, 2) / i / i;
-                    sum += newMember;
-                    if (Math.Abs(newMember - e) == 0)
-                        break;
-                    oldMember = newMember;
-                }
-                Console.WriteLine("{0,7:F} | {1,7:F3} | {2,10:F} | {3,7:F}\n", i, Math.PI / 2 - sum - i, membersCount, Math.Acos(i));
-            }*/
-
-
+                    sum += fn;
+                    n += 1;
+                    fn *= n * Math.Pow((2 * n + 1), 2) * Math.Pow(x, 2);
+                    fn /= 1.0 * (n + 1) * (2 * n + 3) * (2 * n - 1);
+                }   
+                return 0.5 * 3.1415926535 - sum;
             }
+            Console.WriteLine(f(-1, 1e-6));
+
+
+        }
     }
 }
