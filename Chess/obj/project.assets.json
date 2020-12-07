@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab3. Организация циклов\\lab3.csproj",
-      "projectName": "lab3",
-      "projectPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab3. Организация циклов\\lab3.csproj",
+      "projectUniqueName": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\Chess\\Chess.csproj",
+      "projectName": "Chess",
+      "projectPath": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\Chess\\Chess.csproj",
       "packagesPath": "C:\\Users\\username\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Labs\\Lab3. Организация циклов\\obj\\",
+      "outputPath": "C:\\Users\\username\\source\\repos\\goshanoob\\c-sharp-examples\\Chess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\username\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,6 +56,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"

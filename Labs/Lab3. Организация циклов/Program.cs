@@ -12,7 +12,7 @@ namespace lab3
             // функции, заданной графически, на интервале от хn до хk с шагом dx. 
             // Интервал и шаг задать таким образом, чтобы проверить все ветви 
             // программы. Таблицу снабдить заголовком и шапкой.
-            /*float dx = 1, xk = 10, x = -15, y, R;
+            float dx = 1, xk = 10, x = -15, y, R;
             Console.WriteLine("Решаем задачу 4 \n Введите R: ");
             R = float.Parse(Console.ReadLine());
             Console.WriteLine("|   x   |   y   |");
@@ -108,7 +108,7 @@ namespace lab3
                 }
             }
             Console.WriteLine($"В результате {hitCount} попаданий(-е, -я) и {shotCount - hitCount} промах(-ов, -а).");
-            */
+
             // Задача 3.20. Вычислить и вывести на экран в виде таблицы значения функции, заданной с помощью ряда 
             // Тейлора, на интервале от хn до хk с шагом dx с точностью e. Таблицу снабдить заголовком 
             // и шапкой. Каждая строка таблицы должна содержать значение аргумента, значение функции и 
@@ -122,24 +122,25 @@ namespace lab3
             double getMember(double x)
             {
                 // Сумма членов ряда, n-й член ряда, точность.
-                double sum = Math.Pow(x, 3) / 6, yn = sum, e = 1e-500, n = 2;
+                double sum = x, yn = x, e = 1e-6, n = 0;
 
                 while (e < Math.Abs(yn))
                 {
                     if (n == maxMembersCount)
                         break;
+                    yn *= x * x * (2 * n + 1) * (2 * n + 1);
+                    yn /= 2 * (n + 1) * (2 * n + 3);
                     //yn *= n * x * x * Math.Pow(2 * n + 1, 2) / ((2 * n - 1) * (n + 1) * (2 * n + 3));
-                    yn *= x * x / (16 * Math.Pow(n, 4) + 32 * Math.Pow(n, 3) + 4 * n * n - 12 * n);
-                    // yn /= ;
+                    //yn *= x * x / (16 * Math.Pow(n, 4) + 32 * Math.Pow(n, 3) + 4 * n * n - 12 * n);
                     sum += yn;
                     ++n;
                     ++membersCount;
                 }
-                return Math.PI / 2 - (x + sum);
+                return Math.PI / 2 - sum;
             }
-            double dx = 0.1;
-            double xk = 1;
-            double x = -1;
+            dx = 0.1f;
+            xk = 1;
+            x = -1;
             while (x <= xk)
             {
                 membersCount = 1;
@@ -147,25 +148,6 @@ namespace lab3
                     x, getMember(x), membersCount, Math.Acos(x));
                 x += dx;
             }
-
-            double sum = 0, fn = 0;
-            double f(double x, double eps)
-            {
-                double v, sum = x;
-                long n = 1;
-                double fn = Math.Pow(x, 3) / 2.0;
-                while (eps < Math.Abs(fn))
-                {
-                    sum += fn;
-                    n += 1;
-                    fn *= n * Math.Pow((2 * n + 1), 2) * Math.Pow(x, 2);
-                    fn /= 1.0 * (n + 1) * (2 * n + 3) * (2 * n - 1);
-                }   
-                return 0.5 * 3.1415926535 - sum;
-            }
-            Console.WriteLine(f(-1, 1e-6));
-
-
         }
     }
 }
