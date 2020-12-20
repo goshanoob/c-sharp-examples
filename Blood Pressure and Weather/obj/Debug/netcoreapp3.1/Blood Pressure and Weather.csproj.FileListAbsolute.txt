@@ -1,0 +1,19 @@
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.exe
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.deps.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.runtimeconfig.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.runtimeconfig.dev.json
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\Blood Pressure and Weather.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.csprojAssemblyReference.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather_MarkupCompile.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather_MarkupCompile.lref
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.g.resources
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.AssemblyInfoInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.AssemblyInfo.cs
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.csproj.CoreCompileInputs.cache
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.dll
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.pdb
+C:\Users\goshanoob\source\repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.genruntimeconfig.cache

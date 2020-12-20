@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Blood Pressure and Weather/1.0.0": {
+        "runtime": {
+          "Blood Pressure and Weather.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Blood Pressure and Weather/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
