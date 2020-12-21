@@ -28,14 +28,10 @@
         <Label Content="Максимум:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="306,199,0,0" VerticalAlignment="Top" Width="74"/>
         <Label Content="Размах вариации:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="267,239,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Коэффициент вариации:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="231,280,0,0" VerticalAlignment="Top" Width="149"/>
-        <Label Content="Медиана:" Grid.Column="1" HorizontalAlignment="Center" Height="27" Margin="0,312,0,0" VerticalAlignment="Top" Width="102"/>
-        <Label x:Name="minPressure" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="393,164,0,0" VerticalAlignment="Top" Width="98"/>
-        <Label x:Name="maxPressure" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,200,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="variationRange" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="393,239,0,0" VerticalAlignment="Top" Width="70"/>
-        <Label x:Name="variationCoefficient" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,282,0,0" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.025,-0.957"/>
-        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="398,313,0,0" VerticalAlignment="Top" Width="70"/>
-        <Label Content="Мода:" Grid.Column="1" HorizontalAlignment="Left" Margin="334,339,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="395,339,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="minPressure" Content="минимум" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="393,164,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label x:Name="maxPressure" Content="максимум" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,200,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="variationRange" Content="размах" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="393,239,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="variationCoefficient" Content="коэффициент" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,282,0,0" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.025,-0.957"/>
 
     </Grid>
 </Window>

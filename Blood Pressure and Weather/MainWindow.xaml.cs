@@ -74,8 +74,10 @@ namespace Blood_Pressure_and_Weather
 
         private void showGraphic_Click(object sender, RoutedEventArgs e)
         {
-            Grathics graf = new Grathics();
-            graf.Show();
+            //Graph gra = new Graph(pressure);
+            GraphWindow graphWindow = new GraphWindow();
+            graphWindow.Show();
+
         }
     }
 }
