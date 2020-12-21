@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Blood_Pressure_and_Weather
 {
+    // Класс BloodPressure описывает артериальное давление, зафиксированное при помощи тонометра.
     // Метод GetArithmeticMeanOfUpPressure() возвращает значение средего арифметического наплюдаемых 
     // значений систолического ("верхнего") артериального давления, GetArithmeticMeanOfDownPressure() - 
     // возвращает аналогичное занчение диастолического ("нижнего") давления.
+    // Метод GetDispersionOfUpPressure() возвращает дисперсию значений "верхнего" давления,
+    // GetDispersionOfDownPressure() - дисперсия значений "нижнего" давления.
+    // GetMeanSquareDeviationOfUpPressure() - возвращает срднеквадратическое отклонение для "верхнего" давления,
+    // GetMeanSquareDeviationOfDownPressure() - срднеквадратическое отклонение "нижнего" давления.
     class BloodPressure
     {
         public byte[] SystolicPressure { get; }
@@ -49,6 +55,39 @@ namespace Blood_Pressure_and_Weather
         {
             return GetMeanSquareDeviation(DiastolicPressure);
         }
+        public byte GetMinUpPressure()
+        {
+            return GetMinPressure(SystolicPressure);
+        }
+        public byte GetMinDownPressure()
+        {
+            return GetMinPressure(DiastolicPressure);
+        }
+        public byte GetMaxUpPressure()
+        {
+            return GetMaxPressure(SystolicPressure);
+        }
+        public byte GetMaxDownPressure()
+        {
+            return GetMaxPressure(DiastolicPressure);
+        }
+        public byte GetUpVariationRange()
+        {
+            return GetVariationRange(SystolicPressure);
+        }
+        public byte GetDownVariationRange()
+        {
+            return GetVariationRange(DiastolicPressure);
+        }
+        public float GetUpVariationCoefficient()
+        {
+            return GetVariationCoefficient(SystolicPressure);
+        }
+        public float GetDownVariationCoefficient()
+        {
+            return GetVariationCoefficient(DiastolicPressure);
+        }
+
         private float GetArithmeticMean(byte[] pressure)
         {
             long sum = 0;
@@ -72,6 +111,22 @@ namespace Blood_Pressure_and_Weather
         private float GetMeanSquareDeviation(byte[] pressure)
         {
             return (float)Math.Sqrt(GetDispersion(pressure));
+        }
+        private byte GetMinPressure(byte[] pressure)
+        {
+            return pressure.Min();
+        }
+        private byte GetMaxPressure(byte[] pressure)
+        {
+            return pressure.Max();
+        }
+        private byte GetVariationRange(byte[] pressure)
+        {
+            return (byte)(GetMaxPressure(pressure) - GetMinPressure(pressure));
+        }
+        private float GetVariationCoefficient(byte[] pressure)
+        {
+            return GetMeanSquareDeviation(pressure) / GetArithmeticMean(pressure) * 100;
         }
     }
 }

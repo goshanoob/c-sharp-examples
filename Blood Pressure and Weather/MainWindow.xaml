@@ -6,9 +6,36 @@
         xmlns:local="clr-namespace:Blood_Pressure_and_Weather"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,0,0,-199">
-        <Button Content="Загрузить из файла" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="148" Click="Button_Click"/>
-        <TextBlock Name="PressureValues" HorizontalAlignment="Left" Height="532" Margin="19,77,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="391"/>
+    <Grid x:Name="mainGrid" Margin="0,0,0,-199" Height="792">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="369*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="PressureValues" HorizontalAlignment="Left" Height="532" Margin="19,77,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.ColumnSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
+        <Label Content="Среднее значение артериального давления:" HorizontalAlignment="Left" Height="27" Margin="123,75,0,0" VerticalAlignment="Top" Width="257" Grid.Column="1"/>
+        <Label x:Name="meanPressure" Content="среднее" HorizontalAlignment="Left" Margin="393,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Menu x:Name="mainMenu" UseLayoutRounding="False" Grid.ColumnSpan="2" Margin="0,0,0,750">
+            <Menu/>
+            <Button x:Name="openFile" Content="Загрузить из файла" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="148" Click="Button_Click"/>
+            <Button x:Name="showGraphic" Content="Построить график" Height="30" Width="105" Click="showGraphic_Click"/>
+        </Menu>
+        <Label Content="Дисперсия:" Grid.Column="1" HorizontalAlignment="Left" Margin="308,100,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label Content="Среднеквадратическое отклонение:" Margin="167,131,345,634" Grid.Column="1"/>
+        <Label x:Name="dispersion" Content="дисперсия" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="393,100,0,0" VerticalAlignment="Top" Width="97"/>
+        <Label x:Name="squareDeviation" Content="отклонение" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="393,132,0,0" VerticalAlignment="Top" Width="171"/>
+        <Label Content="Показатели вариации" Grid.Column="1" HorizontalAlignment="Left" Margin="278,47,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="28"/>
+        <Label Content="Минимум:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="311,164,0,0" VerticalAlignment="Top" Width="69"/>
+        <Label Content="Максимум:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="306,199,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Размах вариации:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="267,239,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label Content="Коэффициент вариации:" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="231,280,0,0" VerticalAlignment="Top" Width="149"/>
+        <Label Content="Медиана:" Grid.Column="1" HorizontalAlignment="Center" Height="27" Margin="0,312,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label x:Name="minPressure" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="34" Margin="393,164,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label x:Name="maxPressure" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,200,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="variationRange" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="393,239,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label x:Name="variationCoefficient" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,282,0,0" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.025,-0.957"/>
+        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="398,313,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Мода:" Grid.Column="1" HorizontalAlignment="Left" Margin="334,339,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="395,339,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
