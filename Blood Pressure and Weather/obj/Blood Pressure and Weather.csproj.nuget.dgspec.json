@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj": {}
+    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj": {}
   },
   "projects": {
-    "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj": {
+    "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj",
+        "projectUniqueName": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj",
         "projectName": "Blood Pressure and Weather",
-        "projectPath": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj",
-        "packagesPath": "C:\\Users\\goshanoob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\goshanoob\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\obj\\",
+        "projectPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\Blood Pressure and Weather.csproj",
+        "packagesPath": "C:\\Users\\username\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\username\\Source\\Repos\\goshanoob\\c-sharp-examples\\Blood Pressure and Weather\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\goshanoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\username\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

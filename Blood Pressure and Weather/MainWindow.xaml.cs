@@ -22,9 +22,8 @@ namespace Blood_Pressure_and_Weather
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainWindow mainWindow;
-        FileReader fileReader = new FileReader();
-        BloodPressure pressure ;
+        private FileReader fileReader = new FileReader();
+        private BloodPressure pressure;
         public MainWindow()
         {
             InitializeComponent();
@@ -69,15 +68,22 @@ namespace Blood_Pressure_and_Weather
                     $"{pressure.GetDownVariationRange()}";
                 variationCoefficient.Content = $"{pressure.GetUpVariationCoefficient()} / " +
                     $"{pressure.GetDownVariationCoefficient()} (%)";
+
+                // Делаем доступным построение графика давления.
+                showGraphic.IsEnabled = true;
             }
         }
 
         private void showGraphic_Click(object sender, RoutedEventArgs e)
         {
-            //Graph gra = new Graph(pressure);
             GraphWindow graphWindow = new GraphWindow();
             graphWindow.Show();
+            graphWindow.GraphData.Points = pressure.SystolicPressure.Select(i => (double)i).ToList();
+            graphWindow.GraphData.RefreshGraph();
 
+            graphWindow.GraphData.DrawGraphs("Графики артериального давления",
+                pressure.SystolicPressure.Select(i => (double)i).ToArray(),
+                pressure.DiastolicPressure.Select(i => (double)i).ToArray());
         }
     }
 }

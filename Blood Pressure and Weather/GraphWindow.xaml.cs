@@ -7,9 +7,11 @@ namespace Blood_Pressure_and_Weather
     /// </summary>
     public partial class GraphWindow : Window
     {
+        internal Graph GraphData { get; set; }
         public GraphWindow()
         {
             InitializeComponent();
+            GraphData = (Graph)DataContext;
         }
     }
 }

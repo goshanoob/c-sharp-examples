@@ -37,8 +37,6 @@ C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Wea
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.genruntimeconfig.cache
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\OxyPlot.dll
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\OxyPlot.Wpf.dll
-C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Grathics.g.cs
-C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Grathics.baml
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.csproj.CoreCompileInputs.cache
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.csproj.CopyComplete
 C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
@@ -48,3 +46,5 @@ C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and We
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\bin\Debug\netcoreapp3.1\OxyPlot.Wpf.dll
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\GraphWindow.baml
 C:\Users\goshanoob\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\Blood Pressure and Weather.csproj.CopyComplete
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\GraphWindow.g.cs
+C:\Users\username\Source\Repos\goshanoob\c-sharp-examples\Blood Pressure and Weather\obj\Debug\netcoreapp3.1\GraphWindow.baml

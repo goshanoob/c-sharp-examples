@@ -17,7 +17,7 @@
         <Menu x:Name="mainMenu" UseLayoutRounding="False" Grid.ColumnSpan="2" Margin="0,0,0,750">
             <Menu/>
             <Button x:Name="openFile" Content="Загрузить из файла" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="148" Click="Button_Click"/>
-            <Button x:Name="showGraphic" Content="Построить график" Height="30" Width="105" Click="showGraphic_Click"/>
+            <Button x:Name="showGraphic" Content="Построить график" Height="30" Width="105" Click="showGraphic_Click" IsEnabled="False"/>
         </Menu>
         <Label Content="Дисперсия:" Grid.Column="1" HorizontalAlignment="Left" Margin="308,100,0,0" VerticalAlignment="Top" Height="27"/>
         <Label Content="Среднеквадратическое отклонение:" Margin="167,131,345,634" Grid.Column="1"/>

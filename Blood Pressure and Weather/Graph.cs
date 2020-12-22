@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 namespace Blood_Pressure_and_Weather
 {
-    class Graph
+    internal class Graph
     {
         public PlotModel CurveGraph { get; set; }
+        public List<double> Points { get; set; }
+
         public Graph()
         {
             /* FileReader fileReader = new FileReader();
@@ -54,7 +56,7 @@ namespace Blood_Pressure_and_Weather
                                   new DataPoint(50, 12)
                               };*/
 
-            CurveGraph = new PlotModel { Title = "График артериального давления" };
+            CurveGraph = new PlotModel { Title = "Новый график" };
             CurveGraph.Series.Add(GetData());
             FunctionSeries GetData()
             {
@@ -62,7 +64,7 @@ namespace Blood_Pressure_and_Weather
                 int x = 0;
                 DataPoint point;
                 //foreach (var value in pressure.SystolicPressure)
-                for(int i = 0; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     point = new DataPoint(x, i);
                     serie.Points.Add(point);
@@ -70,6 +72,50 @@ namespace Blood_Pressure_and_Weather
                 }
                 return serie;
             }
+        }
+        public void RefreshGraph()
+        {
+            //Points.Clear();
+            CurveGraph.Series.Clear();
+            FunctionSeries serie = new FunctionSeries();
+            int x = 0;
+            foreach (double value in Points)
+            {
+                serie.Points.Add(new DataPoint(x, value));
+                x += 10;
+            }
+            CurveGraph.Series.Add(serie);
+            CurveGraph.Title = "Новый график";
+            CurveGraph.InvalidatePlot(true);
+        }
+        public void DrawGraphs(string title = "Графики", params double[][] curves)
+        {
+            CurveGraph.Title = title;
+            DrawGraphs(curves);
+        }
+
+        public void DrawGraphs(params double[][] curves)
+        {
+            CurveGraph.Series.Clear();
+            FunctionSeries[] serie = new FunctionSeries[curves.Length];
+            int x = 0, i = 0;
+            foreach (double[] curve in curves)
+            {
+                x = 0;
+                serie[i] = new FunctionSeries();
+                foreach (double value in curve)
+                {
+                    serie[i].Points.Add(new DataPoint(x, value));
+                    x += 10;
+                }
+                CurveGraph.Series.Add(serie[i++]);
+            }
+            CurveGraph.InvalidatePlot(true);
+        }
+
+        private void DaysLines()
+        {
+
         }
     }
 }
