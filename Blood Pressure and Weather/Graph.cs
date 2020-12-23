@@ -1,72 +1,42 @@
 ﻿using OxyPlot;
 using OxyPlot.Series;
 using System.Collections.Generic;
+using System;
 
 namespace Blood_Pressure_and_Weather
 {
+    // Класс Graph для построения графиков, заданных при помощи множества точек, соединенных отрезками.
+    // Используется библиотека OxyPlot.
+    // Свойство CurveGraph описывает модель данных графика. Данная модель используется в разметке WPF.
+    // Свойство Points доступно для задания точек графика.
+    // Перечисленные свойства имеют занчения по умполчиню, которые используются в конструкторе для построения графика прямой,
+    // соединяющей точки (0,0) и (20,100).
+    // Метод RefreshGraph() перерисовывает текущий график, используя совойство Points. Пользователь класса
+    // может изменить совойство Points и перестроить график по новым точкам.
+    // Метод DrawGraphs() перегружен дважды и используется для построения произвольного количества линий на
+    // одном графике, переданных в качестве аргументов.
+    // Метод SetLines() подзволяет визуально разделить значения графика по горизонтальной оси при помощи вертикальных линий.
+
     internal class Graph
     {
-        public PlotModel CurveGraph { get; set; }
-        public List<double> Points { get; set; }
-
+        public PlotModel CurveGraph { get; set; } = new PlotModel { Title = "Новый график" };
+        public List<double> Points { get; set; } = new List<double> { 0, 100 };
         public Graph()
         {
-            /* FileReader fileReader = new FileReader();
-             string workDirectory = Directory.GetCurrentDirectory();
-             string textContent = fileReader.ReadFile(workDirectory + "\\Артериальное давление.txt");
-             if (textContent != "")
-             {
-                 var pressures = Regex.Matches(textContent, @"\d+\/\d+");
-                 List<byte> upPressure = new List<byte>(), lowPressure = new List<byte>();
-                 string[] value = new string[2];
-                 foreach (Match match in pressures)
-                 {
-                     value = match.Value.Split("/");
-                     upPressure.Add(byte.Parse(value[0]));
-                     lowPressure.Add(byte.Parse(value[1]));
-                 }
-
-                 grath = new PlotModel { Title = "График артериального давления" };
-                 LineSeries series = new LineSeries { Title = "Систолическое", MarkerType = MarkerType.Square };
-                 LineSeries series2 = new LineSeries { Title = "Диастолическое", MarkerType = MarkerType.Square };
-                 int x = 0, k = 0;
-                 foreach (byte val  in upPressure)
-                 {
-                     series.Points.Add(new DataPoint(x, val));
-                     series2.Points.Add(new DataPoint(x, lowPressure[k++]));
-                     x += 10;
-                 }
-                 grath.Series.Add(series);
-                 grath.Series.Add(series2);
-
-                 grath.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
-             }
+            /* 
+            LineSeries series = new LineSeries { Title = "Систолическое", MarkerType = MarkerType.Square };
+            LineSeries series2 = new LineSeries { Title = "Диастолическое", MarkerType = MarkerType.Square };
+            grath.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));
             */
-
-            /*
-
-            Title = "Example 2";
-            Points = new List<DataPoint>
-                              {
-                                  new DataPoint(0, 4),
-                                  new DataPoint(10, 13),
-                                  new DataPoint(20, 15),
-                                  new DataPoint(30, 16),
-                                  new DataPoint(40, 12),
-                                  new DataPoint(50, 12)
-                              };*/
-
-            CurveGraph = new PlotModel { Title = "Новый график" };
             CurveGraph.Series.Add(GetData());
             FunctionSeries GetData()
             {
                 FunctionSeries serie = new FunctionSeries();
                 int x = 0;
                 DataPoint point;
-                //foreach (var value in pressure.SystolicPressure)
-                for (int i = 0; i < 10; i++)
+                foreach (double value in Points)
                 {
-                    point = new DataPoint(x, i);
+                    point = new DataPoint(x, value);
                     serie.Points.Add(point);
                     x += 20;
                 }
@@ -75,7 +45,6 @@ namespace Blood_Pressure_and_Weather
         }
         public void RefreshGraph()
         {
-            //Points.Clear();
             CurveGraph.Series.Clear();
             FunctionSeries serie = new FunctionSeries();
             int x = 0;
@@ -88,6 +57,7 @@ namespace Blood_Pressure_and_Weather
             CurveGraph.Title = "Новый график";
             CurveGraph.InvalidatePlot(true);
         }
+
         public void DrawGraphs(string title = "Графики", params double[][] curves)
         {
             CurveGraph.Title = title;
@@ -113,9 +83,9 @@ namespace Blood_Pressure_and_Weather
             CurveGraph.InvalidatePlot(true);
         }
 
-        private void DaysLines()
+        private void SetLines()
         {
-
+            throw new NotImplementedException("Метод не реализован");
         }
     }
 }

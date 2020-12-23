@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Blood_Pressure_and_Weather
 {
-    class FileReader
+    internal class FileReader
     {
         public string ReadFile(string fileName)
         {

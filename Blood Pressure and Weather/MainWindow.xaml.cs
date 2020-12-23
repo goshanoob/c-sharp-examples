@@ -13,15 +13,15 @@ namespace Blood_Pressure_and_Weather
     {
         private FileReader fileReader = new FileReader();
         private BloodPressure pressure;
+        private List<double> temperature;
+        private List<double> atmospheric;
         public MainWindow()
         {
             InitializeComponent();
-
-
             //Presenter presenter = new Presenter(mainWindow, fileReader);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void openPressureFile_Click(object sender, RoutedEventArgs e)
         {
             // Загружаем данные об артериальном давлении.
             string workDirectory = Directory.GetCurrentDirectory();
@@ -87,15 +87,8 @@ namespace Blood_Pressure_and_Weather
             {
                 //temperature = new List<double>();
                 string[] temperatureValues = textContent.Split("\r\n");
-                List<double> temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
-
-                // Выполняем корреляционный анализ.
-                CorrelationAnalysis correlation = new CorrelationAnalysis();
-                correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
-                correlation.Y = temperature;
-                correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+                temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
             }
-
         }
 
         private void openAtmosphericFile_Click(object sender, RoutedEventArgs e)
@@ -105,16 +98,18 @@ namespace Blood_Pressure_and_Weather
             string textContent = fileReader.ReadFile(workDirectory + "\\Атмосферное давление.txt");
             if (textContent != "")
             {
-                string[] temperatureValues = textContent.Split("\r\n");
-                List<double> temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
-
-                // Выполняем корреляционный анализ.
-                CorrelationAnalysis correlation = new CorrelationAnalysis();
-                correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
-                correlation.Y = temperature;
-                correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+                string[] atmosphericValues = textContent.Split("\r\n");
+                atmospheric = atmosphericValues.Select(i => double.Parse(i)).ToList();
             }
         }
 
+        private void makeAnalysis_Click(object sender, RoutedEventArgs e)
+        {
+            // Выполняем корреляционный анализ.
+            CorrelationAnalysis correlation = new CorrelationAnalysis();
+            correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
+            correlation.Y = temperature;
+            correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+        }
     }
 }

@@ -7,20 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="mainGrid" Margin="0,0,0,-199" Height="792">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="31*"/>
-            <ColumnDefinition Width="369*"/>
-        </Grid.ColumnDefinitions>
         <TextBlock x:Name="PressureValues" HorizontalAlignment="Left" Height="532" Margin="19,77,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Grid.ColumnSpan="2" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="True"/>
         <Label Content="Среднее значение артериального давления:" HorizontalAlignment="Left" Height="27" Margin="123,75,0,0" VerticalAlignment="Top" Width="257" Grid.Column="1"/>
         <Label x:Name="meanPressure" Content="среднее" HorizontalAlignment="Left" Margin="393,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Menu x:Name="mainMenu" UseLayoutRounding="False" Grid.ColumnSpan="2" Margin="0,0,0,750">
-            <Menu/>
-            <Button x:Name="openFile" Content="Загрузить АД из файла" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="148" Click="Button_Click"/>
-            <Button x:Name="showGraphic" Content="Построить график" Height="30" Width="105" Click="showGraphic_Click" IsEnabled="False"/>
-            <Button x:Name="openTemperatureFile" Content="Загрузить температуру из файла" Height="31" Width="160" Click="openTemperatureFile_Click"/>
-            <Button x:Name="makeAnalysis" Content="Корреляционный анализ" Height="31" Width="162"/>
-            <Button x:Name="openAtmosphericFile" Content="Загрузить атмосферное давление из файла" Height="30" Width="136" Click="openAtmosphericFile_Click"/>
+        <Menu IsMainMenu="True" x:Name="mainMenu" UseLayoutRounding="False" Margin="0,0,0,770">
+            <MenuItem x:Name="open" Height="20" Width="80" Header="Открыть">
+                <MenuItem x:Name="openPressureFile" Height="30" Width="250" Header="Файл артериального давления" Click="openPressureFile_Click"/>
+                <MenuItem x:Name="openAtmosphericFile" Height="30" Width="250" Header="Файл атмосферного давления" Click="openAtmosphericFile_Click"/>
+                <MenuItem x:Name="openTemperatureFile" Height="30" Width="250" Header="Файл температуры" Click="openTemperatureFile_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="makeAnalysis" IsEnabled="False"  Height="20" Width="200" Header="Корреляционный анализ" Click="makeAnalysis_Click"/>
+            <MenuItem x:Name="showGraphic" IsEnabled="False" Height="20" Width="200" Header="Построить график" Click="showGraphic_Click"/>
         </Menu>
         <Label Content="Дисперсия:" Grid.Column="1" HorizontalAlignment="Left" Margin="308,100,0,0" VerticalAlignment="Top" Height="27"/>
         <Label Content="Среднеквадратическое отклонение:" Margin="167,131,345,634" Grid.Column="1"/>
@@ -37,6 +34,5 @@
         <Label x:Name="variationCoefficient" Content="коэффициент" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="393,282,0,0" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.025,-0.957"/>
         <Label Content="Коэффициент корреляции:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="215,313,0,0" VerticalAlignment="Top" Width="165"/>
         <Label x:Name="correlationCoefficient" Content="корреляция" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="393,313,0,0" VerticalAlignment="Top" Width="143"/>
-
     </Grid>
 </Window>

@@ -12,7 +12,7 @@ namespace Blood_Pressure_and_Weather
     // GetDispersionOfDownPressure() - дисперсия значений "нижнего" давления.
     // GetMeanSquareDeviationOfUpPressure() - возвращает срднеквадратическое отклонение для "верхнего" давления,
     // GetMeanSquareDeviationOfDownPressure() - срднеквадратическое отклонение "нижнего" давления.
-    class BloodPressure
+    internal class BloodPressure
     {
         public byte[] SystolicPressure { get; }
         public byte[] DiastolicPressure { get; }
