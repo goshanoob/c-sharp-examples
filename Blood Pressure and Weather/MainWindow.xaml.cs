@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace Blood_Pressure_and_Weather
 {
@@ -27,19 +16,20 @@ namespace Blood_Pressure_and_Weather
         public MainWindow()
         {
             InitializeComponent();
-            
+
 
             //Presenter presenter = new Presenter(mainWindow, fileReader);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Загружаем данные об артериальном давлении.
             string workDirectory = Directory.GetCurrentDirectory();
-            string textContent = fileReader.ReadFile(workDirectory+ "\\Артериальное давление.txt");
-            if(textContent != "")
+            string textContent = fileReader.ReadFile(workDirectory + "\\Артериальное давление.txt");
+            if (textContent != "")
             {
                 var pressures = Regex.Matches(textContent, @"\d+\/\d+");
-                PressureValues.Text =  string.Join("\n", pressures);
+                PressureValues.Text = string.Join("\n", pressures);
                 List<byte> upPressure = new List<byte>(), lowPressure = new List<byte>();
                 string[] value = new string[2];
                 foreach (Match match in pressures)
@@ -85,5 +75,46 @@ namespace Blood_Pressure_and_Weather
                 pressure.SystolicPressure.Select(i => (double)i).ToArray(),
                 pressure.DiastolicPressure.Select(i => (double)i).ToArray());
         }
+
+        private void openTemperatureFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Загружаем данные о темературе.
+            string workDirectory = Directory.GetCurrentDirectory();
+            string textContent = fileReader.ReadFile(workDirectory + "\\Артериальное давление.txt");
+
+            textContent = fileReader.ReadFile(workDirectory + "\\Температура.txt");
+            if (textContent != "")
+            {
+                //temperature = new List<double>();
+                string[] temperatureValues = textContent.Split("\r\n");
+                List<double> temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
+
+                // Выполняем корреляционный анализ.
+                CorrelationAnalysis correlation = new CorrelationAnalysis();
+                correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
+                correlation.Y = temperature;
+                correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+            }
+
+        }
+
+        private void openAtmosphericFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Загружаем данные об атмосферном давлении.
+            string workDirectory = Directory.GetCurrentDirectory();
+            string textContent = fileReader.ReadFile(workDirectory + "\\Атмосферное давление.txt");
+            if (textContent != "")
+            {
+                string[] temperatureValues = textContent.Split("\r\n");
+                List<double> temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
+
+                // Выполняем корреляционный анализ.
+                CorrelationAnalysis correlation = new CorrelationAnalysis();
+                correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
+                correlation.Y = temperature;
+                correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+            }
+        }
+
     }
 }
