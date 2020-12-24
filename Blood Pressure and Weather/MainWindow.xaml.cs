@@ -13,8 +13,7 @@ namespace Blood_Pressure_and_Weather
     {
         private FileReader fileReader = new FileReader();
         private BloodPressure pressure;
-        private List<double> temperature;
-        private List<double> atmospheric;
+        private Weather weather = new Weather();
         public MainWindow()
         {
             InitializeComponent();
@@ -24,19 +23,21 @@ namespace Blood_Pressure_and_Weather
         private void openPressureFile_Click(object sender, RoutedEventArgs e)
         {
             // Загружаем данные об артериальном давлении.
+            // Затем поменять на OpenFileDialog.
             string workDirectory = Directory.GetCurrentDirectory();
             string textContent = fileReader.ReadFile(workDirectory + "\\Артериальное давление.txt");
             if (textContent != "")
             {
-                var pressures = Regex.Matches(textContent, @"\d+\/\d+");
-                PressureValues.Text = string.Join("\n", pressures);
-                List<byte> upPressure = new List<byte>(), lowPressure = new List<byte>();
-                string[] value = new string[2];
-                foreach (Match match in pressures)
+                MatchCollection pressureValues = GetValuesContent(@"\d+\/\d+", textContent);
+                PressureValues.Text = string.Join("\n", pressureValues);
+                List<double> upPressure = new List<double>(), lowPressure = new List<double>();
+                //string[] value = new string[2];
+                foreach (Match match in pressureValues)
                 {
-                    value = match.Value.Split("/");
-                    upPressure.Add(byte.Parse(value[0]));
-                    lowPressure.Add(byte.Parse(value[1]));
+                    // Будет ли здесь ошибка?
+                    string[] value = match.Value.Split("/");
+                    upPressure.Add(double.Parse(value[0]));
+                    lowPressure.Add(double.Parse(value[1]));
                 }
                 pressure = new BloodPressure(upPressure, lowPressure);
                 meanPressure.Content = $"{pressure.GetArithmeticMeanOfUpPressure()} / " +
@@ -46,10 +47,10 @@ namespace Blood_Pressure_and_Weather
                 squareDeviation.Content = $"{pressure.GetMeanSquareDeviationOfUpPressure()} / " +
                     $"{pressure.GetMeanSquareDeviationDownPressure()}";
                 // Вычисление минимальных и максимальных значений.
-                byte minUpPressureValue = pressure.GetMinUpPressure();
-                byte minDownPressureValue = pressure.GetMinDownPressure();
-                byte maxUpPressureValue = pressure.GetMaxUpPressure();
-                byte maxDownPressureValue = pressure.GetMaxDownPressure();
+                double minUpPressureValue = pressure.GetMinUpPressure();
+                double minDownPressureValue = pressure.GetMinDownPressure();
+                double maxUpPressureValue = pressure.GetMaxUpPressure();
+                double maxDownPressureValue = pressure.GetMaxDownPressure();
                 minPressure.Content = $"{minUpPressureValue} / " +
                     $"{minDownPressureValue}";
                 maxPressure.Content = $"{maxUpPressureValue} / " +
@@ -59,35 +60,41 @@ namespace Blood_Pressure_and_Weather
                 variationCoefficient.Content = $"{pressure.GetUpVariationCoefficient()} / " +
                     $"{pressure.GetDownVariationCoefficient()} (%)";
 
-                // Делаем доступным построение графика давления.
+                // Делаем доступными построение графика давления и корреляционный анализ.
                 showGraphic.IsEnabled = true;
+                makeAnalysis.IsEnabled = true;
             }
         }
+
+        private MatchCollection GetValuesContent(string pattern, string text)
+            => Regex.Matches(text, pattern);
 
         private void showGraphic_Click(object sender, RoutedEventArgs e)
         {
             GraphWindow graphWindow = new GraphWindow();
             graphWindow.Show();
-            graphWindow.GraphData.Points = pressure.SystolicPressure.Select(i => (double)i).ToList();
-            graphWindow.GraphData.RefreshGraph();
-
             graphWindow.GraphData.DrawGraphs("Графики артериального давления",
-                pressure.SystolicPressure.Select(i => (double)i).ToArray(),
-                pressure.DiastolicPressure.Select(i => (double)i).ToArray());
+                pressure.SystolicPressure, pressure.DiastolicPressure);
+
+            //graphWindow.GraphData.DrawGraphsXY(weather.TemperatureValues, weather.AtmospherePressure);
         }
 
         private void openTemperatureFile_Click(object sender, RoutedEventArgs e)
         {
             // Загружаем данные о темературе.
             string workDirectory = Directory.GetCurrentDirectory();
-            string textContent = fileReader.ReadFile(workDirectory + "\\Артериальное давление.txt");
-
-            textContent = fileReader.ReadFile(workDirectory + "\\Температура.txt");
+            string textContent = fileReader.ReadFile(workDirectory + "\\Температура.txt");
             if (textContent != "")
             {
-                //temperature = new List<double>();
-                string[] temperatureValues = textContent.Split("\r\n");
-                temperature = temperatureValues.Select(i => double.Parse(i)).ToList();
+                MatchCollection temperatureValues = GetValuesContent(@"\s-?\d+\r\n", textContent);
+                double[] temperature = new double[temperatureValues.Count];
+                int i = 0;
+                foreach (Match match in temperatureValues)
+                {
+                    temperature[i++] = double.Parse(match.Value);
+                }
+                weather.TemperatureValues = temperature;
+                meanPressure.Content = weather.GetArithmeticMean(temperature);
             }
         }
 
@@ -98,8 +105,16 @@ namespace Blood_Pressure_and_Weather
             string textContent = fileReader.ReadFile(workDirectory + "\\Атмосферное давление.txt");
             if (textContent != "")
             {
-                string[] atmosphericValues = textContent.Split("\r\n");
-                atmospheric = atmosphericValues.Select(i => double.Parse(i)).ToList();
+                // Вынести в общую функцию для атмосферного давления и температуры.
+                MatchCollection atmosphericValues = GetValuesContent(@"\s-?\d+\r\n", textContent);
+                double[] atmosphere = new double[atmosphericValues.Count];
+                int i = 0;
+                foreach (Match match in atmosphericValues)
+                {
+                    atmosphere[i++] = double.Parse(match.Value);
+                }
+                weather.AtmospherePressure = atmosphere;
+                meanPressure.Content = weather.GetArithmeticMean(atmosphere);
             }
         }
 
@@ -107,8 +122,8 @@ namespace Blood_Pressure_and_Weather
         {
             // Выполняем корреляционный анализ.
             CorrelationAnalysis correlation = new CorrelationAnalysis();
-            correlation.X = pressure.SystolicPressure.Select(i => (double)i).ToList();
-            correlation.Y = temperature;
+            correlation.X = pressure.SystolicPressure;
+            correlation.Y = pressure.DiastolicPressure;
             correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
         }
     }

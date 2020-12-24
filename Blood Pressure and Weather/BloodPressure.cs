@@ -12,121 +12,78 @@ namespace Blood_Pressure_and_Weather
     // GetDispersionOfDownPressure() - дисперсия значений "нижнего" давления.
     // GetMeanSquareDeviationOfUpPressure() - возвращает срднеквадратическое отклонение для "верхнего" давления,
     // GetMeanSquareDeviationOfDownPressure() - срднеквадратическое отклонение "нижнего" давления.
-    internal class BloodPressure
+    internal class BloodPressure: Analysis
     {
-        public byte[] SystolicPressure { get; }
-        public byte[] DiastolicPressure { get; }
+        public double[] SystolicPressure { get; }
+        public double[] DiastolicPressure { get; }
         public int PressureCount { get; }
 
-        public BloodPressure(List<byte> systolicPressure, List<byte> diastolicPressure)
+        public BloodPressure(List<double> systolicPressure, List<double> diastolicPressure)
         {
             PressureCount = systolicPressure.Count;
-            SystolicPressure = new byte[PressureCount];
-            DiastolicPressure = new byte[PressureCount];
-            int k = 0;
-            foreach (byte pressure in systolicPressure)
-            {
-                SystolicPressure[k] = pressure;
-                DiastolicPressure[k] = diastolicPressure[k++];
-            }
+            if (PressureCount != diastolicPressure.Count)
+                throw new Exception("Количество измерений систолического и диастолического давлений не сопадают");
+            SystolicPressure = new double[PressureCount];
+            DiastolicPressure = new double[PressureCount];
+            systolicPressure.CopyTo(SystolicPressure, 0);
+            diastolicPressure.CopyTo(DiastolicPressure, 0);
         }
 
-        public float GetArithmeticMeanOfUpPressure()
+        public double GetArithmeticMeanOfUpPressure()
         {
             return GetArithmeticMean(SystolicPressure);
         }
-        public float GetArithmeticMeanOfDownPressure()
+        public double GetArithmeticMeanOfDownPressure()
         {
             return GetArithmeticMean(DiastolicPressure);
         }
-        public float GetDispersionOfUpPressure()
+        public double GetDispersionOfUpPressure()
         {
             return GetDispersion(SystolicPressure);
         }
-        public float GetDispersionDownPressure()
+        public double GetDispersionDownPressure()
         {
             return GetDispersion(DiastolicPressure);
         }
-        public float GetMeanSquareDeviationOfUpPressure()
+        public double GetMeanSquareDeviationOfUpPressure()
         {
             return GetMeanSquareDeviation(SystolicPressure);
         }
-        public float GetMeanSquareDeviationDownPressure()
+        public double GetMeanSquareDeviationDownPressure()
         {
             return GetMeanSquareDeviation(DiastolicPressure);
         }
-        public byte GetMinUpPressure()
+        public double GetMinUpPressure()
         {
-            return GetMinPressure(SystolicPressure);
+            return GetMinValue(SystolicPressure);
         }
-        public byte GetMinDownPressure()
+        public double GetMinDownPressure()
         {
-            return GetMinPressure(DiastolicPressure);
+            return GetMinValue(DiastolicPressure);
         }
-        public byte GetMaxUpPressure()
+        public double GetMaxUpPressure()
         {
-            return GetMaxPressure(SystolicPressure);
+            return GetMaxValue(SystolicPressure);
         }
-        public byte GetMaxDownPressure()
+        public double GetMaxDownPressure()
         {
-            return GetMaxPressure(DiastolicPressure);
+            return GetMaxValue(DiastolicPressure);
         }
-        public byte GetUpVariationRange()
+        public double GetUpVariationRange()
         {
             return GetVariationRange(SystolicPressure);
         }
-        public byte GetDownVariationRange()
+        public double GetDownVariationRange()
         {
             return GetVariationRange(DiastolicPressure);
         }
-        public float GetUpVariationCoefficient()
+        public double GetUpVariationCoefficient()
         {
             return GetVariationCoefficient(SystolicPressure);
         }
-        public float GetDownVariationCoefficient()
+        public double GetDownVariationCoefficient()
         {
             return GetVariationCoefficient(DiastolicPressure);
-        }
-
-        private float GetArithmeticMean(byte[] pressure)
-        {
-            long sum = 0;
-            foreach (byte value in pressure)
-            {
-                sum += value;
-            }
-            return 1.0f * sum / PressureCount;
-        }
-
-        private float GetDispersion(byte[] pressure)
-        {
-            float sum = 0;
-            float arithmeticMean = GetArithmeticMean(pressure);
-            foreach (byte value in pressure)
-            {
-                sum += (float)Math.Pow((value - arithmeticMean), 2);
-            }
-            return sum / PressureCount;
-        }
-        private float GetMeanSquareDeviation(byte[] pressure)
-        {
-            return (float)Math.Sqrt(GetDispersion(pressure));
-        }
-        private byte GetMinPressure(byte[] pressure)
-        {
-            return pressure.Min();
-        }
-        private byte GetMaxPressure(byte[] pressure)
-        {
-            return pressure.Max();
-        }
-        private byte GetVariationRange(byte[] pressure)
-        {
-            return (byte)(GetMaxPressure(pressure) - GetMinPressure(pressure));
-        }
-        private float GetVariationCoefficient(byte[] pressure)
-        {
-            return GetMeanSquareDeviation(pressure) / GetArithmeticMean(pressure) * 100;
         }
     }
 }

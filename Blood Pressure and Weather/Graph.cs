@@ -1,7 +1,7 @@
 ﻿using OxyPlot;
 using OxyPlot.Series;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 namespace Blood_Pressure_and_Weather
 {
@@ -80,6 +80,18 @@ namespace Blood_Pressure_and_Weather
                 }
                 CurveGraph.Series.Add(serie[i++]);
             }
+            CurveGraph.InvalidatePlot(true);
+        }
+
+        public void DrawGraphsXY(double[] x, double[] y)
+        {
+            CurveGraph.Series.Clear();
+            ScatterSeries serie = new ScatterSeries();
+            for(int i = 0; i < x.Length; ++i)
+            {
+                serie.Points.Add(new ScatterPoint(x[i], y[i]));
+            }
+            CurveGraph.Series.Add(serie);
             CurveGraph.InvalidatePlot(true);
         }
 

@@ -4,15 +4,20 @@ using System.Text;
 
 namespace Blood_Pressure_and_Weather
 {
-    internal class CorrelationAnalysis
+    internal class CorrelationAnalysis: Analysis
     {
-        public List<double> X { get; set; }
-        public List<double> Y { get; set; }
+        public double[] X { get; set; }
+        public double[] Y { get; set; }
 
         public CorrelationAnalysis()
         {
-            X = new List<double>();
-            Y = new List<double>();
+
+        }
+        public CorrelationAnalysis(double[] x, double[] y)
+        {
+            // Ожидаем ошибку.
+            x.CopyTo(X, 0);
+            y.CopyTo(Y, 0);
         }
 
         public double GetCorrelationCoefficient()
@@ -20,7 +25,9 @@ namespace Blood_Pressure_and_Weather
             double sum = 0, squareSumX = 0, squareSumY = 0;
             double meanX  = GetArithmeticMean(X);
             double meanY  = GetArithmeticMean(Y);
-            for (int i = 0; i < X.Count; ++i)
+            int lengthX = X.Length, lengthY = Y.Length;
+            int selectionCount = lengthX > lengthY ? lengthY : lengthX;
+            for (int i = 0; i < selectionCount; ++i)
             {
                 double deviationX = X[i] - meanX;
                 double deviationY = Y[i] - meanY;
@@ -30,16 +37,6 @@ namespace Blood_Pressure_and_Weather
                 squareSumY += deviationY * deviationY;
             }
             return sum / Math.Sqrt(squareSumX * squareSumY);
-        }
-
-        private double GetArithmeticMean(List<double> a)
-        {
-            double sum = 0;
-            foreach (byte value in a)
-            {
-                sum += value;
-            }
-            return sum / a.Count;
         }
     }
 }
