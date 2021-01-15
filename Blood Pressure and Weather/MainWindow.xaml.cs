@@ -42,22 +42,22 @@ namespace Blood_Pressure_and_Weather
                 pressure = new BloodPressure(upPressure, lowPressure);
                 meanPressure.Content = $"{pressure.GetArithmeticMeanOfUpPressure()} / " +
                     $"{pressure.GetArithmeticMeanOfDownPressure()}";
-                dispersion.Content = $"{pressure.GetDispersionOfUpPressure()} / " +
+                dispersionAtmospheric.Content = $"{pressure.GetDispersionOfUpPressure()} / " +
                     $"{pressure.GetDispersionDownPressure()}";
-                squareDeviation.Content = $"{pressure.GetMeanSquareDeviationOfUpPressure()} / " +
+                squareDeviationAtmospheric.Content = $"{pressure.GetMeanSquareDeviationOfUpPressure()} / " +
                     $"{pressure.GetMeanSquareDeviationDownPressure()}";
                 // Вычисление минимальных и максимальных значений.
                 double minUpPressureValue = pressure.GetMinUpPressure();
                 double minDownPressureValue = pressure.GetMinDownPressure();
                 double maxUpPressureValue = pressure.GetMaxUpPressure();
                 double maxDownPressureValue = pressure.GetMaxDownPressure();
-                minPressure.Content = $"{minUpPressureValue} / " +
+                minPressureAtmospheric.Content = $"{minUpPressureValue} / " +
                     $"{minDownPressureValue}";
-                maxPressure.Content = $"{maxUpPressureValue} / " +
+                maxPressureAtmospheric.Content = $"{maxUpPressureValue} / " +
                     $"{maxDownPressureValue}";
-                variationRange.Content = $"{pressure.GetUpVariationRange()} / " +
+                variationRangeAtmospheric.Content = $"{pressure.GetUpVariationRange()} / " +
                     $"{pressure.GetDownVariationRange()}";
-                variationCoefficient.Content = $"{pressure.GetUpVariationCoefficient()} / " +
+                variationCoefficientAtmospheric.Content = $"{pressure.GetUpVariationCoefficient()} / " +
                     $"{pressure.GetDownVariationCoefficient()} (%)";
 
                 // Делаем доступными построение графика давления и корреляционный анализ.
@@ -124,7 +124,7 @@ namespace Blood_Pressure_and_Weather
             CorrelationAnalysis correlation = new CorrelationAnalysis();
             correlation.X = pressure.SystolicPressure;
             correlation.Y = pressure.DiastolicPressure;
-            correlationCoefficient.Content = correlation.GetCorrelationCoefficient();
+            correlationCoefficientAtmospheric.Content = correlation.GetCorrelationCoefficient();
         }
     }
 }
